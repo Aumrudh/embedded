@@ -1,0 +1,20 @@
+#include<pic18.h>
+main(){
+	TRISB7=0;
+	RB7=1;
+	TRISC=0xFF;
+	PORTC=0xFF;
+	TRISD=0;
+	TRISB0=1;
+	GIE=1;
+	INT0IE=1;
+	while(1){
+		PORTD=PORTC;
+	}
+}
+interrupt chk_isr(){
+	if(INT0IF==1){
+		RB7=~RB7;
+		INT0IF=0;
+	}
+}
