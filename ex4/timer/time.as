@@ -385,20 +385,28 @@ TOSU equ 0FFFh ;#
 	FNCALL	intlevel2,_chk_isr
 	global	intlevel2
 	FNROOT	intlevel2
-	global	_PORTB
-_PORTB	set	0xF81
+	global	_PORTD
+_PORTD	set	0xF83
 	global	_T1CON
 _T1CON	set	0xFCD
 	global	_TMR1H
 _TMR1H	set	0xFCF
 	global	_TMR1L
 _TMR1L	set	0xFCE
+	global	_TRISA
+_TRISA	set	0xF92
 	global	_TRISB
 _TRISB	set	0xF93
+	global	_TRISC
+_TRISC	set	0xF94
+	global	_TRISD
+_TRISD	set	0xF95
 	global	_GIE
 _GIE	set	0x7F97
 	global	_PEIE
 _PEIE	set	0x7F96
+	global	_RA6
+_RA6	set	0x7C06
 	global	_RC4
 _RC4	set	0x7C14
 	global	_RD4
@@ -409,10 +417,6 @@ _TMR1IE	set	0x7CE8
 _TMR1IF	set	0x7CF0
 	global	_TMR1ON
 _TMR1ON	set	0x7E68
-	global	_TRISC4
-_TRISC4	set	0x7CA4
-	global	_TRISD4
-_TRISD4	set	0x7CAC
 psect	intcode_body,class=CODE,space=0,reloc=2
 global __pintcode_body
 __pintcode_body:
@@ -587,13 +591,13 @@ __pcstackCOMRAM:
 
 ;; *************** function _main *****************
 ;; Defined at:
-;;		line 2 in file "C:\Users\imaum\Documents\timer\timer_int.c"
+;;		line 2 in file "D:\Aumrudh Documents\mepco\lab\sem6-Lab\embedded\even\embedded\ex4\timer\timer_int.c"
 ;; Parameters:    Size  Location     Type
 ;;		None
 ;; Auto vars:     Size  Location     Type
 ;;		None
 ;; Return value:  Size  Location     Type
-;;                  2   30[COMRAM] int 
+;;                  2   34[COMRAM] int 
 ;; Registers used:
 ;;		wreg, status,2
 ;; Tracked objects:
@@ -617,7 +621,7 @@ psect	text0,class=CODE,space=0,reloc=2
 global __ptext0
 __ptext0:
 psect	text0
-	file	"C:\Users\imaum\Documents\timer\timer_int.c"
+	file	"D:\Aumrudh Documents\mepco\lab\sem6-Lab\embedded\even\embedded\ex4\timer\timer_int.c"
 	line	2
 	global	__size_of_main
 	__size_of_main	equ	__end_of_main-_main
@@ -626,72 +630,76 @@ _main:
 	opt	stack 30
 	line	3
 	
-l617:
-;timer_int.c: 3: TRISB=0;
+l621:
+;timer_int.c: 3: TRISD=0;
 	movlw	low(0)
-	movwf	((c:3987)),c	;volatile
+	movwf	((c:3989)),c	;volatile
 	line	4
-	
-l619:
-;timer_int.c: 4: TRISC4=0;
-	bcf	c:(31908/8),(31908)&7	;volatile
+;timer_int.c: 4: TRISC=0;
+	movlw	low(0)
+	movwf	((c:3988)),c	;volatile
 	line	5
 	
-l621:
-;timer_int.c: 5: TRISD4=1;
-	bsf	c:(31916/8),(31916)&7	;volatile
+l623:
+;timer_int.c: 5: TRISB=255;
+	setf	((c:3987)),c	;volatile
 	line	6
 	
-l623:
-;timer_int.c: 6: RD4=1;
-	bsf	c:(31772/8),(31772)&7	;volatile
-	line	7
-;timer_int.c: 7: T1CON=0x00;
-	movlw	low(0)
-	movwf	((c:4045)),c	;volatile
-	line	8
-;timer_int.c: 8: TMR1L=0x6D;
-	movlw	low(06Dh)
-	movwf	((c:4046)),c	;volatile
-	line	9
-;timer_int.c: 9: TMR1H=0x84;
-	movlw	low(084h)
-	movwf	((c:4047)),c	;volatile
-	line	10
-	
 l625:
-;timer_int.c: 10: TMR1ON=1;
-	bsf	c:(32360/8),(32360)&7	;volatile
-	line	11
+;timer_int.c: 6: TRISA=255;
+	setf	((c:3986)),c	;volatile
+	line	7
 	
 l627:
-;timer_int.c: 11: GIE=1;
-	bsf	c:(32663/8),(32663)&7	;volatile
-	line	12
+;timer_int.c: 7: RD4=1;
+	bsf	c:(31772/8),(31772)&7	;volatile
+	line	8
+;timer_int.c: 8: T1CON=0x00;
+	movlw	low(0)
+	movwf	((c:4045)),c	;volatile
+	line	9
+;timer_int.c: 9: TMR1L=0x6D;
+	movlw	low(06Dh)
+	movwf	((c:4046)),c	;volatile
+	line	10
+;timer_int.c: 10: TMR1H=0x84;
+	movlw	low(084h)
+	movwf	((c:4047)),c	;volatile
+	line	11
 	
 l629:
-;timer_int.c: 12: PEIE=1;
-	bsf	c:(32662/8),(32662)&7	;volatile
-	line	13
+;timer_int.c: 11: TMR1ON=1;
+	bsf	c:(32360/8),(32360)&7	;volatile
+	line	12
 	
 l631:
-;timer_int.c: 13: TMR1IE=1;
-	bsf	c:(31976/8),(31976)&7	;volatile
-	line	14
+;timer_int.c: 12: GIE=1;
+	bsf	c:(32663/8),(32663)&7	;volatile
+	line	13
 	
 l633:
-;timer_int.c: 14: PORTB=0xFF;
-	setf	((c:3969)),c	;volatile
-	goto	l635
-	line	15
-;timer_int.c: 15: while(1){
-	
-l31:
-	line	16
+;timer_int.c: 13: PEIE=1;
+	bsf	c:(32662/8),(32662)&7	;volatile
+	line	14
 	
 l635:
-;timer_int.c: 16: RC4=RD4;
-	btfsc	c:(31772/8),(31772)&7	;volatile
+;timer_int.c: 14: TMR1IE=1;
+	bsf	c:(31976/8),(31976)&7	;volatile
+	line	15
+	
+l637:
+;timer_int.c: 15: PORTD=0xFF;
+	setf	((c:3971)),c	;volatile
+	goto	l639
+	line	16
+;timer_int.c: 16: while(1){
+	
+l35:
+	line	17
+	
+l639:
+;timer_int.c: 17: RC4=RA6;
+	btfsc	c:(31750/8),(31750)&7	;volatile
 	goto	u11
 	goto	u10
 u11:
@@ -700,17 +708,17 @@ u11:
 u10:
 	bcf	c:(31764/8),(31764)&7	;volatile
 u25:
-	goto	l635
-	line	17
-	
-l32:
-	line	15
-	goto	l635
-	
-l33:
+	goto	l639
 	line	18
 	
-l34:
+l36:
+	line	16
+	goto	l639
+	
+l37:
+	line	19
+	
+l38:
 	global	start
 	goto	start
 	opt stack 0
@@ -721,13 +729,13 @@ GLOBAL	__end_of_main
 
 ;; *************** function _chk_isr *****************
 ;; Defined at:
-;;		line 19 in file "C:\Users\imaum\Documents\timer\timer_int.c"
+;;		line 20 in file "D:\Aumrudh Documents\mepco\lab\sem6-Lab\embedded\even\embedded\ex4\timer\timer_int.c"
 ;; Parameters:    Size  Location     Type
 ;;		None
 ;; Auto vars:     Size  Location     Type
 ;;		None
 ;; Return value:  Size  Location     Type
-;;                  2   36[COMRAM] int 
+;;                  2   40[COMRAM] int 
 ;; Registers used:
 ;;		wreg, status,2, status,0
 ;; Tracked objects:
@@ -751,8 +759,8 @@ psect	intcode,class=CODE,space=0,reloc=2
 global __pintcode
 __pintcode:
 psect	intcode
-	file	"C:\Users\imaum\Documents\timer\timer_int.c"
-	line	19
+	file	"D:\Aumrudh Documents\mepco\lab\sem6-Lab\embedded\even\embedded\ex4\timer\timer_int.c"
+	line	20
 	global	__size_of_chk_isr
 	__size_of_chk_isr	equ	__end_of_chk_isr-_chk_isr
 	
@@ -778,45 +786,45 @@ int_func:
 	movff	tblptrh+0,??_chk_isr+11
 	movff	tblptru+0,??_chk_isr+12
 	movff	tablat+0,??_chk_isr+13
-	line	20
+	line	21
 	
-i2l637:
-;timer_int.c: 20: if(TMR1IF==1){
+i2l641:
+;timer_int.c: 21: if(TMR1IF==1){
 	btfss	c:(31984/8),(31984)&7	;volatile
 	goto	i2u3_41
 	goto	i2u3_40
 i2u3_41:
-	goto	i2l38
+	goto	i2l42
 i2u3_40:
-	line	21
-	
-i2l639:
-;timer_int.c: 21: PORTB=~PORTB;
-	comf	((c:3969)),c	;volatile
 	line	22
 	
-i2l641:
-;timer_int.c: 22: TMR1L=0x6D;
-	movlw	low(06Dh)
-	movwf	((c:4046)),c	;volatile
+i2l643:
+;timer_int.c: 22: PORTD=~PORTD;
+	comf	((c:3971)),c	;volatile
 	line	23
 	
-i2l643:
-;timer_int.c: 23: TMR1H=0x84;
-	movlw	low(084h)
-	movwf	((c:4047)),c	;volatile
+i2l645:
+;timer_int.c: 23: TMR1L=0x6D;
+	movlw	low(06Dh)
+	movwf	((c:4046)),c	;volatile
 	line	24
 	
-i2l645:
-;timer_int.c: 24: TMR1IF=0;
-	bcf	c:(31984/8),(31984)&7	;volatile
-	goto	i2l38
+i2l647:
+;timer_int.c: 24: TMR1H=0x84;
+	movlw	low(084h)
+	movwf	((c:4047)),c	;volatile
 	line	25
 	
-i2l37:
+i2l649:
+;timer_int.c: 25: TMR1IF=0;
+	bcf	c:(31984/8),(31984)&7	;volatile
+	goto	i2l42
 	line	26
 	
-i2l38:
+i2l41:
+	line	27
+	
+i2l42:
 	movff	??_chk_isr+13,tablat+0
 	movff	??_chk_isr+12,tblptru+0
 	movff	??_chk_isr+11,tblptrh+0

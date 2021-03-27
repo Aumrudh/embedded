@@ -1,0 +1,1627 @@
+
+
+HI-TECH Software PIC18 LITE Macro Assembler V9.80 build 11162 
+                                                                                               Fri Mar 26 22:36:49 2021
+
+HI-TECH Software Omniscient Code Generator (Lite mode) build 11162
+     1  0000                     opt subtitle "HI-TECH Software Omniscient Code Generator (Lite mode) build 11162"
+     2                           
+     3                           opt pagewidth 120
+     4                           
+     5                           	opt lm
+     6                           
+     7                           	processor	18F4520
+     8  0000                     porta	equ	0F80h
+     9  0000                     portb	equ	0F81h
+    10  0000                     portc	equ	0F82h
+    11  0000                     portd	equ	0F83h
+    12  0000                     porte	equ	0F84h
+    13  0000                     lata	equ	0F89h
+    14  0000                     latb	equ	0F8Ah
+    15  0000                     latc	equ	0F8Bh
+    16  0000                     latd	equ	0F8Ch
+    17  0000                     late	equ	0F8Dh
+    18  0000                     trisa	equ	0F92h
+    19  0000                     trisb	equ	0F93h
+    20  0000                     trisc	equ	0F94h
+    21  0000                     trisd	equ	0F95h
+    22  0000                     trise	equ	0F96h
+    23  0000                     pie1	equ	0F9Dh
+    24  0000                     pir1	equ	0F9Eh
+    25  0000                     ipr1	equ	0F9Fh
+    26  0000                     pie2	equ	0FA0h
+    27  0000                     pir2	equ	0FA1h
+    28  0000                     ipr2	equ	0FA2h
+    29  0000                     t3con	equ	0FB1h
+    30  0000                     tmr3l	equ	0FB2h
+    31  0000                     tmr3h	equ	0FB3h
+    32  0000                     ccp1con	equ	0FBDh
+    33  0000                     ccpr1l	equ	0FBEh
+    34  0000                     ccpr1h	equ	0FBFh
+    35  0000                     adcon1	equ	0FC1h
+    36  0000                     adcon0	equ	0FC2h
+    37  0000                     adresl	equ	0FC3h
+    38  0000                     adresh	equ	0FC4h
+    39  0000                     sspcon2	equ	0FC5h
+    40  0000                     sspcon1	equ	0FC6h
+    41  0000                     sspstat	equ	0FC7h
+    42  0000                     sspadd	equ	0FC8h
+    43  0000                     sspbuf	equ	0FC9h
+    44  0000                     t2con	equ	0FCAh
+    45  0000                     pr2	equ	0FCBh
+    46  0000                     tmr2	equ	0FCCh
+    47  0000                     t1con	equ	0FCDh
+    48  0000                     tmr1l	equ	0FCEh
+    49  0000                     tmr1h	equ	0FCFh
+    50  0000                     rcon	equ	0FD0h
+    51  0000                     wdtcon	equ	0FD1h
+    52  0000                     lvdcon	equ	0FD2h
+    53  0000                     osccon	equ	0FD3h
+    54  0000                     t0con	equ	0FD5h
+    55  0000                     tmr0l	equ	0FD6h
+    56  0000                     tmr0h	equ	0FD7h
+    57  0000                     status	equ	0FD8h
+    58  0000                     fsr2	equ	0FD9h
+    59  0000                     fsr2l	equ	0FD9h
+    60  0000                     fsr2h	equ	0FDAh
+    61  0000                     plusw2	equ	0FDBh
+    62  0000                     preinc2	equ	0FDCh
+    63  0000                     postdec2	equ	0FDDh
+    64  0000                     postinc2	equ	0FDEh
+    65  0000                     indf2	equ	0FDFh
+    66  0000                     bsr	equ	0FE0h
+    67  0000                     fsr1	equ	0FE1h
+    68  0000                     fsr1l	equ	0FE1h
+    69  0000                     fsr1h	equ	0FE2h
+    70  0000                     plusw1	equ	0FE3h
+    71  0000                     preinc1	equ	0FE4h
+    72  0000                     postdec1	equ	0FE5h
+    73  0000                     postinc1	equ	0FE6h
+    74  0000                     indf1	equ	0FE7h
+    75  0000                     wreg	equ	0FE8h
+    76  0000                     fsr0	equ	0FE9h
+    77  0000                     fsr0l	equ	0FE9h
+    78  0000                     fsr0h	equ	0FEAh
+    79  0000                     plusw0	equ	0FEBh
+    80  0000                     preinc0	equ	0FECh
+    81  0000                     postdec0	equ	0FEDh
+    82  0000                     postinc0	equ	0FEEh
+    83  0000                     indf0	equ	0FEFh
+    84  0000                     intcon3	equ	0FF0h
+    85  0000                     intcon2	equ	0FF1h
+    86  0000                     intcon	equ	0FF2h
+    87  0000                     prod	equ	0FF3h
+    88  0000                     prodl	equ	0FF3h
+    89  0000                     prodh	equ	0FF4h
+    90  0000                     tablat	equ	0FF5h
+    91  0000                     tblptr	equ	0FF6h
+    92  0000                     tblptrl	equ	0FF6h
+    93  0000                     tblptrh	equ	0FF7h
+    94  0000                     tblptru	equ	0FF8h
+    95  0000                     pcl	equ	0FF9h
+    96  0000                     pclat	equ	0FFAh
+    97  0000                     pclath	equ	0FFAh
+    98  0000                     pclatu	equ	0FFBh
+    99  0000                     stkptr	equ	0FFCh
+   100  0000                     tosl	equ	0FFDh
+   101  0000                     tosh	equ	0FFEh
+   102  0000                     tosu	equ	0FFFh
+   103                           skipnz macro
+   104                           	btfsc	status,2
+   105  0000                     	endm
+   106                           	global	__ramtop
+   107                           	global	__accesstop
+   108                           # 19 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   109  0000                     PORTA equ 0F80h ;# 
+   110                           # 90 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   111  0000                     PORTB equ 0F81h ;# 
+   112                           # 139 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   113  0000                     PORTC equ 0F82h ;# 
+   114                           # 194 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   115  0000                     PORTD equ 0F83h ;# 
+   116                           # 236 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   117  0000                     PORTE equ 0F84h ;# 
+   118                           # 365 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   119  0000                     LATA equ 0F89h ;# 
+   120                           # 418 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   121  0000                     LATB equ 0F8Ah ;# 
+   122                           # 471 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   123  0000                     LATC equ 0F8Bh ;# 
+   124                           # 524 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   125  0000                     LATD equ 0F8Ch ;# 
+   126                           # 577 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   127  0000                     LATE equ 0F8Dh ;# 
+   128                           # 625 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   129  0000                     TRISA equ 0F92h ;# 
+   130                           # 630 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   131  0000                     DDRA equ 0F92h ;# 
+   132                           # 688 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   133  0000                     TRISB equ 0F93h ;# 
+   134                           # 693 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   135  0000                     DDRB equ 0F93h ;# 
+   136                           # 751 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   137  0000                     TRISC equ 0F94h ;# 
+   138                           # 756 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   139  0000                     DDRC equ 0F94h ;# 
+   140                           # 814 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   141  0000                     TRISD equ 0F95h ;# 
+   142                           # 819 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   143  0000                     DDRD equ 0F95h ;# 
+   144                           # 877 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   145  0000                     TRISE equ 0F96h ;# 
+   146                           # 882 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   147  0000                     DDRE equ 0F96h ;# 
+   148                           # 932 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   149  0000                     OSCTUNE equ 0F9Bh ;# 
+   150                           # 954 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   151  0000                     PIE1 equ 0F9Dh ;# 
+   152                           # 981 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   153  0000                     PIR1 equ 0F9Eh ;# 
+   154                           # 1017 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   155  0000                     IPR1 equ 0F9Fh ;# 
+   156                           # 1044 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   157  0000                     PIE2 equ 0FA0h ;# 
+   158                           # 1067 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   159  0000                     PIR2 equ 0FA1h ;# 
+   160                           # 1090 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   161  0000                     IPR2 equ 0FA2h ;# 
+   162                           # 1113 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   163  0000                     EECON1 equ 0FA6h ;# 
+   164                           # 1136 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   165  0000                     EECON2 equ 0FA7h ;# 
+   166                           # 1148 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   167  0000                     EEDATA equ 0FA8h ;# 
+   168                           # 1160 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   169  0000                     EEADR equ 0FA9h ;# 
+   170                           # 1172 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   171  0000                     RCSTA equ 0FABh ;# 
+   172                           # 1177 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   173  0000                     RCSTA1 equ 0FABh ;# 
+   174                           # 1225 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   175  0000                     TXSTA equ 0FACh ;# 
+   176                           # 1230 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   177  0000                     TXSTA1 equ 0FACh ;# 
+   178                           # 1324 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   179  0000                     TXREG equ 0FADh ;# 
+   180                           # 1329 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   181  0000                     TXREG1 equ 0FADh ;# 
+   182                           # 1347 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   183  0000                     RCREG equ 0FAEh ;# 
+   184                           # 1352 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   185  0000                     RCREG1 equ 0FAEh ;# 
+   186                           # 1370 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   187  0000                     SPBRG equ 0FAFh ;# 
+   188                           # 1375 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   189  0000                     SPBRG1 equ 0FAFh ;# 
+   190                           # 1393 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   191  0000                     SPBRGH equ 0FB0h ;# 
+   192                           # 1405 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   193  0000                     T3CON equ 0FB1h ;# 
+   194                           # 1446 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   195  0000                     TMR3 equ 0FB2h ;# 
+   196                           # 1458 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   197  0000                     TMR3L equ 0FB2h ;# 
+   198                           # 1470 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   199  0000                     TMR3H equ 0FB3h ;# 
+   200                           # 1482 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   201  0000                     CMCON equ 0FB4h ;# 
+   202                           # 1515 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   203  0000                     CVRCON equ 0FB5h ;# 
+   204                           # 1541 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   205  0000                     ECCP1AS equ 0FB6h ;# 
+   206                           # 1546 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   207  0000                     ECCPAS equ 0FB6h ;# 
+   208                           # 1588 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   209  0000                     PWM1CON equ 0FB7h ;# 
+   210                           # 1593 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   211  0000                     ECCP1DEL equ 0FB7h ;# 
+   212                           # 1631 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   213  0000                     BAUDCON equ 0FB8h ;# 
+   214                           # 1636 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   215  0000                     BAUDCTL equ 0FB8h ;# 
+   216                           # 1696 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   217  0000                     CCP2CON equ 0FBAh ;# 
+   218                           # 1722 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   219  0000                     CCPR2 equ 0FBBh ;# 
+   220                           # 1734 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   221  0000                     CCPR2L equ 0FBBh ;# 
+   222                           # 1746 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   223  0000                     CCPR2H equ 0FBCh ;# 
+   224                           # 1758 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   225  0000                     CCP1CON equ 0FBDh ;# 
+   226                           # 1787 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   227  0000                     CCPR1 equ 0FBEh ;# 
+   228                           # 1799 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   229  0000                     CCPR1L equ 0FBEh ;# 
+   230                           # 1811 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   231  0000                     CCPR1H equ 0FBFh ;# 
+   232                           # 1823 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   233  0000                     ADCON2 equ 0FC0h ;# 
+   234                           # 1846 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   235  0000                     ADCON1 equ 0FC1h ;# 
+   236                           # 1879 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   237  0000                     ADCON0 equ 0FC2h ;# 
+   238                           # 1934 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   239  0000                     ADRES equ 0FC3h ;# 
+   240                           # 1946 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   241  0000                     ADRESL equ 0FC3h ;# 
+   242                           # 1958 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   243  0000                     ADRESH equ 0FC4h ;# 
+   244                           # 1970 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   245  0000                     SSPCON2 equ 0FC5h ;# 
+   246                           # 1997 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   247  0000                     SSPCON1 equ 0FC6h ;# 
+   248                           # 2019 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   249  0000                     SSPSTAT equ 0FC7h ;# 
+   250                           # 2126 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   251  0000                     SSPADD equ 0FC8h ;# 
+   252                           # 2138 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   253  0000                     SSPBUF equ 0FC9h ;# 
+   254                           # 2150 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   255  0000                     T2CON equ 0FCAh ;# 
+   256                           # 2180 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   257  0000                     PR2 equ 0FCBh ;# 
+   258                           # 2185 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   259  0000                     MEMCON equ 0FCBh ;# 
+   260                           # 2203 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   261  0000                     TMR2 equ 0FCCh ;# 
+   262                           # 2215 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   263  0000                     T1CON equ 0FCDh ;# 
+   264                           # 2252 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   265  0000                     TMR1 equ 0FCEh ;# 
+   266                           # 2264 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   267  0000                     TMR1L equ 0FCEh ;# 
+   268                           # 2276 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   269  0000                     TMR1H equ 0FCFh ;# 
+   270                           # 2288 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   271  0000                     RCON equ 0FD0h ;# 
+   272                           # 2333 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   273  0000                     WDTCON equ 0FD1h ;# 
+   274                           # 2348 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   275  0000                     HLVDCON equ 0FD2h ;# 
+   276                           # 2353 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   277  0000                     LVDCON equ 0FD2h ;# 
+   278                           # 2423 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   279  0000                     OSCCON equ 0FD3h ;# 
+   280                           # 2448 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   281  0000                     T0CON equ 0FD5h ;# 
+   282                           # 2473 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   283  0000                     TMR0 equ 0FD6h ;# 
+   284                           # 2485 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   285  0000                     TMR0L equ 0FD6h ;# 
+   286                           # 2497 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   287  0000                     TMR0H equ 0FD7h ;# 
+   288                           # 2509 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   289  0000                     STATUS equ 0FD8h ;# 
+   290                           # 2540 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   291  0000                     FSR2 equ 0FD9h ;# 
+   292                           # 2552 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   293  0000                     FSR2L equ 0FD9h ;# 
+   294                           # 2564 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   295  0000                     FSR2H equ 0FDAh ;# 
+   296                           # 2576 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   297  0000                     PLUSW2 equ 0FDBh ;# 
+   298                           # 2588 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   299  0000                     PREINC2 equ 0FDCh ;# 
+   300                           # 2600 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   301  0000                     POSTDEC2 equ 0FDDh ;# 
+   302                           # 2612 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   303  0000                     POSTINC2 equ 0FDEh ;# 
+   304                           # 2624 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   305  0000                     INDF2 equ 0FDFh ;# 
+   306                           # 2636 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   307  0000                     BSR equ 0FE0h ;# 
+   308                           # 2648 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   309  0000                     FSR1 equ 0FE1h ;# 
+   310                           # 2660 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   311  0000                     FSR1L equ 0FE1h ;# 
+   312                           # 2672 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   313  0000                     FSR1H equ 0FE2h ;# 
+   314                           # 2684 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   315  0000                     PLUSW1 equ 0FE3h ;# 
+   316                           # 2696 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   317  0000                     PREINC1 equ 0FE4h ;# 
+   318                           # 2708 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   319  0000                     POSTDEC1 equ 0FE5h ;# 
+   320                           # 2720 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   321  0000                     POSTINC1 equ 0FE6h ;# 
+   322                           # 2732 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   323  0000                     INDF1 equ 0FE7h ;# 
+   324                           # 2744 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   325  0000                     WREG equ 0FE8h ;# 
+   326                           # 2767 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   327  0000                     FSR0 equ 0FE9h ;# 
+   328                           # 2779 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   329  0000                     FSR0L equ 0FE9h ;# 
+   330                           # 2791 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   331  0000                     FSR0H equ 0FEAh ;# 
+   332                           # 2803 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   333  0000                     PLUSW0 equ 0FEBh ;# 
+   334                           # 2815 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   335  0000                     PREINC0 equ 0FECh ;# 
+   336                           # 2827 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   337  0000                     POSTDEC0 equ 0FEDh ;# 
+   338                           # 2839 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   339  0000                     POSTINC0 equ 0FEEh ;# 
+   340                           # 2851 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   341  0000                     INDF0 equ 0FEFh ;# 
+   342                           # 2863 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   343  0000                     INTCON3 equ 0FF0h ;# 
+   344                           # 2892 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   345  0000                     INTCON2 equ 0FF1h ;# 
+   346                           # 2919 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   347  0000                     INTCON equ 0FF2h ;# 
+   348                           # 2983 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   349  0000                     PROD equ 0FF3h ;# 
+   350                           # 2995 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   351  0000                     PRODL equ 0FF3h ;# 
+   352                           # 3007 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   353  0000                     PRODH equ 0FF4h ;# 
+   354                           # 3019 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   355  0000                     TABLAT equ 0FF5h ;# 
+   356                           # 3031 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   357  0000                     TBLPTR equ 0FF6h ;# 
+   358                           # 3044 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   359  0000                     TBLPTRL equ 0FF6h ;# 
+   360                           # 3056 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   361  0000                     TBLPTRH equ 0FF7h ;# 
+   362                           # 3068 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   363  0000                     TBLPTRU equ 0FF8h ;# 
+   364                           # 3081 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   365  0000                     PCLAT equ 0FF9h ;# 
+   366                           # 3086 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   367  0000                     PC equ 0FF9h ;# 
+   368                           # 3104 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   369  0000                     PCL equ 0FF9h ;# 
+   370                           # 3116 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   371  0000                     PCLATH equ 0FFAh ;# 
+   372                           # 3128 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   373  0000                     PCLATU equ 0FFBh ;# 
+   374                           # 3140 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   375  0000                     STKPTR equ 0FFCh ;# 
+   376                           # 3164 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   377  0000                     TOS equ 0FFDh ;# 
+   378                           # 3176 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   379  0000                     TOSL equ 0FFDh ;# 
+   380                           # 3188 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   381  0000                     TOSH equ 0FFEh ;# 
+   382                           # 3200 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   383  0000                     TOSU equ 0FFFh ;# 
+   384                           	FNCALL	_main,_delay
+   385                           	FNCALL	_main,_command
+   386                           	FNCALL	_main,_ready
+   387                           	FNCALL	_main,_data
+   388                           	FNCALL	_main,_hdelay
+   389                           	FNCALL	_command,_delay
+   390                           	FNCALL	_ready,_delay
+   391                           	FNCALL	_data,_delay
+   392                           	FNROOT	_main
+   393                           	global	main@F4459
+   394                           psect	idataCOMRAM,class=CODE,space=0,delta=1
+   395                           global __pidataCOMRAM
+   396  007E00                     __pidataCOMRAM:
+   397                           	file	"C:\Users\imaum\Downloads\Ex5\Ex5\lcdd.c"
+   398                           	line	54
+   399                           
+   400                           ;initializer for main@F4459
+   401  007E00  41                 	db	low(041h)
+   402  007E01  55                 	db	low(055h)
+   403  007E02  4D                 	db	low(04Dh)
+   404  007E03  52                 	db	low(052h)
+   405  007E04  55                 	db	low(055h)
+   406  007E05  44                 	db	low(044h)
+   407  007E06  48                 	db	low(048h)
+   408  007E07  20                 	db	low(020h)
+   409  007E08  4C                 	db	low(04Ch)
+   410  007E09  41                 	db	low(041h)
+   411  007E0A  4C                 	db	low(04Ch)
+   412  007E0B  20                 	db	low(020h)
+   413  007E0C  4B                 	db	low(04Bh)
+   414  007E0D  55                 	db	low(055h)
+   415  007E0E  4D                 	db	low(04Dh)
+   416  007E0F  41                 	db	low(041h)
+   417  007E10  52                 	db	low(052h)
+   418  007E11  20                 	db	low(020h)
+   419                           	global	_PORTBbits
+   420  0000                     _PORTBbits	set	0xF81
+   421                           	global	_PORTC
+   422  0000                     _PORTC	set	0xF82
+   423                           	global	_PORTCbits
+   424  0000                     _PORTCbits	set	0xF82
+   425                           	global	_TRISB
+   426  0000                     _TRISB	set	0xF93
+   427                           	global	_TRISC
+   428  0000                     _TRISC	set	0xF94
+   429                           ; #config settings
+   430                           	file	"Ex5led.as"
+   431                           	line	#
+   432                           psect	cinit,class=CODE,delta=1,reloc=2
+   433                           global __pcinit
+   434  007E5A                     __pcinit:
+   435                           global start_initialization
+   436  007E5A                     start_initialization:
+   437                           
+   438                           psect	dataCOMRAM,class=COMRAM,space=1
+   439                           global __pdataCOMRAM
+   440  000019                     __pdataCOMRAM:
+   441                           	file	"C:\Users\imaum\Downloads\Ex5\Ex5\lcdd.c"
+   442  000019                     main@F4459:
+   443  000019                            ds      18
+   444                           psect	cinit
+   445                           ; Initialize objects allocated to COMRAM (18 bytes)
+   446                           	global __pidataCOMRAM
+   447                           	; load TBLPTR registers with __pidataCOMRAM
+   448  007E5A  0E00               	movlw	low (__pidataCOMRAM)
+   449  007E5C  6EF6               	movwf	tblptrl
+   450  007E5E  0E7E               	movlw	high(__pidataCOMRAM)
+   451  007E60  6EF7               	movwf	tblptrh
+   452  007E62  0E00               	movlw	low highword(__pidataCOMRAM)
+   453  007E64  6EF8               	movwf	tblptru
+   454  007E66  EE00  F019         	lfsr	0,__pdataCOMRAM
+   455  007E6A  EE10 F012          	lfsr	1,18
+   456  007E6E                     	copy_data0:
+   457  007E6E  0009               	tblrd	*+
+   458  007E70  CFF5 FFEE          	movff	tablat, postinc0
+   459  007E74  50E5               	movf	postdec1,w
+   460  007E76  50E1               	movf	fsr1l,w
+   461  007E78  E1FA               	bnz	copy_data0
+   462                           psect cinit,class=CODE,delta=1
+   463                           global end_of_initialization
+   464                           
+   465                           ;End of C runtime variable initialization code
+   466                           
+   467  007E7A                     end_of_initialization:
+   468  007E7A  0100               movlb 0
+   469  007E7C  EF7D  F03F         goto _main	;jump to C main() function
+   470                           psect	cstackCOMRAM,class=COMRAM,space=1
+   471                           global __pcstackCOMRAM
+   472  000001                     __pcstackCOMRAM:
+   473                           	global	?_delay
+   474  000001                     ?_delay:	; 0 bytes @ 0x0
+   475                           	global	?_hdelay
+   476  000001                     ?_hdelay:	; 0 bytes @ 0x0
+   477                           	global	??_hdelay
+   478  000001                     ??_hdelay:	; 0 bytes @ 0x0
+   479                           	global	?_ready
+   480  000001                     ?_ready:	; 0 bytes @ 0x0
+   481                           	global	?_main
+   482  000001                     ?_main:	; 2 bytes @ 0x0
+   483                           	global	delay@i
+   484  000001                     delay@i:	; 1 bytes @ 0x0
+   485  000001                     	ds   1
+   486                           	global	??_delay
+   487  000002                     ??_delay:	; 0 bytes @ 0x1
+   488                           	global	?_command
+   489  000002                     ?_command:	; 0 bytes @ 0x1
+   490                           	global	?_data
+   491  000002                     ?_data:	; 0 bytes @ 0x1
+   492                           	global	??_ready
+   493  000002                     ??_ready:	; 0 bytes @ 0x1
+   494                           	global	hdelay@k
+   495  000002                     hdelay@k:	; 1 bytes @ 0x1
+   496                           	global	command@v
+   497  000002                     command@v:	; 1 bytes @ 0x1
+   498                           	global	data@v
+   499  000002                     data@v:	; 1 bytes @ 0x1
+   500  000002                     	ds   1
+   501                           	global	??_command
+   502  000003                     ??_command:	; 0 bytes @ 0x2
+   503                           	global	??_data
+   504  000003                     ??_data:	; 0 bytes @ 0x2
+   505                           	global	hdelay@i
+   506  000003                     hdelay@i:	; 1 bytes @ 0x2
+   507  000003                     	ds   1
+   508                           	global	hdelay@j
+   509  000004                     hdelay@j:	; 1 bytes @ 0x3
+   510  000004                     	ds   1
+   511                           	global	??_main
+   512  000005                     ??_main:	; 0 bytes @ 0x4
+   513  000005                     	ds   1
+   514                           	global	main@a
+   515  000006                     main@a:	; 18 bytes @ 0x5
+   516  000006                     	ds   18
+   517                           	global	main@i
+   518  000018                     main@i:	; 1 bytes @ 0x17
+   519  000018                     	ds   1
+   520                           ;!
+   521                           ;!Data Sizes:
+   522                           ;!    Strings     0
+   523                           ;!    Constant    0
+   524                           ;!    Data        18
+   525                           ;!    BSS         0
+   526                           ;!    Persistent  0
+   527                           ;!    Stack       0
+   528                           ;!
+   529                           ;!Auto Spaces:
+   530                           ;!    Space          Size  Autos    Used
+   531                           ;!    COMRAM          127     24      42
+   532                           ;!    BANK0           128      0       0
+   533                           ;!    BANK1           256      0       0
+   534                           ;!    BANK2           256      0       0
+   535                           ;!    BANK3           256      0       0
+   536                           ;!    BANK4           256      0       0
+   537                           ;!    BANK5           256      0       0
+   538                           
+   539                           ;!
+   540                           ;!Pointer List with Targets:
+   541                           ;!
+   542                           ;!    None.
+   543                           
+   544                           
+   545                           ;!
+   546                           ;!Critical Paths under _main in COMRAM
+   547                           ;!
+   548                           ;!    _main->_hdelay
+   549                           ;!    _command->_delay
+   550                           ;!    _ready->_delay
+   551                           ;!    _data->_delay
+   552                           ;!
+   553                           ;!Critical Paths under _main in BANK0
+   554                           ;!
+   555                           ;!    None.
+   556                           ;!
+   557                           ;!Critical Paths under _main in BANK1
+   558                           ;!
+   559                           ;!    None.
+   560                           ;!
+   561                           ;!Critical Paths under _main in BANK2
+   562                           ;!
+   563                           ;!    None.
+   564                           ;!
+   565                           ;!Critical Paths under _main in BANK3
+   566                           ;!
+   567                           ;!    None.
+   568                           ;!
+   569                           ;!Critical Paths under _main in BANK4
+   570                           ;!
+   571                           ;!    None.
+   572                           ;!
+   573                           ;!Critical Paths under _main in BANK5
+   574                           ;!
+   575                           ;!    None.
+   576                           
+   577 ;;
+   578 ;;Main: autosize = 0, tempsize = 1, incstack = 0, save=0
+   579 ;;
+   580                           
+   581                           ;!
+   582                           ;!Call Graph Tables:
+   583                           ;!
+   584                           ;! ---------------------------------------------------------------------------------
+   585                           ;! (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
+   586                           ;! ---------------------------------------------------------------------------------
+   587                           ;! (0) _main                                                20    20      0     270
+   588                           ;!                                              4 COMRAM    20    20      0
+   589                           ;!                              _delay
+   590                           ;!                            _command
+   591                           ;!                              _ready
+   592                           ;!                               _data
+   593                           ;!                             _hdelay
+   594                           ;! ---------------------------------------------------------------------------------
+   595                           ;! (1) _hdelay                                               4     4      0      60
+   596                           ;!                                              0 COMRAM     4     4      0
+   597                           ;! ---------------------------------------------------------------------------------
+   598                           ;! (1) _command                                              2     1      1      45
+   599                           ;!                                              1 COMRAM     2     1      1
+   600                           ;!                              _delay
+   601                           ;! ---------------------------------------------------------------------------------
+   602                           ;! (1) _ready                                                1     1      0      30
+   603                           ;!                                              1 COMRAM     1     1      0
+   604                           ;!                              _delay
+   605                           ;! ---------------------------------------------------------------------------------
+   606                           ;! (1) _data                                                 2     1      1      45
+   607                           ;!                                              1 COMRAM     2     1      1
+   608                           ;!                              _delay
+   609                           ;! ---------------------------------------------------------------------------------
+   610                           ;! (2) _delay                                                1     0      1      30
+   611                           ;!                                              0 COMRAM     1     0      1
+   612                           ;! ---------------------------------------------------------------------------------
+   613                           ;! Estimated maximum stack depth 2
+   614                           ;! ---------------------------------------------------------------------------------
+   615                           ;!
+   616                           ;! Call Graph Graphs:
+   617                           ;!
+   618                           ;! _main (ROOT)
+   619                           ;!   _delay
+   620                           ;!   _command
+   621                           ;!     _delay
+   622                           ;!   _ready
+   623                           ;!     _delay
+   624                           ;!   _data
+   625                           ;!     _delay
+   626                           ;!   _hdelay
+   627                           ;!
+   628                           
+   629                           ;! Address spaces:
+   630                           
+   631                           ;!Name               Size   Autos  Total    Cost      Usage
+   632                           ;!BIGRAM             5FF      0       0      17        0.0%
+   633                           ;!EEDATA             100      0       0       0        0.0%
+   634                           ;!BITBANK5           100      0       0      16        0.0%
+   635                           ;!BANK5              100      0       0      14        0.0%
+   636                           ;!BITBANK4           100      0       0      12        0.0%
+   637                           ;!BANK4              100      0       0      13        0.0%
+   638                           ;!BITBANK3           100      0       0      10        0.0%
+   639                           ;!BANK3              100      0       0      11        0.0%
+   640                           ;!BITBANK2           100      0       0       8        0.0%
+   641                           ;!BANK2              100      0       0       9        0.0%
+   642                           ;!BITBANK1           100      0       0       6        0.0%
+   643                           ;!BANK1              100      0       0       7        0.0%
+   644                           ;!BITBANK0            80      0       0       4        0.0%
+   645                           ;!BANK0               80      0       0       5        0.0%
+   646                           ;!BITCOMRAM           7F      0       0       0        0.0%
+   647                           ;!COMRAM              7F     18      2A       1       33.1%
+   648                           ;!BITSFR               0      0       0      40        0.0%
+   649                           ;!SFR                  0      0       0      40        0.0%
+   650                           ;!STACK                0      0       2       2        0.0%
+   651                           ;!NULL                 0      0       0       0        0.0%
+   652                           ;!ABS                  0      0      2A      15        0.0%
+   653                           ;!DATA                 0      0      2C       3        0.0%
+   654                           ;!CODE                 0      0       0       0        0.0%
+   655                           
+   656                           	global	_main
+   657                           
+   658 ;; *************** function _main *****************
+   659 ;; Defined at:
+   660 ;;		line 53 in file "C:\Users\imaum\Downloads\Ex5\Ex5\lcdd.c"
+   661 ;; Parameters:    Size  Location     Type
+   662 ;;		None
+   663 ;; Auto vars:     Size  Location     Type
+   664 ;;  i               1   23[COMRAM] unsigned char 
+   665 ;;  a              18    5[COMRAM] unsigned char [18]
+   666 ;; Return value:  Size  Location     Type
+   667 ;;                  2   36[COMRAM] int 
+   668 ;; Registers used:
+   669 ;;		wreg, fsr1l, fsr1h, fsr2l, fsr2h, status,2, status,0, prodl, prodh, cstack
+   670 ;; Tracked objects:
+   671 ;;		On entry : 0/0
+   672 ;;		On exit  : 0/0
+   673 ;;		Unchanged: 0/0
+   674 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+   675 ;;      Params:         0       0       0       0       0       0       0
+   676 ;;      Locals:        19       0       0       0       0       0       0
+   677 ;;      Temps:          1       0       0       0       0       0       0
+   678 ;;      Totals:        20       0       0       0       0       0       0
+   679 ;;Total ram usage:       20 bytes
+   680 ;; Hardware stack levels required when called:    2
+   681 ;; This function calls:
+   682 ;;		_delay
+   683 ;;		_command
+   684 ;;		_ready
+   685 ;;		_data
+   686 ;;		_hdelay
+   687 ;; This function is called by:
+   688 ;;		Startup code after reset
+   689 ;; This function uses a non-reentrant model
+   690 ;;
+   691                           psect	text0,class=CODE,space=0,reloc=2
+   692                           global __ptext0
+   693  007EFA                     __ptext0:
+   694                           psect	text0
+   695                           	file	"C:\Users\imaum\Downloads\Ex5\Ex5\lcdd.c"
+   696                           	line	53
+   697                           	global	__size_of_main
+   698  0000                     	__size_of_main	equ	__end_of_main-_main
+   699                           	
+   700  007EFA                     _main:
+   701                           	opt	stack 29
+   702                           	line	54
+   703                           	
+   704  007EFA                     l1839:
+   705                           ;lcdd.c: 54: char a[] = {'A','U','M','R','U','D','H',' ','L','A','L',' ','K','U','M','A'
+                                 ,'R',' '};
+   706  007EFA  EE20  F019         	lfsr	2,(main@F4459)
+   707  007EFE  EE10  F006         	lfsr	1,(main@a)
+   708  007F02  0E12               	movlw	18
+   709  007F04                     u1881:
+   710  007F04  CFDE FFE6          	movff	postinc2,postinc1
+   711  007F08  2EE8               	decfsz	wreg
+   712  007F0A  D7FC               	goto	u1881
+   713                           	line	55
+   714                           	
+   715  007F0C                     l1841:
+   716                           ;lcdd.c: 55: PORTBbits.RB2 = 0;
+   717  007F0C  9481               	bcf	((c:3969)),c,2	;volatile
+   718                           	line	56
+   719                           	
+   720  007F0E                     l1843:
+   721                           ;lcdd.c: 56: TRISC = 0x00;
+   722  007F0E  0E00               	movlw	low(0)
+   723  007F10  6E94               	movwf	((c:3988)),c	;volatile
+   724                           	line	57
+   725                           	
+   726  007F12                     l1845:
+   727                           ;lcdd.c: 57: TRISB = 0x00;
+   728  007F12  0E00               	movlw	low(0)
+   729  007F14  6E93               	movwf	((c:3987)),c	;volatile
+   730                           	line	58
+   731                           	
+   732  007F16                     l1847:
+   733                           ;lcdd.c: 58: delay(500);
+   734  007F16  6E05               	movwf	(??_main+0+0)&0ffh,c
+   735  007F18  0EF4               	movlw	low(0F4h)
+   736  007F1A  6E01               	movwf	((c:?_delay)),c
+   737  007F1C  5005               	movf	(??_main+0+0)&0ffh,c,w
+   738  007F1E  EC09  F03F         	call	_delay	;wreg free
+   739                           	line	59
+   740                           	
+   741  007F22                     l1849:
+   742                           ;lcdd.c: 59: command(0x38);
+   743  007F22  6E05               	movwf	(??_main+0+0)&0ffh,c
+   744  007F24  0E38               	movlw	low(038h)
+   745  007F26  6E02               	movwf	((c:?_command)),c
+   746  007F28  5005               	movf	(??_main+0+0)&0ffh,c,w
+   747  007F2A  EC20  F03F         	call	_command	;wreg free
+   748                           	line	60
+   749                           	
+   750  007F2E                     l1851:
+   751                           ;lcdd.c: 60: delay(500);
+   752  007F2E  6E05               	movwf	(??_main+0+0)&0ffh,c
+   753  007F30  0EF4               	movlw	low(0F4h)
+   754  007F32  6E01               	movwf	((c:?_delay)),c
+   755  007F34  5005               	movf	(??_main+0+0)&0ffh,c,w
+   756  007F36  EC09  F03F         	call	_delay	;wreg free
+   757                           	line	61
+   758                           	
+   759  007F3A                     l1853:
+   760                           ;lcdd.c: 61: command(0x0E);
+   761  007F3A  6E05               	movwf	(??_main+0+0)&0ffh,c
+   762  007F3C  0E0E               	movlw	low(0Eh)
+   763  007F3E  6E02               	movwf	((c:?_command)),c
+   764  007F40  5005               	movf	(??_main+0+0)&0ffh,c,w
+   765  007F42  EC20  F03F         	call	_command	;wreg free
+   766                           	line	62
+   767                           	
+   768  007F46                     l1855:
+   769                           ;lcdd.c: 62: ready();
+   770  007F46  EC40  F03F         	call	_ready	;wreg free
+   771                           	line	63
+   772                           	
+   773  007F4A                     l1857:
+   774                           ;lcdd.c: 63: command(0x01);
+   775  007F4A  6E05               	movwf	(??_main+0+0)&0ffh,c
+   776  007F4C  0E01               	movlw	low(01h)
+   777  007F4E  6E02               	movwf	((c:?_command)),c
+   778  007F50  5005               	movf	(??_main+0+0)&0ffh,c,w
+   779  007F52  EC20  F03F         	call	_command	;wreg free
+   780                           	line	64
+   781                           	
+   782  007F56                     l1859:
+   783                           ;lcdd.c: 64: ready();
+   784  007F56  EC40  F03F         	call	_ready	;wreg free
+   785                           	line	65
+   786                           	
+   787  007F5A                     l1861:
+   788                           ;lcdd.c: 65: command(0x06);
+   789  007F5A  6E05               	movwf	(??_main+0+0)&0ffh,c
+   790  007F5C  0E06               	movlw	low(06h)
+   791  007F5E  6E02               	movwf	((c:?_command)),c
+   792  007F60  5005               	movf	(??_main+0+0)&0ffh,c,w
+   793  007F62  EC20  F03F         	call	_command	;wreg free
+   794                           	line	66
+   795                           	
+   796  007F66                     l1863:
+   797                           ;lcdd.c: 66: ready();
+   798  007F66  EC40  F03F         	call	_ready	;wreg free
+   799                           	line	67
+   800                           	
+   801  007F6A                     l1865:
+   802                           ;lcdd.c: 67: ready();
+   803  007F6A  EC40  F03F         	call	_ready	;wreg free
+   804                           	line	68
+   805                           	
+   806  007F6E                     l1867:
+   807                           ;lcdd.c: 68: command(0x86);
+   808  007F6E  6E05               	movwf	(??_main+0+0)&0ffh,c
+   809  007F70  0E86               	movlw	low(086h)
+   810  007F72  6E02               	movwf	((c:?_command)),c
+   811  007F74  5005               	movf	(??_main+0+0)&0ffh,c,w
+   812  007F76  EC20  F03F         	call	_command	;wreg free
+   813                           	line	69
+   814                           	
+   815  007F7A                     l1869:
+   816                           ;lcdd.c: 69: ready();
+   817  007F7A  EC40  F03F         	call	_ready	;wreg free
+   818                           	line	70
+   819                           	
+   820  007F7E                     l1871:
+   821                           ;lcdd.c: 70: command(0x1C);
+   822  007F7E  6E05               	movwf	(??_main+0+0)&0ffh,c
+   823  007F80  0E1C               	movlw	low(01Ch)
+   824  007F82  6E02               	movwf	((c:?_command)),c
+   825  007F84  5005               	movf	(??_main+0+0)&0ffh,c,w
+   826  007F86  EC20  F03F         	call	_command	;wreg free
+   827                           	line	71
+   828                           	
+   829  007F8A                     l1873:
+   830                           ;lcdd.c: 71: ready();
+   831  007F8A  EC40  F03F         	call	_ready	;wreg free
+   832                           	line	72
+   833                           	
+   834  007F8E                     l1875:
+   835                           ;lcdd.c: 72: ready();
+   836  007F8E  EC40  F03F         	call	_ready	;wreg free
+   837                           	line	73
+   838                           	
+   839  007F92                     l1877:
+   840                           ;lcdd.c: 73: delay(250);
+   841  007F92  6E05               	movwf	(??_main+0+0)&0ffh,c
+   842  007F94  0EFA               	movlw	low(0FAh)
+   843  007F96  6E01               	movwf	((c:?_delay)),c
+   844  007F98  5005               	movf	(??_main+0+0)&0ffh,c,w
+   845  007F9A  EC09  F03F         	call	_delay	;wreg free
+   846  007F9E  D000               	goto	l1879
+   847                           	line	74
+   848                           ;lcdd.c: 74: while(1){
+   849                           	
+   850  007FA0                     l39:
+   851                           	line	75
+   852                           	
+   853  007FA0                     l1879:
+   854                           ;lcdd.c: 75: for (char i =0;i<18;i++){
+   855  007FA0  6E05               	movwf	(??_main+0+0)&0ffh,c
+   856  007FA2  0E00               	movlw	low(0)
+   857  007FA4  6E18               	movwf	((c:main@i)),c
+   858  007FA6  5005               	movf	(??_main+0+0)&0ffh,c,w
+   859                           	
+   860  007FA8                     l1881:
+   861  007FA8  0E11               	movlw	(012h-1)
+   862  007FAA  6418               	cpfsgt	((c:main@i)),c
+   863  007FAC  D001               	goto	u1891
+   864  007FAE  D001               	goto	u1890
+   865  007FB0                     u1891:
+   866  007FB0  D002               	goto	l1885
+   867  007FB2                     u1890:
+   868  007FB2  D7F6               	goto	l1879
+   869                           	
+   870  007FB4                     l1883:
+   871  007FB4  D7F5               	goto	l1879
+   872                           	
+   873  007FB6                     l40:
+   874                           	line	76
+   875                           	
+   876  007FB6                     l1885:
+   877                           ;lcdd.c: 76: data(a[i]);
+   878  007FB6  5018               	movf	((c:main@i)),c,w
+   879  007FB8  0D01               	mullw	01h
+   880  007FBA  0E06               	movlw	low((c:main@a))
+   881  007FBC  24F3               	addwf	(prodl),c,w
+   882  007FBE  6ED9               	movwf	c:fsr2l
+   883  007FC0  6ADA               	clrf	1+c:fsr2l
+   884  007FC2  0E00               	movlw	high((c:main@a))
+   885  007FC4  22DA               	addwfc	1+c:fsr2l
+   886  007FC6  50DF               	movf	indf2,w
+   887  007FC8  6E02               	movwf	((c:?_data)),c
+   888  007FCA  EC13  F03F         	call	_data	;wreg free
+   889                           	line	77
+   890                           	
+   891  007FCE                     l1887:
+   892                           ;lcdd.c: 77: ready();
+   893  007FCE  EC40  F03F         	call	_ready	;wreg free
+   894                           	line	78
+   895                           	
+   896  007FD2                     l1889:
+   897                           ;lcdd.c: 78: ready();
+   898  007FD2  EC40  F03F         	call	_ready	;wreg free
+   899                           	line	79
+   900                           	
+   901  007FD6                     l1891:
+   902                           ;lcdd.c: 79: hdelay();
+   903  007FD6  EC53  F03F         	call	_hdelay	;wreg free
+   904                           	line	80
+   905                           	
+   906  007FDA                     l1893:
+   907                           ;lcdd.c: 80: command(0x1C);
+   908  007FDA  6E05               	movwf	(??_main+0+0)&0ffh,c
+   909  007FDC  0E1C               	movlw	low(01Ch)
+   910  007FDE  6E02               	movwf	((c:?_command)),c
+   911  007FE0  5005               	movf	(??_main+0+0)&0ffh,c,w
+   912  007FE2  EC20  F03F         	call	_command	;wreg free
+   913                           	line	81
+   914                           	
+   915  007FE6                     l1895:
+   916                           ;lcdd.c: 81: ready();
+   917  007FE6  EC40  F03F         	call	_ready	;wreg free
+   918                           	line	75
+   919                           	
+   920  007FEA                     l1897:
+   921  007FEA  2A18               	incf	((c:main@i)),c
+   922                           	
+   923  007FEC                     l1899:
+   924  007FEC  0E11               	movlw	(012h-1)
+   925  007FEE  6418               	cpfsgt	((c:main@i)),c
+   926  007FF0  D001               	goto	u1901
+   927  007FF2  D001               	goto	u1900
+   928  007FF4                     u1901:
+   929  007FF4  D7E0               	goto	l1885
+   930  007FF6                     u1900:
+   931  007FF6  D7D4               	goto	l1879
+   932                           	
+   933  007FF8                     l41:
+   934  007FF8  D7D3               	goto	l1879
+   935                           	line	83
+   936                           	
+   937  007FFA                     l42:
+   938                           	line	74
+   939  007FFA  D7D2               	goto	l1879
+   940                           	
+   941  007FFC                     l43:
+   942                           	line	84
+   943                           	
+   944  007FFC                     l44:
+   945                           	global	start
+   946  007FFC  EF00  F000         	goto	start
+   947                           	opt stack 0
+   948                           GLOBAL	__end_of_main
+   949  008000                     	__end_of_main:
+   950                           	signat	_main,90
+   951                           	global	_hdelay
+   952                           
+   953 ;; *************** function _hdelay *****************
+   954 ;; Defined at:
+   955 ;;		line 14 in file "C:\Users\imaum\Downloads\Ex5\Ex5\lcdd.c"
+   956 ;; Parameters:    Size  Location     Type
+   957 ;;		None
+   958 ;; Auto vars:     Size  Location     Type
+   959 ;;  k               1    1[COMRAM] unsigned char 
+   960 ;;  j               1    3[COMRAM] unsigned char 
+   961 ;;  i               1    2[COMRAM] unsigned char 
+   962 ;; Return value:  Size  Location     Type
+   963 ;;		None               void
+   964 ;; Registers used:
+   965 ;;		wreg, status,2, status,0
+   966 ;; Tracked objects:
+   967 ;;		On entry : 0/0
+   968 ;;		On exit  : 0/0
+   969 ;;		Unchanged: 0/0
+   970 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+   971 ;;      Params:         0       0       0       0       0       0       0
+   972 ;;      Locals:         3       0       0       0       0       0       0
+   973 ;;      Temps:          1       0       0       0       0       0       0
+   974 ;;      Totals:         4       0       0       0       0       0       0
+   975 ;;Total ram usage:        4 bytes
+   976 ;; Hardware stack levels used:    1
+   977 ;; This function calls:
+   978 ;;		Nothing
+   979 ;; This function is called by:
+   980 ;;		_main
+   981 ;; This function uses a non-reentrant model
+   982 ;;
+   983                           psect	text1,class=CODE,space=0,reloc=2
+   984                           global __ptext1
+   985  007EA6                     __ptext1:
+   986                           psect	text1
+   987                           	file	"C:\Users\imaum\Downloads\Ex5\Ex5\lcdd.c"
+   988                           	line	14
+   989                           	global	__size_of_hdelay
+   990  0000                     	__size_of_hdelay	equ	__end_of_hdelay-_hdelay
+   991                           	
+   992  007EA6                     _hdelay:
+   993                           	opt	stack 30
+   994                           	line	15
+   995                           	
+   996  007EA6                     l629:
+   997                           ;lcdd.c: 15: for (char i =0;i<40;i++){
+   998  007EA6  6E01               	movwf	(??_hdelay+0+0)&0ffh,c
+   999  007EA8  0E00               	movlw	low(0)
+  1000  007EAA  6E03               	movwf	((c:hdelay@i)),c
+  1001  007EAC  5001               	movf	(??_hdelay+0+0)&0ffh,c,w
+  1002                           	
+  1003  007EAE                     l631:
+  1004  007EAE  0E27               	movlw	(028h-1)
+  1005  007EB0  6403               	cpfsgt	((c:hdelay@i)),c
+  1006  007EB2  D001               	goto	u21
+  1007  007EB4  D001               	goto	u20
+  1008  007EB6                     u21:
+  1009  007EB6  D002               	goto	l635
+  1010  007EB8                     u20:
+  1011  007EB8  D01F               	goto	l23
+  1012                           	
+  1013  007EBA                     l633:
+  1014  007EBA  D01E               	goto	l23
+  1015                           	
+  1016  007EBC                     l19:
+  1017                           	line	16
+  1018                           	
+  1019  007EBC                     l635:
+  1020                           ;lcdd.c: 16: for (char j =0;j<135;j++){
+  1021  007EBC  6E01               	movwf	(??_hdelay+0+0)&0ffh,c
+  1022  007EBE  0E00               	movlw	low(0)
+  1023  007EC0  6E04               	movwf	((c:hdelay@j)),c
+  1024  007EC2  5001               	movf	(??_hdelay+0+0)&0ffh,c,w
+  1025                           	
+  1026  007EC4                     l637:
+  1027  007EC4  0E86               	movlw	(087h-1)
+  1028  007EC6  6404               	cpfsgt	((c:hdelay@j)),c
+  1029  007EC8  D001               	goto	u31
+  1030  007ECA  D001               	goto	u30
+  1031  007ECC                     u31:
+  1032  007ECC  D002               	goto	l641
+  1033  007ECE                     u30:
+  1034  007ECE  D00D               	goto	l649
+  1035                           	
+  1036  007ED0                     l639:
+  1037  007ED0  D00C               	goto	l649
+  1038                           	
+  1039  007ED2                     l21:
+  1040                           	line	17
+  1041                           	
+  1042  007ED2                     l641:
+  1043                           ;lcdd.c: 17: char k =0;
+  1044  007ED2  6E01               	movwf	(??_hdelay+0+0)&0ffh,c
+  1045  007ED4  0E00               	movlw	low(0)
+  1046  007ED6  6E02               	movwf	((c:hdelay@k)),c
+  1047  007ED8  5001               	movf	(??_hdelay+0+0)&0ffh,c,w
+  1048                           	line	18
+  1049                           	
+  1050  007EDA                     l643:
+  1051                           ;lcdd.c: 18: k++;
+  1052  007EDA  2A02               	incf	((c:hdelay@k)),c
+  1053                           	line	16
+  1054                           	
+  1055  007EDC                     l645:
+  1056  007EDC  2A04               	incf	((c:hdelay@j)),c
+  1057                           	
+  1058  007EDE                     l647:
+  1059  007EDE  0E86               	movlw	(087h-1)
+  1060  007EE0  6404               	cpfsgt	((c:hdelay@j)),c
+  1061  007EE2  D001               	goto	u41
+  1062  007EE4  D001               	goto	u40
+  1063  007EE6                     u41:
+  1064  007EE6  D7F5               	goto	l641
+  1065  007EE8                     u40:
+  1066  007EE8  D000               	goto	l649
+  1067                           	
+  1068  007EEA                     l22:
+  1069                           	line	15
+  1070                           	
+  1071  007EEA                     l649:
+  1072  007EEA  2A03               	incf	((c:hdelay@i)),c
+  1073                           	
+  1074  007EEC                     l651:
+  1075  007EEC  0E27               	movlw	(028h-1)
+  1076  007EEE  6403               	cpfsgt	((c:hdelay@i)),c
+  1077  007EF0  D001               	goto	u51
+  1078  007EF2  D001               	goto	u50
+  1079  007EF4                     u51:
+  1080  007EF4  D7E3               	goto	l635
+  1081  007EF6                     u50:
+  1082  007EF6  D000               	goto	l23
+  1083                           	
+  1084  007EF8                     l20:
+  1085                           	line	21
+  1086                           	
+  1087  007EF8                     l23:
+  1088  007EF8  0012               	return
+  1089                           	opt stack 0
+  1090                           GLOBAL	__end_of_hdelay
+  1091  007EFA                     	__end_of_hdelay:
+  1092                           	signat	_hdelay,88
+  1093                           	global	_command
+  1094                           
+  1095 ;; *************** function _command *****************
+  1096 ;; Defined at:
+  1097 ;;		line 23 in file "C:\Users\imaum\Downloads\Ex5\Ex5\lcdd.c"
+  1098 ;; Parameters:    Size  Location     Type
+  1099 ;;  v               1    1[COMRAM] unsigned char 
+  1100 ;; Auto vars:     Size  Location     Type
+  1101 ;;		None
+  1102 ;; Return value:  Size  Location     Type
+  1103 ;;		None               void
+  1104 ;; Registers used:
+  1105 ;;		wreg, status,2, status,0, cstack
+  1106 ;; Tracked objects:
+  1107 ;;		On entry : 0/0
+  1108 ;;		On exit  : 0/0
+  1109 ;;		Unchanged: 0/0
+  1110 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+  1111 ;;      Params:         1       0       0       0       0       0       0
+  1112 ;;      Locals:         0       0       0       0       0       0       0
+  1113 ;;      Temps:          1       0       0       0       0       0       0
+  1114 ;;      Totals:         2       0       0       0       0       0       0
+  1115 ;;Total ram usage:        2 bytes
+  1116 ;; Hardware stack levels used:    1
+  1117 ;; Hardware stack levels required when called:    1
+  1118 ;; This function calls:
+  1119 ;;		_delay
+  1120 ;; This function is called by:
+  1121 ;;		_main
+  1122 ;; This function uses a non-reentrant model
+  1123 ;;
+  1124                           psect	text2,class=CODE,space=0,reloc=2
+  1125                           global __ptext2
+  1126  007E40                     __ptext2:
+  1127                           psect	text2
+  1128                           	file	"C:\Users\imaum\Downloads\Ex5\Ex5\lcdd.c"
+  1129                           	line	23
+  1130                           	global	__size_of_command
+  1131  0000                     	__size_of_command	equ	__end_of_command-_command
+  1132                           	
+  1133  007E40                     _command:
+  1134                           	opt	stack 29
+  1135                           	line	24
+  1136                           	
+  1137  007E40                     l1817:
+  1138                           ;lcdd.c: 24: PORTC = v;
+  1139  007E40  C002  FF82         	movff	(c:command@v),(c:3970)	;volatile
+  1140                           	line	25
+  1141                           ;lcdd.c: 25: PORTBbits.RB0 = 0;
+  1142  007E44  9081               	bcf	((c:3969)),c,0	;volatile
+  1143                           	line	26
+  1144                           ;lcdd.c: 26: PORTBbits.RB1 = 0;
+  1145  007E46  9281               	bcf	((c:3969)),c,1	;volatile
+  1146                           	line	27
+  1147                           ;lcdd.c: 27: PORTBbits.RB2 = 1;
+  1148  007E48  8481               	bsf	((c:3969)),c,2	;volatile
+  1149                           	line	28
+  1150                           	
+  1151  007E4A                     l1819:
+  1152                           ;lcdd.c: 28: delay(1);
+  1153  007E4A  6E03               	movwf	(??_command+0+0)&0ffh,c
+  1154  007E4C  0E01               	movlw	low(01h)
+  1155  007E4E  6E01               	movwf	((c:?_delay)),c
+  1156  007E50  5003               	movf	(??_command+0+0)&0ffh,c,w
+  1157  007E52  EC09  F03F         	call	_delay	;wreg free
+  1158                           	line	29
+  1159                           	
+  1160  007E56                     l1821:
+  1161                           ;lcdd.c: 29: PORTBbits.RB2 = 0;
+  1162  007E56  9481               	bcf	((c:3969)),c,2	;volatile
+  1163                           	line	30
+  1164                           	
+  1165  007E58                     l26:
+  1166  007E58  0012               	return
+  1167                           	opt stack 0
+  1168                           GLOBAL	__end_of_command
+  1169  007E5A                     	__end_of_command:
+  1170                           	signat	_command,4216
+  1171                           	global	_ready
+  1172                           
+  1173 ;; *************** function _ready *****************
+  1174 ;; Defined at:
+  1175 ;;		line 41 in file "C:\Users\imaum\Downloads\Ex5\Ex5\lcdd.c"
+  1176 ;; Parameters:    Size  Location     Type
+  1177 ;;		None
+  1178 ;; Auto vars:     Size  Location     Type
+  1179 ;;		None
+  1180 ;; Return value:  Size  Location     Type
+  1181 ;;		None               void
+  1182 ;; Registers used:
+  1183 ;;		wreg, status,2, status,0, cstack
+  1184 ;; Tracked objects:
+  1185 ;;		On entry : 0/0
+  1186 ;;		On exit  : 0/0
+  1187 ;;		Unchanged: 0/0
+  1188 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+  1189 ;;      Params:         0       0       0       0       0       0       0
+  1190 ;;      Locals:         0       0       0       0       0       0       0
+  1191 ;;      Temps:          1       0       0       0       0       0       0
+  1192 ;;      Totals:         1       0       0       0       0       0       0
+  1193 ;;Total ram usage:        1 bytes
+  1194 ;; Hardware stack levels used:    1
+  1195 ;; Hardware stack levels required when called:    1
+  1196 ;; This function calls:
+  1197 ;;		_delay
+  1198 ;; This function is called by:
+  1199 ;;		_main
+  1200 ;; This function uses a non-reentrant model
+  1201 ;;
+  1202                           psect	text3,class=CODE,space=0,reloc=2
+  1203                           global __ptext3
+  1204  007E80                     __ptext3:
+  1205                           psect	text3
+  1206                           	file	"C:\Users\imaum\Downloads\Ex5\Ex5\lcdd.c"
+  1207                           	line	41
+  1208                           	global	__size_of_ready
+  1209  0000                     	__size_of_ready	equ	__end_of_ready-_ready
+  1210                           	
+  1211  007E80                     _ready:
+  1212                           	opt	stack 29
+  1213                           	line	42
+  1214                           	
+  1215  007E80                     l1829:
+  1216                           ;lcdd.c: 42: TRISC = 0xFF;
+  1217  007E80  6894               	setf	((c:3988)),c	;volatile
+  1218                           	line	43
+  1219                           ;lcdd.c: 43: PORTBbits.RB0 = 0;
+  1220  007E82  9081               	bcf	((c:3969)),c,0	;volatile
+  1221                           	line	44
+  1222                           ;lcdd.c: 44: PORTBbits.RB1 = 1;
+  1223  007E84  8281               	bsf	((c:3969)),c,1	;volatile
+  1224                           	line	45
+  1225                           ;lcdd.c: 45: do{
+  1226                           	
+  1227  007E86                     l32:
+  1228                           	line	46
+  1229                           ;lcdd.c: 46: PORTBbits.RB2 = 1;
+  1230  007E86  8481               	bsf	((c:3969)),c,2	;volatile
+  1231                           	line	47
+  1232                           	
+  1233  007E88                     l1831:
+  1234                           ;lcdd.c: 47: delay(1);
+  1235  007E88  6E02               	movwf	(??_ready+0+0)&0ffh,c
+  1236  007E8A  0E01               	movlw	low(01h)
+  1237  007E8C  6E01               	movwf	((c:?_delay)),c
+  1238  007E8E  5002               	movf	(??_ready+0+0)&0ffh,c,w
+  1239  007E90  EC09  F03F         	call	_delay	;wreg free
+  1240                           	line	48
+  1241                           	
+  1242  007E94                     l1833:
+  1243                           ;lcdd.c: 48: PORTBbits.RB2 = 0;
+  1244  007E94  9481               	bcf	((c:3969)),c,2	;volatile
+  1245                           	line	49
+  1246                           	
+  1247  007E96                     l1835:
+  1248                           ;lcdd.c: 49: }while(PORTCbits.RC7 == 1);
+  1249                           	
+  1250  007E96  BE82               	btfsc	((c:3970)),c,7	;volatile
+  1251  007E98  D001               	goto	u1871
+  1252  007E9A  D001               	goto	u1870
+  1253  007E9C                     u1871:
+  1254  007E9C  D7F4               	goto	l32
+  1255  007E9E                     u1870:
+  1256  007E9E  D000               	goto	l1837
+  1257                           	
+  1258  007EA0                     l33:
+  1259                           	line	50
+  1260                           	
+  1261  007EA0                     l1837:
+  1262                           ;lcdd.c: 50: TRISC = 0x00;
+  1263  007EA0  0E00               	movlw	low(0)
+  1264  007EA2  6E94               	movwf	((c:3988)),c	;volatile
+  1265                           	line	51
+  1266                           	
+  1267  007EA4                     l34:
+  1268  007EA4  0012               	return
+  1269                           	opt stack 0
+  1270                           GLOBAL	__end_of_ready
+  1271  007EA6                     	__end_of_ready:
+  1272                           	signat	_ready,88
+  1273                           	global	_data
+  1274                           
+  1275 ;; *************** function _data *****************
+  1276 ;; Defined at:
+  1277 ;;		line 32 in file "C:\Users\imaum\Downloads\Ex5\Ex5\lcdd.c"
+  1278 ;; Parameters:    Size  Location     Type
+  1279 ;;  v               1    1[COMRAM] unsigned char 
+  1280 ;; Auto vars:     Size  Location     Type
+  1281 ;;		None
+  1282 ;; Return value:  Size  Location     Type
+  1283 ;;		None               void
+  1284 ;; Registers used:
+  1285 ;;		wreg, status,2, status,0, cstack
+  1286 ;; Tracked objects:
+  1287 ;;		On entry : 0/0
+  1288 ;;		On exit  : 0/0
+  1289 ;;		Unchanged: 0/0
+  1290 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+  1291 ;;      Params:         1       0       0       0       0       0       0
+  1292 ;;      Locals:         0       0       0       0       0       0       0
+  1293 ;;      Temps:          1       0       0       0       0       0       0
+  1294 ;;      Totals:         2       0       0       0       0       0       0
+  1295 ;;Total ram usage:        2 bytes
+  1296 ;; Hardware stack levels used:    1
+  1297 ;; Hardware stack levels required when called:    1
+  1298 ;; This function calls:
+  1299 ;;		_delay
+  1300 ;; This function is called by:
+  1301 ;;		_main
+  1302 ;; This function uses a non-reentrant model
+  1303 ;;
+  1304                           psect	text4,class=CODE,space=0,reloc=2
+  1305                           global __ptext4
+  1306  007E26                     __ptext4:
+  1307                           psect	text4
+  1308                           	file	"C:\Users\imaum\Downloads\Ex5\Ex5\lcdd.c"
+  1309                           	line	32
+  1310                           	global	__size_of_data
+  1311  0000                     	__size_of_data	equ	__end_of_data-_data
+  1312                           	
+  1313  007E26                     _data:
+  1314                           	opt	stack 29
+  1315                           	line	33
+  1316                           	
+  1317  007E26                     l1823:
+  1318                           ;lcdd.c: 33: PORTC = v;
+  1319  007E26  C002  FF82         	movff	(c:data@v),(c:3970)	;volatile
+  1320                           	line	34
+  1321                           ;lcdd.c: 34: PORTBbits.RB0 = 1;
+  1322  007E2A  8081               	bsf	((c:3969)),c,0	;volatile
+  1323                           	line	35
+  1324                           ;lcdd.c: 35: PORTBbits.RB1 = 0;
+  1325  007E2C  9281               	bcf	((c:3969)),c,1	;volatile
+  1326                           	line	36
+  1327                           ;lcdd.c: 36: PORTBbits.RB2 = 1;
+  1328  007E2E  8481               	bsf	((c:3969)),c,2	;volatile
+  1329                           	line	37
+  1330                           	
+  1331  007E30                     l1825:
+  1332                           ;lcdd.c: 37: delay(1);
+  1333  007E30  6E03               	movwf	(??_data+0+0)&0ffh,c
+  1334  007E32  0E01               	movlw	low(01h)
+  1335  007E34  6E01               	movwf	((c:?_delay)),c
+  1336  007E36  5003               	movf	(??_data+0+0)&0ffh,c,w
+  1337  007E38  EC09  F03F         	call	_delay	;wreg free
+  1338                           	line	38
+  1339                           	
+  1340  007E3C                     l1827:
+  1341                           ;lcdd.c: 38: PORTBbits.RB2 = 0;
+  1342  007E3C  9481               	bcf	((c:3969)),c,2	;volatile
+  1343                           	line	39
+  1344                           	
+  1345  007E3E                     l29:
+  1346  007E3E  0012               	return
+  1347                           	opt stack 0
+  1348                           GLOBAL	__end_of_data
+  1349  007E40                     	__end_of_data:
+  1350                           	signat	_data,4216
+  1351                           	global	_delay
+  1352                           
+  1353 ;; *************** function _delay *****************
+  1354 ;; Defined at:
+  1355 ;;		line 7 in file "C:\Users\imaum\Downloads\Ex5\Ex5\lcdd.c"
+  1356 ;; Parameters:    Size  Location     Type
+  1357 ;;  i               1    0[COMRAM] unsigned char 
+  1358 ;; Auto vars:     Size  Location     Type
+  1359 ;;		None
+  1360 ;; Return value:  Size  Location     Type
+  1361 ;;		None               void
+  1362 ;; Registers used:
+  1363 ;;		wreg, status,2, status,0
+  1364 ;; Tracked objects:
+  1365 ;;		On entry : 0/0
+  1366 ;;		On exit  : 0/0
+  1367 ;;		Unchanged: 0/0
+  1368 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+  1369 ;;      Params:         1       0       0       0       0       0       0
+  1370 ;;      Locals:         0       0       0       0       0       0       0
+  1371 ;;      Temps:          0       0       0       0       0       0       0
+  1372 ;;      Totals:         1       0       0       0       0       0       0
+  1373 ;;Total ram usage:        1 bytes
+  1374 ;; Hardware stack levels used:    1
+  1375 ;; This function calls:
+  1376 ;;		Nothing
+  1377 ;; This function is called by:
+  1378 ;;		_command
+  1379 ;;		_data
+  1380 ;;		_ready
+  1381 ;;		_main
+  1382 ;; This function uses a non-reentrant model
+  1383 ;;
+  1384                           psect	text5,class=CODE,space=0,reloc=2
+  1385                           global __ptext5
+  1386  007E12                     __ptext5:
+  1387                           psect	text5
+  1388                           	file	"C:\Users\imaum\Downloads\Ex5\Ex5\lcdd.c"
+  1389                           	line	7
+  1390                           	global	__size_of_delay
+  1391  0000                     	__size_of_delay	equ	__end_of_delay-_delay
+  1392                           	
+  1393  007E12                     _delay:
+  1394                           	opt	stack 29
+  1395                           	line	8
+  1396                           	
+  1397  007E12                     l623:
+  1398                           ;lcdd.c: 8: while(i!=0)
+  1399  007E12  D003               	goto	l627
+  1400                           	
+  1401  007E14                     l14:
+  1402                           	line	10
+  1403                           	
+  1404  007E14                     l625:
+  1405                           ;lcdd.c: 9: {
+  1406                           ;lcdd.c: 10: i = i-1;
+  1407  007E14  0401               	decf	((c:delay@i)),c,w
+  1408  007E16  6E01               	movwf	((c:delay@i)),c
+  1409  007E18  D000               	goto	l627
+  1410                           	line	11
+  1411                           	
+  1412  007E1A                     l13:
+  1413                           	line	8
+  1414                           	
+  1415  007E1A                     l627:
+  1416  007E1A  6601               	tstfsz	((c:delay@i)),c
+  1417  007E1C  D001               	goto	u11
+  1418  007E1E  D001               	goto	u10
+  1419  007E20                     u11:
+  1420  007E20  D7F9               	goto	l625
+  1421  007E22                     u10:
+  1422  007E22  D000               	goto	l16
+  1423                           	
+  1424  007E24                     l15:
+  1425                           	line	12
+  1426                           	
+  1427  007E24                     l16:
+  1428  007E24  0012               	return
+  1429                           	opt stack 0
+  1430                           GLOBAL	__end_of_delay
+  1431  007E26                     	__end_of_delay:
+  1432                           	signat	_delay,4216
+  1433                           	GLOBAL	__activetblptr
+  1434  0000                     __activetblptr	EQU	0
+  1435                           	psect	intsave_regs,class=BIGRAM,space=1
+  1436                           psect	text6,class=CODE,space=0,reloc=2
+  1437                           global __ptext6
+  1438  000000                     __ptext6:
+  1439                           	PSECT	rparam,class=COMRAM,space=1
+  1440                           	GLOBAL	__Lrparam
+  1441                           	FNCONF	rparam,??,?
+  1442                           GLOBAL	__Lparam, __Hparam
+  1443                           GLOBAL	__Lrparam, __Hrparam
+  1444  0000                     __Lparam	EQU	__Lrparam
+  1445  0000                     __Hparam	EQU	__Hrparam
+
+
+Data Sizes:
+    Strings     0
+    Constant    0
+    Data        18
+    BSS         0
+    Persistent  0
+    Stack       0
+
+Auto Spaces:
+    Space          Size  Autos    Used
+    COMRAM          127     24      42
+    BANK0           128      0       0
+    BANK1           256      0       0
+    BANK2           256      0       0
+    BANK3           256      0       0
+    BANK4           256      0       0
+    BANK5           256      0       0
+
+Pointer List with Targets:
+
+    None.
+
+Critical Paths under _main in COMRAM
+
+    _main->_hdelay
+    _command->_delay
+    _ready->_delay
+    _data->_delay
+
+Critical Paths under _main in BANK0
+
+    None.
+
+Critical Paths under _main in BANK1
+
+    None.
+
+Critical Paths under _main in BANK2
+
+    None.
+
+Critical Paths under _main in BANK3
+
+    None.
+
+Critical Paths under _main in BANK4
+
+    None.
+
+Critical Paths under _main in BANK5
+
+    None.
+
+Call Graph Tables:
+
+ ---------------------------------------------------------------------------------
+ (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
+ ---------------------------------------------------------------------------------
+ (0) _main                                                20    20      0     270
+                                              4 COMRAM    20    20      0
+                              _delay
+                            _command
+                              _ready
+                               _data
+                             _hdelay
+ ---------------------------------------------------------------------------------
+ (1) _hdelay                                               4     4      0      60
+                                              0 COMRAM     4     4      0
+ ---------------------------------------------------------------------------------
+ (1) _command                                              2     1      1      45
+                                              1 COMRAM     2     1      1
+                              _delay
+ ---------------------------------------------------------------------------------
+ (1) _ready                                                1     1      0      30
+                                              1 COMRAM     1     1      0
+                              _delay
+ ---------------------------------------------------------------------------------
+ (1) _data                                                 2     1      1      45
+                                              1 COMRAM     2     1      1
+                              _delay
+ ---------------------------------------------------------------------------------
+ (2) _delay                                                1     0      1      30
+                                              0 COMRAM     1     0      1
+ ---------------------------------------------------------------------------------
+ Estimated maximum stack depth 2
+ ---------------------------------------------------------------------------------
+
+ Call Graph Graphs:
+
+ _main (ROOT)
+   _delay
+   _command
+     _delay
+   _ready
+     _delay
+   _data
+     _delay
+   _hdelay
+
+ Address spaces:
+Name               Size   Autos  Total    Cost      Usage
+BIGRAM             5FF      0       0      17        0.0%
+EEDATA             100      0       0       0        0.0%
+BITBANK5           100      0       0      16        0.0%
+BANK5              100      0       0      14        0.0%
+BITBANK4           100      0       0      12        0.0%
+BANK4              100      0       0      13        0.0%
+BITBANK3           100      0       0      10        0.0%
+BANK3              100      0       0      11        0.0%
+BITBANK2           100      0       0       8        0.0%
+BANK2              100      0       0       9        0.0%
+BITBANK1           100      0       0       6        0.0%
+BANK1              100      0       0       7        0.0%
+BITBANK0            80      0       0       4        0.0%
+BANK0               80      0       0       5        0.0%
+BITCOMRAM           7F      0       0       0        0.0%
+COMRAM              7F     18      2A       1       33.1%
+BITSFR               0      0       0      40        0.0%
+SFR                  0      0       0      40        0.0%
+STACK                0      0       2       2        0.0%
+NULL                 0      0       0       0        0.0%
+ABS                  0      0      2A      15        0.0%
+DATA                 0      0      2C       3        0.0%
+CODE                 0      0       0       0        0.0%
+
+
+HI-TECH Software PICC-18 Macro Assembler V9.80 build 11162 
+Symbol Table                                                                                   Fri Mar 26 22:36:49 2021
+
+                  l20 7EF8                    l13 7E1A                    l21 7ED2                    l14 7E14  
+                  l22 7EEA                    l15 7E24                    l23 7EF8                    l16 7E24  
+                  l32 7E86                    l40 7FB6                    l33 7EA0                    l41 7FF8  
+                  l34 7EA4                    l26 7E58                    l42 7FFA                    l19 7EBC  
+                  l43 7FFC                    l44 7FFC                    l29 7E3E                    l39 7FA0  
+                  u10 7E22                    u11 7E20                    u20 7EB8                    u21 7EB6  
+                  u30 7ECE                    u31 7ECC                    u40 7EE8                    u41 7EE6  
+                  u50 7EF6                    u51 7EF4                   l623 7E12                   l631 7EAE  
+                 l625 7E14                   l641 7ED2                   l633 7EBA                   l627 7E1A  
+                 l651 7EEC                   l643 7EDA                   l635 7EBC                   l645 7EDC  
+                 l637 7EC4                   l629 7EA6                   l647 7EDE                   l639 7ED0  
+                 l649 7EEA                   wreg 000FE8                  l1821 7E56                  l1823 7E26  
+                l1831 7E88                  l1825 7E30                  l1833 7E94                  l1817 7E40  
+                l1841 7F0C                  l1827 7E3C                  l1835 7E96                  l1819 7E4A  
+                l1851 7F2E                  l1843 7F0E                  l1837 7EA0                  l1829 7E80  
+                l1861 7F5A                  l1853 7F3A                  l1845 7F12                  l1871 7F7E  
+                l1863 7F66                  l1855 7F46                  l1847 7F16                  l1839 7EFA  
+                l1881 7FA8                  l1873 7F8A                  l1865 7F6A                  l1857 7F4A  
+                l1849 7F22                  l1891 7FD6                  l1883 7FB4                  l1875 7F8E  
+                l1867 7F6E                  l1859 7F56                  l1893 7FDA                  l1885 7FB6  
+                l1877 7F92                  l1869 7F7A                  l1895 7FE6                  l1887 7FCE  
+                l1879 7FA0                  l1897 7FEA                  l1889 7FD2                  l1899 7FEC  
+                u1900 7FF6                  u1901 7FF4                  u1870 7E9E                  u1871 7E9C  
+                u1881 7F04                  u1890 7FB2                  u1891 7FB0                  _data 7E26  
+                _main 7EFA                  fsr1l 000FE1                  indf2 000FDF                  fsr2l 000FD9  
+                prodl 000FF3                  start 0000                 ?_data 0002                 ?_main 0001  
+               _PORTC 000F82                 _TRISB 000F93                 _TRISC 000F94       __end_of_command 7E5A  
+               _delay 7E12                 data@v 0002                 _ready 7E80                 main@a 0006  
+               main@i 0018                 tablat 000FF5          __end_of_data 7E40          __end_of_main 8000  
+              ??_data 0003                ??_main 0005         __activetblptr 000000                ?_delay 0001  
+              ?_ready 0001                _hdelay 7EA6                delay@i 0001             ??_command 0003  
+        __pdataCOMRAM 0019                tblptrh 000FF7                tblptrl 000FF6                tblptru 000FF8  
+          __accesstop 0080        __pcstackCOMRAM 0001         __end_of_delay 7E26         __end_of_ready 7EA6  
+             ??_delay 0002               ??_ready 0002               ?_hdelay 0001               __Hparam 0000  
+             __Lparam 0000       __size_of_hdelay 0054               __pcinit 7E5A               __ramtop 0600  
+             __ptext0 7EFA               __ptext1 7EA6               __ptext2 7E40               __ptext3 7E80  
+             __ptext4 7E26               __ptext5 7E12               __ptext6 0000               _command 7E40  
+             hdelay@i 0003               hdelay@j 0004               hdelay@k 0002  end_of_initialization 7E7A  
+             postdec1 000FE5               postinc0 000FEE               postinc1 000FE6               postinc2 000FDE  
+           _PORTBbits 000F81             _PORTCbits 000F82         __pidataCOMRAM 7E00        __end_of_hdelay 7EFA  
+ start_initialization 7E5A              ??_hdelay 0001              ?_command 0002        __size_of_delay 0014  
+      __size_of_ready 0026             main@F4459 0019             copy_data0 7E6E              __Hrparam 0000  
+            __Lrparam 0000      __size_of_command 001A         __size_of_data 001A         __size_of_main 0106  
+            command@v 0002  

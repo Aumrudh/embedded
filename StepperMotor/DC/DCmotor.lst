@@ -1,0 +1,983 @@
+
+
+HI-TECH Software PIC18 LITE Macro Assembler V9.80 build 11162 
+                                                                                               Wed Mar 24 15:00:36 2021
+
+HI-TECH Software Omniscient Code Generator (Lite mode) build 11162
+     1  0000                     opt subtitle "HI-TECH Software Omniscient Code Generator (Lite mode) build 11162"
+     2                           
+     3                           opt pagewidth 120
+     4                           
+     5                           	opt lm
+     6                           
+     7                           	processor	18F458
+     8  0000                     porta	equ	0F80h
+     9  0000                     portb	equ	0F81h
+    10  0000                     portc	equ	0F82h
+    11  0000                     portd	equ	0F83h
+    12  0000                     porte	equ	0F84h
+    13  0000                     lata	equ	0F89h
+    14  0000                     latb	equ	0F8Ah
+    15  0000                     latc	equ	0F8Bh
+    16  0000                     latd	equ	0F8Ch
+    17  0000                     late	equ	0F8Dh
+    18  0000                     trisa	equ	0F92h
+    19  0000                     trisb	equ	0F93h
+    20  0000                     trisc	equ	0F94h
+    21  0000                     trisd	equ	0F95h
+    22  0000                     trise	equ	0F96h
+    23  0000                     pie1	equ	0F9Dh
+    24  0000                     pir1	equ	0F9Eh
+    25  0000                     ipr1	equ	0F9Fh
+    26  0000                     pie2	equ	0FA0h
+    27  0000                     pir2	equ	0FA1h
+    28  0000                     ipr2	equ	0FA2h
+    29  0000                     t3con	equ	0FB1h
+    30  0000                     tmr3l	equ	0FB2h
+    31  0000                     tmr3h	equ	0FB3h
+    32  0000                     ccp1con	equ	0FBDh
+    33  0000                     ccpr1l	equ	0FBEh
+    34  0000                     ccpr1h	equ	0FBFh
+    35  0000                     adcon1	equ	0FC1h
+    36  0000                     adcon0	equ	0FC2h
+    37  0000                     adresl	equ	0FC3h
+    38  0000                     adresh	equ	0FC4h
+    39  0000                     sspcon2	equ	0FC5h
+    40  0000                     sspcon1	equ	0FC6h
+    41  0000                     sspstat	equ	0FC7h
+    42  0000                     sspadd	equ	0FC8h
+    43  0000                     sspbuf	equ	0FC9h
+    44  0000                     t2con	equ	0FCAh
+    45  0000                     pr2	equ	0FCBh
+    46  0000                     tmr2	equ	0FCCh
+    47  0000                     t1con	equ	0FCDh
+    48  0000                     tmr1l	equ	0FCEh
+    49  0000                     tmr1h	equ	0FCFh
+    50  0000                     rcon	equ	0FD0h
+    51  0000                     wdtcon	equ	0FD1h
+    52  0000                     lvdcon	equ	0FD2h
+    53  0000                     osccon	equ	0FD3h
+    54  0000                     t0con	equ	0FD5h
+    55  0000                     tmr0l	equ	0FD6h
+    56  0000                     tmr0h	equ	0FD7h
+    57  0000                     status	equ	0FD8h
+    58  0000                     fsr2	equ	0FD9h
+    59  0000                     fsr2l	equ	0FD9h
+    60  0000                     fsr2h	equ	0FDAh
+    61  0000                     plusw2	equ	0FDBh
+    62  0000                     preinc2	equ	0FDCh
+    63  0000                     postdec2	equ	0FDDh
+    64  0000                     postinc2	equ	0FDEh
+    65  0000                     indf2	equ	0FDFh
+    66  0000                     bsr	equ	0FE0h
+    67  0000                     fsr1	equ	0FE1h
+    68  0000                     fsr1l	equ	0FE1h
+    69  0000                     fsr1h	equ	0FE2h
+    70  0000                     plusw1	equ	0FE3h
+    71  0000                     preinc1	equ	0FE4h
+    72  0000                     postdec1	equ	0FE5h
+    73  0000                     postinc1	equ	0FE6h
+    74  0000                     indf1	equ	0FE7h
+    75  0000                     wreg	equ	0FE8h
+    76  0000                     fsr0	equ	0FE9h
+    77  0000                     fsr0l	equ	0FE9h
+    78  0000                     fsr0h	equ	0FEAh
+    79  0000                     plusw0	equ	0FEBh
+    80  0000                     preinc0	equ	0FECh
+    81  0000                     postdec0	equ	0FEDh
+    82  0000                     postinc0	equ	0FEEh
+    83  0000                     indf0	equ	0FEFh
+    84  0000                     intcon3	equ	0FF0h
+    85  0000                     intcon2	equ	0FF1h
+    86  0000                     intcon	equ	0FF2h
+    87  0000                     prod	equ	0FF3h
+    88  0000                     prodl	equ	0FF3h
+    89  0000                     prodh	equ	0FF4h
+    90  0000                     tablat	equ	0FF5h
+    91  0000                     tblptr	equ	0FF6h
+    92  0000                     tblptrl	equ	0FF6h
+    93  0000                     tblptrh	equ	0FF7h
+    94  0000                     tblptru	equ	0FF8h
+    95  0000                     pcl	equ	0FF9h
+    96  0000                     pclat	equ	0FFAh
+    97  0000                     pclath	equ	0FFAh
+    98  0000                     pclatu	equ	0FFBh
+    99  0000                     stkptr	equ	0FFCh
+   100  0000                     tosl	equ	0FFDh
+   101  0000                     tosh	equ	0FFEh
+   102  0000                     tosu	equ	0FFFh
+   103                           skipnz macro
+   104                           	btfsc	status,2
+   105  0000                     	endm
+   106                           	global	__ramtop
+   107                           	global	__accesstop
+   108                           # 19 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   109  0000                     RXF0SIDH equ 0F00h ;# 
+   110                           # 69 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   111  0000                     RXF0SIDL equ 0F01h ;# 
+   112                           # 111 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   113  0000                     RXF0EIDH equ 0F02h ;# 
+   114                           # 161 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   115  0000                     RXF0EIDL equ 0F03h ;# 
+   116                           # 211 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   117  0000                     RXF1SIDH equ 0F04h ;# 
+   118                           # 261 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   119  0000                     RXF1SIDL equ 0F05h ;# 
+   120                           # 303 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   121  0000                     RXF1EIDH equ 0F06h ;# 
+   122                           # 353 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   123  0000                     RXF1EIDL equ 0F07h ;# 
+   124                           # 403 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   125  0000                     RXF2SIDH equ 0F08h ;# 
+   126                           # 453 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   127  0000                     RXF2SIDL equ 0F09h ;# 
+   128                           # 495 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   129  0000                     RXF2EIDH equ 0F0Ah ;# 
+   130                           # 545 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   131  0000                     RXF2EIDL equ 0F0Bh ;# 
+   132                           # 595 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   133  0000                     RXF3SIDH equ 0F0Ch ;# 
+   134                           # 645 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   135  0000                     RXF3SIDL equ 0F0Dh ;# 
+   136                           # 687 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   137  0000                     RXF3EIDH equ 0F0Eh ;# 
+   138                           # 737 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   139  0000                     RXF3EIDL equ 0F0Fh ;# 
+   140                           # 787 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   141  0000                     RXF4SIDH equ 0F10h ;# 
+   142                           # 837 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   143  0000                     RXF4SIDL equ 0F11h ;# 
+   144                           # 879 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   145  0000                     RXF4EIDH equ 0F12h ;# 
+   146                           # 929 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   147  0000                     RXF4EIDL equ 0F13h ;# 
+   148                           # 979 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   149  0000                     RXF5SIDH equ 0F14h ;# 
+   150                           # 1029 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   151  0000                     RXF5SIDL equ 0F15h ;# 
+   152                           # 1071 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   153  0000                     RXF5EIDH equ 0F16h ;# 
+   154                           # 1121 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   155  0000                     RXF5EIDL equ 0F17h ;# 
+   156                           # 1171 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   157  0000                     RXM0SIDH equ 0F18h ;# 
+   158                           # 1221 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   159  0000                     RXM0SIDL equ 0F19h ;# 
+   160                           # 1257 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   161  0000                     RXM0EIDH equ 0F1Ah ;# 
+   162                           # 1307 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   163  0000                     RXM0EIDL equ 0F1Bh ;# 
+   164                           # 1357 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   165  0000                     RXM1SIDH equ 0F1Ch ;# 
+   166                           # 1407 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   167  0000                     RXM1SIDL equ 0F1Dh ;# 
+   168                           # 1443 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   169  0000                     RXM1EIDH equ 0F1Eh ;# 
+   170                           # 1493 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   171  0000                     RXM1EIDL equ 0F1Fh ;# 
+   172                           # 1543 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   173  0000                     TXB2CON equ 0F20h ;# 
+   174                           # 1584 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   175  0000                     TXB2SIDH equ 0F21h ;# 
+   176                           # 1634 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   177  0000                     TXB2SIDL equ 0F22h ;# 
+   178                           # 1676 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   179  0000                     TXB2EIDH equ 0F23h ;# 
+   180                           # 1726 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   181  0000                     TXB2EIDL equ 0F24h ;# 
+   182                           # 1776 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   183  0000                     TXB2DLC equ 0F25h ;# 
+   184                           # 1812 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   185  0000                     TXB2D0 equ 0F26h ;# 
+   186                           # 1831 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   187  0000                     TXB2D1 equ 0F27h ;# 
+   188                           # 1850 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   189  0000                     TXB2D2 equ 0F28h ;# 
+   190                           # 1869 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   191  0000                     TXB2D3 equ 0F29h ;# 
+   192                           # 1888 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   193  0000                     TXB2D4 equ 0F2Ah ;# 
+   194                           # 1907 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   195  0000                     TXB2D5 equ 0F2Bh ;# 
+   196                           # 1926 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   197  0000                     TXB2D6 equ 0F2Ch ;# 
+   198                           # 1945 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   199  0000                     TXB2D7 equ 0F2Dh ;# 
+   200                           # 1964 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   201  0000                     CANSTATRO4 equ 0F2Eh ;# 
+   202                           # 1983 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   203  0000                     TXB1CON equ 0F30h ;# 
+   204                           # 2024 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   205  0000                     TXB1SIDH equ 0F31h ;# 
+   206                           # 2074 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   207  0000                     TXB1SIDL equ 0F32h ;# 
+   208                           # 2116 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   209  0000                     TXB1EIDH equ 0F33h ;# 
+   210                           # 2166 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   211  0000                     TXB1EIDL equ 0F34h ;# 
+   212                           # 2216 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   213  0000                     TXB1DLC equ 0F35h ;# 
+   214                           # 2252 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   215  0000                     TXB1D0 equ 0F36h ;# 
+   216                           # 2271 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   217  0000                     TXB1D1 equ 0F37h ;# 
+   218                           # 2290 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   219  0000                     TXB1D2 equ 0F38h ;# 
+   220                           # 2313 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   221  0000                     TXB1D3 equ 0F39h ;# 
+   222                           # 2332 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   223  0000                     TXB1D4 equ 0F3Ah ;# 
+   224                           # 2351 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   225  0000                     TXB1D5 equ 0F3Bh ;# 
+   226                           # 2370 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   227  0000                     TXB1D6 equ 0F3Ch ;# 
+   228                           # 2389 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   229  0000                     TXB1D7 equ 0F3Dh ;# 
+   230                           # 2408 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   231  0000                     CANSTATRO3 equ 0F3Eh ;# 
+   232                           # 2427 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   233  0000                     TXB0CON equ 0F40h ;# 
+   234                           # 2468 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   235  0000                     TXB0SIDH equ 0F41h ;# 
+   236                           # 2518 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   237  0000                     TXB0SIDL equ 0F42h ;# 
+   238                           # 2560 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   239  0000                     TXB0EIDH equ 0F43h ;# 
+   240                           # 2610 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   241  0000                     TXB0EIDL equ 0F44h ;# 
+   242                           # 2660 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   243  0000                     TXB0DLC equ 0F45h ;# 
+   244                           # 2696 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   245  0000                     TXB0D0 equ 0F46h ;# 
+   246                           # 2715 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   247  0000                     TXB0D1 equ 0F47h ;# 
+   248                           # 2734 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   249  0000                     TXB0D2 equ 0F48h ;# 
+   250                           # 2753 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   251  0000                     TXB0D3 equ 0F49h ;# 
+   252                           # 2772 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   253  0000                     TXB0D4 equ 0F4Ah ;# 
+   254                           # 2791 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   255  0000                     TXB0D5 equ 0F4Bh ;# 
+   256                           # 2810 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   257  0000                     TXB0D6 equ 0F4Ch ;# 
+   258                           # 2829 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   259  0000                     TXB0D7 equ 0F4Dh ;# 
+   260                           # 2848 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   261  0000                     CANSTATRO2 equ 0F4Eh ;# 
+   262                           # 2867 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   263  0000                     RXB1CON equ 0F50h ;# 
+   264                           # 2921 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   265  0000                     RXB1SIDH equ 0F51h ;# 
+   266                           # 2971 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   267  0000                     RXB1SIDL equ 0F52h ;# 
+   268                           # 3017 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   269  0000                     RXB1EIDH equ 0F53h ;# 
+   270                           # 3067 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   271  0000                     RXB1EIDL equ 0F54h ;# 
+   272                           # 3117 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   273  0000                     RXB1DLC equ 0F55h ;# 
+   274                           # 3167 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   275  0000                     RXB1D0 equ 0F56h ;# 
+   276                           # 3186 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   277  0000                     RXB1D1 equ 0F57h ;# 
+   278                           # 3205 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   279  0000                     RXB1D2 equ 0F58h ;# 
+   280                           # 3224 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   281  0000                     RXB1D3 equ 0F59h ;# 
+   282                           # 3243 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   283  0000                     RXB1D4 equ 0F5Ah ;# 
+   284                           # 3262 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   285  0000                     RXB1D5 equ 0F5Bh ;# 
+   286                           # 3281 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   287  0000                     RXB1D6 equ 0F5Ch ;# 
+   288                           # 3300 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   289  0000                     RXB1D7 equ 0F5Dh ;# 
+   290                           # 3319 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   291  0000                     CANSTATRO1 equ 0F5Eh ;# 
+   292                           # 3338 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   293  0000                     RXB0CON equ 0F60h ;# 
+   294                           # 3392 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   295  0000                     RXB0SIDH equ 0F61h ;# 
+   296                           # 3442 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   297  0000                     RXB0SIDL equ 0F62h ;# 
+   298                           # 3488 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   299  0000                     RXB0EIDH equ 0F63h ;# 
+   300                           # 3538 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   301  0000                     RXB0EIDL equ 0F64h ;# 
+   302                           # 3588 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   303  0000                     RXB0DLC equ 0F65h ;# 
+   304                           # 3638 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   305  0000                     RXB0D0 equ 0F66h ;# 
+   306                           # 3667 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   307  0000                     RXB0D1 equ 0F67h ;# 
+   308                           # 3696 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   309  0000                     RXB0D2 equ 0F68h ;# 
+   310                           # 3725 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   311  0000                     RXB0D3 equ 0F69h ;# 
+   312                           # 3754 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   313  0000                     RXB0D4 equ 0F6Ah ;# 
+   314                           # 3783 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   315  0000                     RXB0D5 equ 0F6Bh ;# 
+   316                           # 3812 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   317  0000                     RXB0D6 equ 0F6Ch ;# 
+   318                           # 3841 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   319  0000                     RXB0D7 equ 0F6Dh ;# 
+   320                           # 3870 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   321  0000                     CANSTAT equ 0F6Eh ;# 
+   322                           # 3901 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   323  0000                     CANCON equ 0F6Fh ;# 
+   324                           # 3932 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   325  0000                     BRGCON1 equ 0F70h ;# 
+   326                           # 3951 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   327  0000                     BRGCON2 equ 0F71h ;# 
+   328                           # 3974 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   329  0000                     BRGCON3 equ 0F72h ;# 
+   330                           # 3990 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   331  0000                     CIOCON equ 0F73h ;# 
+   332                           # 4004 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   333  0000                     COMSTAT equ 0F74h ;# 
+   334                           # 4036 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   335  0000                     RXERRCNT equ 0F75h ;# 
+   336                           # 4055 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   337  0000                     TXERRCNT equ 0F76h ;# 
+   338                           # 4074 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   339  0000                     PORTA equ 0F80h ;# 
+   340                           # 4136 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   341  0000                     PORTB equ 0F81h ;# 
+   342                           # 4172 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   343  0000                     PORTC equ 0F82h ;# 
+   344                           # 4226 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   345  0000                     PORTD equ 0F83h ;# 
+   346                           # 4276 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   347  0000                     PORTE equ 0F84h ;# 
+   348                           # 4401 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   349  0000                     LATA equ 0F89h ;# 
+   350                           # 4457 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   351  0000                     LATB equ 0F8Ah ;# 
+   352                           # 4510 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   353  0000                     LATC equ 0F8Bh ;# 
+   354                           # 4563 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   355  0000                     LATD equ 0F8Ch ;# 
+   356                           # 4616 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   357  0000                     LATE equ 0F8Dh ;# 
+   358                           # 4664 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   359  0000                     TRISA equ 0F92h ;# 
+   360                           # 4669 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   361  0000                     DDRA equ 0F92h ;# 
+   362                           # 4723 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   363  0000                     TRISB equ 0F93h ;# 
+   364                           # 4728 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   365  0000                     DDRB equ 0F93h ;# 
+   366                           # 4786 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   367  0000                     TRISC equ 0F94h ;# 
+   368                           # 4791 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   369  0000                     DDRC equ 0F94h ;# 
+   370                           # 4849 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   371  0000                     TRISD equ 0F95h ;# 
+   372                           # 4854 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   373  0000                     DDRD equ 0F95h ;# 
+   374                           # 4912 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   375  0000                     TRISE equ 0F96h ;# 
+   376                           # 4917 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   377  0000                     DDRE equ 0F96h ;# 
+   378                           # 4975 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   379  0000                     PIE1 equ 0F9Dh ;# 
+   380                           # 5002 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   381  0000                     PIR1 equ 0F9Eh ;# 
+   382                           # 5038 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   383  0000                     IPR1 equ 0F9Fh ;# 
+   384                           # 5065 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   385  0000                     PIE2 equ 0FA0h ;# 
+   386                           # 5083 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   387  0000                     PIR2 equ 0FA1h ;# 
+   388                           # 5101 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   389  0000                     IPR2 equ 0FA2h ;# 
+   390                           # 5119 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   391  0000                     PIE3 equ 0FA3h ;# 
+   392                           # 5155 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   393  0000                     PIR3 equ 0FA4h ;# 
+   394                           # 5191 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   395  0000                     IPR3 equ 0FA5h ;# 
+   396                           # 5222 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   397  0000                     EECON1 equ 0FA6h ;# 
+   398                           # 5245 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   399  0000                     EECON2 equ 0FA7h ;# 
+   400                           # 5257 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   401  0000                     EEDATA equ 0FA8h ;# 
+   402                           # 5269 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   403  0000                     EEADR equ 0FA9h ;# 
+   404                           # 5281 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   405  0000                     RCSTA equ 0FABh ;# 
+   406                           # 5286 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   407  0000                     RCSTA1 equ 0FABh ;# 
+   408                           # 5360 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   409  0000                     TXSTA equ 0FACh ;# 
+   410                           # 5365 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   411  0000                     TXSTA1 equ 0FACh ;# 
+   412                           # 5477 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   413  0000                     TXREG equ 0FADh ;# 
+   414                           # 5482 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   415  0000                     TXREG1 equ 0FADh ;# 
+   416                           # 5500 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   417  0000                     RCREG equ 0FAEh ;# 
+   418                           # 5505 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   419  0000                     RCREG1 equ 0FAEh ;# 
+   420                           # 5523 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   421  0000                     SPBRG equ 0FAFh ;# 
+   422                           # 5528 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   423  0000                     SPBRG1 equ 0FAFh ;# 
+   424                           # 5546 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   425  0000                     T3CON equ 0FB1h ;# 
+   426                           # 5591 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   427  0000                     TMR3 equ 0FB2h ;# 
+   428                           # 5603 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   429  0000                     TMR3L equ 0FB2h ;# 
+   430                           # 5615 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   431  0000                     TMR3H equ 0FB3h ;# 
+   432                           # 5627 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   433  0000                     CMCON equ 0FB4h ;# 
+   434                           # 5660 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   435  0000                     CVRCON equ 0FB5h ;# 
+   436                           # 5686 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   437  0000                     ECCPAS equ 0FB6h ;# 
+   438                           # 5710 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   439  0000                     ECCP1DEL equ 0FB7h ;# 
+   440                           # 5732 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   441  0000                     ECCP1CON equ 0FBAh ;# 
+   442                           # 5761 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   443  0000                     ECCPR1 equ 0FBBh ;# 
+   444                           # 5773 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   445  0000                     ECCPR1L equ 0FBBh ;# 
+   446                           # 5785 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   447  0000                     ECCPR1H equ 0FBCh ;# 
+   448                           # 5797 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   449  0000                     CCP1CON equ 0FBDh ;# 
+   450                           # 5823 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   451  0000                     CCPR1 equ 0FBEh ;# 
+   452                           # 5835 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   453  0000                     CCPR1L equ 0FBEh ;# 
+   454                           # 5847 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   455  0000                     CCPR1H equ 0FBFh ;# 
+   456                           # 5859 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   457  0000                     ADCON1 equ 0FC1h ;# 
+   458                           # 5884 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   459  0000                     ADCON0 equ 0FC2h ;# 
+   460                           # 5948 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   461  0000                     ADRES equ 0FC3h ;# 
+   462                           # 5960 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   463  0000                     ADRESL equ 0FC3h ;# 
+   464                           # 5972 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   465  0000                     ADRESH equ 0FC4h ;# 
+   466                           # 5984 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   467  0000                     SSPCON2 equ 0FC5h ;# 
+   468                           # 6003 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   469  0000                     SSPCON1 equ 0FC6h ;# 
+   470                           # 6025 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   471  0000                     SSPSTAT equ 0FC7h ;# 
+   472                           # 6143 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   473  0000                     SSPADD equ 0FC8h ;# 
+   474                           # 6155 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   475  0000                     SSPBUF equ 0FC9h ;# 
+   476                           # 6167 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   477  0000                     T2CON equ 0FCAh ;# 
+   478                           # 6190 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   479  0000                     PR2 equ 0FCBh ;# 
+   480                           # 6195 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   481  0000                     MEMCON equ 0FCBh ;# 
+   482                           # 6213 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   483  0000                     TMR2 equ 0FCCh ;# 
+   484                           # 6225 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   485  0000                     T1CON equ 0FCDh ;# 
+   486                           # 6266 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   487  0000                     TMR1 equ 0FCEh ;# 
+   488                           # 6278 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   489  0000                     TMR1L equ 0FCEh ;# 
+   490                           # 6290 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   491  0000                     TMR1H equ 0FCFh ;# 
+   492                           # 6302 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   493  0000                     RCON equ 0FD0h ;# 
+   494                           # 6352 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   495  0000                     WDTCON equ 0FD1h ;# 
+   496                           # 6367 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   497  0000                     LVDCON equ 0FD2h ;# 
+   498                           # 6389 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   499  0000                     OSCCON equ 0FD3h ;# 
+   500                           # 6401 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   501  0000                     T0CON equ 0FD5h ;# 
+   502                           # 6423 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   503  0000                     TMR0 equ 0FD6h ;# 
+   504                           # 6435 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   505  0000                     TMR0L equ 0FD6h ;# 
+   506                           # 6447 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   507  0000                     TMR0H equ 0FD7h ;# 
+   508                           # 6459 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   509  0000                     STATUS equ 0FD8h ;# 
+   510                           # 6490 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   511  0000                     FSR2 equ 0FD9h ;# 
+   512                           # 6502 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   513  0000                     FSR2L equ 0FD9h ;# 
+   514                           # 6514 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   515  0000                     FSR2H equ 0FDAh ;# 
+   516                           # 6526 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   517  0000                     PLUSW2 equ 0FDBh ;# 
+   518                           # 6538 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   519  0000                     PREINC2 equ 0FDCh ;# 
+   520                           # 6550 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   521  0000                     POSTDEC2 equ 0FDDh ;# 
+   522                           # 6562 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   523  0000                     POSTINC2 equ 0FDEh ;# 
+   524                           # 6574 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   525  0000                     INDF2 equ 0FDFh ;# 
+   526                           # 6586 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   527  0000                     BSR equ 0FE0h ;# 
+   528                           # 6598 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   529  0000                     FSR1 equ 0FE1h ;# 
+   530                           # 6610 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   531  0000                     FSR1L equ 0FE1h ;# 
+   532                           # 6622 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   533  0000                     FSR1H equ 0FE2h ;# 
+   534                           # 6634 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   535  0000                     PLUSW1 equ 0FE3h ;# 
+   536                           # 6646 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   537  0000                     PREINC1 equ 0FE4h ;# 
+   538                           # 6658 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   539  0000                     POSTDEC1 equ 0FE5h ;# 
+   540                           # 6670 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   541  0000                     POSTINC1 equ 0FE6h ;# 
+   542                           # 6682 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   543  0000                     INDF1 equ 0FE7h ;# 
+   544                           # 6694 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   545  0000                     WREG equ 0FE8h ;# 
+   546                           # 6717 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   547  0000                     FSR0 equ 0FE9h ;# 
+   548                           # 6729 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   549  0000                     FSR0L equ 0FE9h ;# 
+   550                           # 6741 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   551  0000                     FSR0H equ 0FEAh ;# 
+   552                           # 6753 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   553  0000                     PLUSW0 equ 0FEBh ;# 
+   554                           # 6765 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   555  0000                     PREINC0 equ 0FECh ;# 
+   556                           # 6777 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   557  0000                     POSTDEC0 equ 0FEDh ;# 
+   558                           # 6789 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   559  0000                     POSTINC0 equ 0FEEh ;# 
+   560                           # 6801 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   561  0000                     INDF0 equ 0FEFh ;# 
+   562                           # 6813 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   563  0000                     INTCON3 equ 0FF0h ;# 
+   564                           # 6842 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   565  0000                     INTCON2 equ 0FF1h ;# 
+   566                           # 6871 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   567  0000                     INTCON equ 0FF2h ;# 
+   568                           # 6876 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   569  0000                     INTCON1 equ 0FF2h ;# 
+   570                           # 6998 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   571  0000                     PROD equ 0FF3h ;# 
+   572                           # 7010 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   573  0000                     PRODL equ 0FF3h ;# 
+   574                           # 7022 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   575  0000                     PRODH equ 0FF4h ;# 
+   576                           # 7034 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   577  0000                     TABLAT equ 0FF5h ;# 
+   578                           # 7046 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   579  0000                     TBLPTR equ 0FF6h ;# 
+   580                           # 7059 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   581  0000                     TBLPTRL equ 0FF6h ;# 
+   582                           # 7071 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   583  0000                     TBLPTRH equ 0FF7h ;# 
+   584                           # 7083 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   585  0000                     TBLPTRU equ 0FF8h ;# 
+   586                           # 7096 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   587  0000                     PCLAT equ 0FF9h ;# 
+   588                           # 7101 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   589  0000                     PC equ 0FF9h ;# 
+   590                           # 7119 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   591  0000                     PCL equ 0FF9h ;# 
+   592                           # 7131 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   593  0000                     PCLATH equ 0FFAh ;# 
+   594                           # 7143 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   595  0000                     PCLATU equ 0FFBh ;# 
+   596                           # 7155 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   597  0000                     STKPTR equ 0FFCh ;# 
+   598                           # 7186 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   599  0000                     TOS equ 0FFDh ;# 
+   600                           # 7198 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   601  0000                     TOSL equ 0FFDh ;# 
+   602                           # 7210 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   603  0000                     TOSH equ 0FFEh ;# 
+   604                           # 7222 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f458.h"
+   605  0000                     TOSU equ 0FFFh ;# 
+   606                           	FNROOT	_main
+   607                           	global	_TRISD
+   608  0000                     _TRISD	set	0xF95
+   609                           	global	_RB0
+   610  0000                     _RB0	set	0x7C08
+   611                           	global	_RD0
+   612  0000                     _RD0	set	0x7C18
+   613                           	global	_RD1
+   614  0000                     _RD1	set	0x7C19
+   615                           	global	_TRISB0
+   616  0000                     _TRISB0	set	0x7C98
+   617                           psect	text0,class=CODE,space=0,reloc=2
+   618                           global __ptext0
+   619  003FD8                     __ptext0:
+   620                           ; #config settings
+   621                           	file	"DCmotor.as"
+   622                           	line	#
+   623                           psect	cinit,class=CODE,delta=1,reloc=2
+   624                           global __pcinit
+   625  003FD2                     __pcinit:
+   626                           global start_initialization
+   627  003FD2                     start_initialization:
+   628                           
+   629                           psect cinit,class=CODE,delta=1
+   630                           global end_of_initialization
+   631                           
+   632                           ;End of C runtime variable initialization code
+   633                           
+   634  003FD2                     end_of_initialization:
+   635  003FD2  0100               movlb 0
+   636  003FD4  EFEC  F01F         goto _main	;jump to C main() function
+   637                           psect	cstackCOMRAM,class=COMRAM,space=1
+   638                           global __pcstackCOMRAM
+   639  000000                     __pcstackCOMRAM:
+   640                           	global	??_main
+   641  000000                     ??_main:	; 0 bytes @ 0x0
+   642                           	global	?_main
+   643  000000                     ?_main:	; 2 bytes @ 0x0
+   644                           ;!
+   645                           ;!Data Sizes:
+   646                           ;!    Strings     0
+   647                           ;!    Constant    0
+   648                           ;!    Data        0
+   649                           ;!    BSS         0
+   650                           ;!    Persistent  0
+   651                           ;!    Stack       0
+   652                           ;!
+   653                           ;!Auto Spaces:
+   654                           ;!    Space          Size  Autos    Used
+   655                           ;!    COMRAM           95      0       0
+   656                           ;!    BANK0           160      0       0
+   657                           ;!    BANK1           256      0       0
+   658                           ;!    BANK2           256      0       0
+   659                           ;!    BANK3           256      0       0
+   660                           ;!    BANK4           256      0       0
+   661                           ;!    BANK5           256      0       0
+   662                           
+   663                           ;!
+   664                           ;!Pointer List with Targets:
+   665                           ;!
+   666                           ;!    None.
+   667                           
+   668                           
+   669                           ;!
+   670                           ;!Critical Paths under _main in COMRAM
+   671                           ;!
+   672                           ;!    None.
+   673                           ;!
+   674                           ;!Critical Paths under _main in BANK0
+   675                           ;!
+   676                           ;!    None.
+   677                           ;!
+   678                           ;!Critical Paths under _main in BANK1
+   679                           ;!
+   680                           ;!    None.
+   681                           ;!
+   682                           ;!Critical Paths under _main in BANK2
+   683                           ;!
+   684                           ;!    None.
+   685                           ;!
+   686                           ;!Critical Paths under _main in BANK3
+   687                           ;!
+   688                           ;!    None.
+   689                           ;!
+   690                           ;!Critical Paths under _main in BANK4
+   691                           ;!
+   692                           ;!    None.
+   693                           ;!
+   694                           ;!Critical Paths under _main in BANK5
+   695                           ;!
+   696                           ;!    None.
+   697                           
+   698 ;;
+   699 ;;Main: autosize = 0, tempsize = 0, incstack = 0, save=0
+   700 ;;
+   701                           
+   702                           ;!
+   703                           ;!Call Graph Tables:
+   704                           ;!
+   705                           ;! ---------------------------------------------------------------------------------
+   706                           ;! (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
+   707                           ;! ---------------------------------------------------------------------------------
+   708                           ;! (0) _main                                                 0     0      0       0
+   709                           ;! ---------------------------------------------------------------------------------
+   710                           ;! Estimated maximum stack depth 0
+   711                           ;! ---------------------------------------------------------------------------------
+   712                           ;!
+   713                           ;! Call Graph Graphs:
+   714                           ;!
+   715                           ;! _main (ROOT)
+   716                           ;!
+   717                           
+   718                           ;! Address spaces:
+   719                           
+   720                           ;!Name               Size   Autos  Total    Cost      Usage
+   721                           ;!BITCOMRAM           5F      0       0       0        0.0%
+   722                           ;!EEDATA             100      0       0       0        0.0%
+   723                           ;!NULL                 0      0       0       0        0.0%
+   724                           ;!CODE                 0      0       0       0        0.0%
+   725                           ;!COMRAM              5F      0       0       1        0.0%
+   726                           ;!STACK                0      0       0       2        0.0%
+   727                           ;!BITBANK0            A0      0       0       3        0.0%
+   728                           ;!BANK0               A0      0       0       4        0.0%
+   729                           ;!BITBANK1           100      0       0       5        0.0%
+   730                           ;!BANK1              100      0       0       6        0.0%
+   731                           ;!BITBANK2           100      0       0       7        0.0%
+   732                           ;!BANK2              100      0       0       8        0.0%
+   733                           ;!ABS                  0      0       0       9        0.0%
+   734                           ;!BITBANK3           100      0       0      10        0.0%
+   735                           ;!BANK3              100      0       0      11        0.0%
+   736                           ;!BITBANK4           100      0       0      12        0.0%
+   737                           ;!BANK4              100      0       0      13        0.0%
+   738                           ;!BITBANK5           100      0       0      14        0.0%
+   739                           ;!BANK5              100      0       0      15        0.0%
+   740                           ;!BIGRAM             5FF      0       0      16        0.0%
+   741                           ;!DATA                 0      0       0      17        0.0%
+   742                           ;!BITSFR_1             0      0       0      40        0.0%
+   743                           ;!SFR_1                0      0       0      40        0.0%
+   744                           ;!BITSFR               0      0       0      40        0.0%
+   745                           ;!SFR                  0      0       0      40        0.0%
+   746                           
+   747                           	global	_main
+   748                           
+   749 ;; *************** function _main *****************
+   750 ;; Defined at:
+   751 ;;		line 3 in file "F:\eslab\emlab\Ex6\DC\DC.c"
+   752 ;; Parameters:    Size  Location     Type
+   753 ;;		None
+   754 ;; Auto vars:     Size  Location     Type
+   755 ;;		None
+   756 ;; Return value:  Size  Location     Type
+   757 ;;                  2   12[COMRAM] int 
+   758 ;; Registers used:
+   759 ;;		wreg, status,2
+   760 ;; Tracked objects:
+   761 ;;		On entry : 0/0
+   762 ;;		On exit  : 0/0
+   763 ;;		Unchanged: 0/0
+   764 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+   765 ;;      Params:         0       0       0       0       0       0       0
+   766 ;;      Locals:         0       0       0       0       0       0       0
+   767 ;;      Temps:          0       0       0       0       0       0       0
+   768 ;;      Totals:         0       0       0       0       0       0       0
+   769 ;;Total ram usage:        0 bytes
+   770 ;; This function calls:
+   771 ;;		Nothing
+   772 ;; This function is called by:
+   773 ;;		Startup code after reset
+   774 ;; This function uses a non-reentrant model
+   775 ;;
+   776                           psect	text0
+   777                           psect	text0
+   778                           	file	"F:\eslab\emlab\Ex6\DC\DC.c"
+   779                           	line	3
+   780                           	global	__size_of_main
+   781  0000                     	__size_of_main	equ	__end_of_main-_main
+   782                           	
+   783  003FD8                     _main:
+   784                           	opt	stack 31
+   785  003FD8  FFFF               	dw	0FFFFh
+   786                           	line	4
+   787                           	
+   788  003FDA                     l597:
+   789                           ;DC.c: 4: TRISB0=1;
+   790  003FDA  8093               	bsf	c:(31896/8),(31896)&7	;volatile
+   791                           	line	5
+   792                           	
+   793  003FDC                     l599:
+   794                           ;DC.c: 5: TRISD=0;
+   795  003FDC  0E00               	movlw	low(0)
+   796  003FDE  6E95               	movwf	((c:3989)),c	;volatile
+   797  003FE0  D000               	goto	l601
+   798                           	line	6
+   799                           ;DC.c: 6: while(1)
+   800                           	
+   801  003FE2                     l13:
+   802                           	line	8
+   803                           	
+   804  003FE2                     l601:
+   805                           ;DC.c: 7: {
+   806                           ;DC.c: 8: if(RB0=1)
+   807  003FE2  8081               	bsf	c:(31752/8),(31752)&7	;volatile
+   808  003FE4  A081               	btfss	c:(31752/8),(31752)&7	;volatile
+   809  003FE6  D001               	goto	u11
+   810  003FE8  D001               	goto	u10
+   811  003FEA                     u11:
+   812  003FEA  D003               	goto	l14
+   813  003FEC                     u10:
+   814                           	line	10
+   815                           	
+   816  003FEC                     l603:
+   817                           ;DC.c: 9: {
+   818                           ;DC.c: 10: RD0=1;
+   819  003FEC  8083               	bsf	c:(31768/8),(31768)&7	;volatile
+   820                           	line	11
+   821                           ;DC.c: 11: RD1=0;
+   822  003FEE  9283               	bcf	c:(31769/8),(31769)&7	;volatile
+   823                           	line	12
+   824                           ;DC.c: 12: }
+   825  003FF0  D7F8               	goto	l601
+   826                           	line	13
+   827                           	
+   828  003FF2                     l14:
+   829                           	line	15
+   830                           ;DC.c: 13: else
+   831                           ;DC.c: 14: {
+   832                           ;DC.c: 15: RD0=0;
+   833  003FF2  9083               	bcf	c:(31768/8),(31768)&7	;volatile
+   834                           	line	16
+   835                           ;DC.c: 16: RD1=1;
+   836  003FF4  8283               	bsf	c:(31769/8),(31769)&7	;volatile
+   837  003FF6  D7F5               	goto	l601
+   838                           	line	17
+   839                           	
+   840  003FF8                     l15:
+   841  003FF8  D7F4               	goto	l601
+   842                           	line	18
+   843                           	
+   844  003FFA                     l16:
+   845                           	line	6
+   846  003FFA  D7F3               	goto	l601
+   847                           	
+   848  003FFC                     l17:
+   849                           	line	19
+   850                           	
+   851  003FFC                     l18:
+   852                           	global	start
+   853  003FFC  EF00  F000         	goto	start
+   854                           	opt stack 0
+   855                           GLOBAL	__end_of_main
+   856  004000                     	__end_of_main:
+   857                           	signat	_main,90
+   858                           	GLOBAL	__activetblptr
+   859  0000                     __activetblptr	EQU	0
+   860                           	psect	intsave_regs,class=BIGRAM,space=1
+   861                           psect	text1,class=CODE,space=0,reloc=2
+   862                           global __ptext1
+   863  000000                     __ptext1:
+   864                           	PSECT	rparam,class=COMRAM,space=1
+   865                           	GLOBAL	__Lrparam
+   866                           	FNCONF	rparam,??,?
+   867                           GLOBAL	__Lparam, __Hparam
+   868                           GLOBAL	__Lrparam, __Hrparam
+   869  0000                     __Lparam	EQU	__Lrparam
+   870  0000                     __Hparam	EQU	__Hrparam
+
+
+Data Sizes:
+    Strings     0
+    Constant    0
+    Data        0
+    BSS         0
+    Persistent  0
+    Stack       0
+
+Auto Spaces:
+    Space          Size  Autos    Used
+    COMRAM           95      0       0
+    BANK0           160      0       0
+    BANK1           256      0       0
+    BANK2           256      0       0
+    BANK3           256      0       0
+    BANK4           256      0       0
+    BANK5           256      0       0
+
+Pointer List with Targets:
+
+    None.
+
+Critical Paths under _main in COMRAM
+
+    None.
+
+Critical Paths under _main in BANK0
+
+    None.
+
+Critical Paths under _main in BANK1
+
+    None.
+
+Critical Paths under _main in BANK2
+
+    None.
+
+Critical Paths under _main in BANK3
+
+    None.
+
+Critical Paths under _main in BANK4
+
+    None.
+
+Critical Paths under _main in BANK5
+
+    None.
+
+Call Graph Tables:
+
+ ---------------------------------------------------------------------------------
+ (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
+ ---------------------------------------------------------------------------------
+ (0) _main                                                 0     0      0       0
+ ---------------------------------------------------------------------------------
+ Estimated maximum stack depth 0
+ ---------------------------------------------------------------------------------
+
+ Call Graph Graphs:
+
+ _main (ROOT)
+
+ Address spaces:
+Name               Size   Autos  Total    Cost      Usage
+BITCOMRAM           5F      0       0       0        0.0%
+EEDATA             100      0       0       0        0.0%
+NULL                 0      0       0       0        0.0%
+CODE                 0      0       0       0        0.0%
+COMRAM              5F      0       0       1        0.0%
+STACK                0      0       0       2        0.0%
+BITBANK0            A0      0       0       3        0.0%
+BANK0               A0      0       0       4        0.0%
+BITBANK1           100      0       0       5        0.0%
+BANK1              100      0       0       6        0.0%
+BITBANK2           100      0       0       7        0.0%
+BANK2              100      0       0       8        0.0%
+ABS                  0      0       0       9        0.0%
+BITBANK3           100      0       0      10        0.0%
+BANK3              100      0       0      11        0.0%
+BITBANK4           100      0       0      12        0.0%
+BANK4              100      0       0      13        0.0%
+BITBANK5           100      0       0      14        0.0%
+BANK5              100      0       0      15        0.0%
+BIGRAM             5FF      0       0      16        0.0%
+DATA                 0      0       0      17        0.0%
+BITSFR_1             0      0       0      40        0.0%
+SFR_1                0      0       0      40        0.0%
+BITSFR               0      0       0      40        0.0%
+SFR                  0      0       0      40        0.0%
+
+
+HI-TECH Software PICC-18 Macro Assembler V9.80 build 11162 
+Symbol Table                                                                                   Wed Mar 24 15:00:36 2021
+
+                  l13 3FE2                    l14 3FF2                    l15 3FF8                    l16 3FFA  
+                  l17 3FFC                    l18 3FFC                    u10 3FEC                    u11 3FEA  
+                 l601 3FE2                   l603 3FEC                   l597 3FDA                   l599 3FDC  
+                 _RB0 007C08                   _RD0 007C18                   _RD1 007C19                  _main 3FD8  
+                start 0000                 ?_main 0000                 _TRISD 000F95          __end_of_main 4000  
+              ??_main 0000         __activetblptr 000000                _TRISB0 007C98            __accesstop 0060  
+      __pcstackCOMRAM 0000               __Hparam 0000               __Lparam 0000               __pcinit 3FD2  
+             __ramtop 0600               __ptext0 3FD8               __ptext1 0000  end_of_initialization 3FD2  
+ start_initialization 3FD2              __Hrparam 0000              __Lrparam 0000         __size_of_main 0028  

@@ -1,0 +1,19 @@
+#include<pic18.h>
+main()
+{
+	TRISB0=1;
+	TRISD=0;
+	while(1)
+	{
+		if(RB0=1)
+		{
+			RD0=1;
+			RD1=0;	
+		}
+		else
+		{
+			RD0=0;
+			RD1=1;
+		}
+		}
+		}

@@ -1,7 +1,7 @@
 
 
 HI-TECH Software PIC18 Macro Assembler V9.80 build 11162 
-                                                                                                           Sat Mar 13 20:00:07 2021
+                                                                                                           Fri Mar 26 09:36:27 2021
 
 
      1                           
@@ -117,13 +117,13 @@ HI-TECH Software PIC18 Macro Assembler V9.80 build 11162
    111  000018                     start:
    112                           	psect	end_init
    113                           	global start_initialization
-   114  000018  EF68  F000         	goto start_initialization	;jump to C runtime clear & initialization
+   114  000018  EF6A  F000         	goto start_initialization	;jump to C runtime clear & initialization
 
 
 HI-TECH Software PICC-18 Macro Assembler V9.80 build 11162 
-Symbol Table                                                                                               Sat Mar 13 20:00:07 2021
+Symbol Table                                                                                               Fri Mar 26 09:36:27 2021
 
                 __S1 000F                 _main 009A                 start 0018                __HRAM 0000  
               __LRAM 0001         __mediumconst 0000           __accesstop 000080              __ramtop 0600  
-start_initialization 00D0          __smallconst 0000             intlevel0 0000             intlevel1 0000  
+start_initialization 00D4          __smallconst 0000             intlevel0 0000             intlevel1 0000  
            intlevel2 0000             intlevel3 0000             reset_vec 0000  

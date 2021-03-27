@@ -1,0 +1,20 @@
+#include<pic18.h>
+main(){
+	TRISA=0;
+	TRISC=0xFF;
+	TRISD=0;
+	TRISB0=1;
+	GIE=1;
+	INT0IF=0;
+	INT0IE=1;
+	while(1){
+		PORTD=PORTC;
+	}
+}
+interrupt chk_isr(){
+	if(INT0IF==1){
+		PORTA=255;
+		PORTA=~PORTA;
+		INT0IF=0;
+	}
+}

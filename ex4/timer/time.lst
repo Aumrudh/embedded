@@ -1,7 +1,7 @@
 
 
 HI-TECH Software PIC18 LITE Macro Assembler V9.80 build 11162 
-                                                                                               Sat Mar 13 20:00:07 2021
+                                                                                               Fri Mar 26 09:36:26 2021
 
 HI-TECH Software Omniscient Code Generator (Lite mode) build 11162
      1  0000                     opt subtitle "HI-TECH Software Omniscient Code Generator (Lite mode) build 11162"
@@ -391,468 +391,478 @@ HI-TECH Software Omniscient Code Generator (Lite mode) build 11162
    385                           	FNCALL	intlevel2,_chk_isr
    386                           	global	intlevel2
    387                           	FNROOT	intlevel2
-   388                           	global	_PORTB
-   389  0000                     _PORTB	set	0xF81
+   388                           	global	_PORTD
+   389  0000                     _PORTD	set	0xF83
    390                           	global	_T1CON
    391  0000                     _T1CON	set	0xFCD
    392                           	global	_TMR1H
    393  0000                     _TMR1H	set	0xFCF
    394                           	global	_TMR1L
    395  0000                     _TMR1L	set	0xFCE
-   396                           	global	_TRISB
-   397  0000                     _TRISB	set	0xF93
-   398                           	global	_GIE
-   399  0000                     _GIE	set	0x7F97
-   400                           	global	_PEIE
-   401  0000                     _PEIE	set	0x7F96
-   402                           	global	_RC4
-   403  0000                     _RC4	set	0x7C14
-   404                           	global	_RD4
-   405  0000                     _RD4	set	0x7C1C
-   406                           	global	_TMR1IE
-   407  0000                     _TMR1IE	set	0x7CE8
-   408                           	global	_TMR1IF
-   409  0000                     _TMR1IF	set	0x7CF0
-   410                           	global	_TMR1ON
-   411  0000                     _TMR1ON	set	0x7E68
-   412                           	global	_TRISC4
-   413  0000                     _TRISC4	set	0x7CA4
-   414                           	global	_TRISD4
-   415  0000                     _TRISD4	set	0x7CAC
-   416                           psect	intcode_body,class=CODE,space=0,reloc=2
-   417                           global __pintcode_body
-   418  00001C                     __pintcode_body:
-   419                           ; #config settings
-   420                           	file	"time.as"
-   421                           	line	#
-   422                           psect	cinit,class=CODE,delta=1,reloc=2
-   423                           global __pcinit
-   424  0000D0                     __pcinit:
-   425                           global start_initialization
-   426  0000D0                     start_initialization:
-   427                           
-   428                           psect cinit,class=CODE,delta=1
-   429                           global end_of_initialization
-   430                           
-   431                           ;End of C runtime variable initialization code
-   432                           
-   433  0000D0                     end_of_initialization:
-   434  0000D0  0100               movlb 0
-   435  0000D2  EF4D  F000         goto _main	;jump to C main() function
-   436                           psect	cstackCOMRAM,class=COMRAM,space=1
-   437                           global __pcstackCOMRAM
-   438  000001                     __pcstackCOMRAM:
-   439                           	global	??_chk_isr
-   440  000001                     ??_chk_isr:	; 0 bytes @ 0x0
-   441                           	global	?_main
-   442  000001                     ?_main:	; 2 bytes @ 0x0
-   443                           	global	?_chk_isr
-   444  000001                     ?_chk_isr:	; 2 bytes @ 0x0
-   445  000001                     	ds   14
-   446                           	global	??_main
-   447  00000F                     ??_main:	; 0 bytes @ 0xE
-   448                           ;!
-   449                           ;!Data Sizes:
-   450                           ;!    Strings     0
-   451                           ;!    Constant    0
-   452                           ;!    Data        0
-   453                           ;!    BSS         0
-   454                           ;!    Persistent  0
-   455                           ;!    Stack       0
-   456                           ;!
-   457                           ;!Auto Spaces:
-   458                           ;!    Space          Size  Autos    Used
-   459                           ;!    COMRAM          127     14      14
-   460                           ;!    BANK0           128      0       0
-   461                           ;!    BANK1           256      0       0
-   462                           ;!    BANK2           256      0       0
-   463                           ;!    BANK3           256      0       0
-   464                           ;!    BANK4           256      0       0
-   465                           ;!    BANK5           256      0       0
-   466                           
-   467                           ;!
-   468                           ;!Pointer List with Targets:
-   469                           ;!
-   470                           ;!    None.
-   471                           
-   472                           
+   396                           	global	_TRISA
+   397  0000                     _TRISA	set	0xF92
+   398                           	global	_TRISB
+   399  0000                     _TRISB	set	0xF93
+   400                           	global	_TRISC
+   401  0000                     _TRISC	set	0xF94
+   402                           	global	_TRISD
+   403  0000                     _TRISD	set	0xF95
+   404                           	global	_GIE
+   405  0000                     _GIE	set	0x7F97
+   406                           	global	_PEIE
+   407  0000                     _PEIE	set	0x7F96
+   408                           	global	_RA6
+   409  0000                     _RA6	set	0x7C06
+   410                           	global	_RC4
+   411  0000                     _RC4	set	0x7C14
+   412                           	global	_RD4
+   413  0000                     _RD4	set	0x7C1C
+   414                           	global	_TMR1IE
+   415  0000                     _TMR1IE	set	0x7CE8
+   416                           	global	_TMR1IF
+   417  0000                     _TMR1IF	set	0x7CF0
+   418                           	global	_TMR1ON
+   419  0000                     _TMR1ON	set	0x7E68
+   420                           psect	intcode_body,class=CODE,space=0,reloc=2
+   421                           global __pintcode_body
+   422  00001C                     __pintcode_body:
+   423                           ; #config settings
+   424                           	file	"time.as"
+   425                           	line	#
+   426                           psect	cinit,class=CODE,delta=1,reloc=2
+   427                           global __pcinit
+   428  0000D4                     __pcinit:
+   429                           global start_initialization
+   430  0000D4                     start_initialization:
+   431                           
+   432                           psect cinit,class=CODE,delta=1
+   433                           global end_of_initialization
+   434                           
+   435                           ;End of C runtime variable initialization code
+   436                           
+   437  0000D4                     end_of_initialization:
+   438  0000D4  0100               movlb 0
+   439  0000D6  EF4D  F000         goto _main	;jump to C main() function
+   440                           psect	cstackCOMRAM,class=COMRAM,space=1
+   441                           global __pcstackCOMRAM
+   442  000001                     __pcstackCOMRAM:
+   443                           	global	??_chk_isr
+   444  000001                     ??_chk_isr:	; 0 bytes @ 0x0
+   445                           	global	?_main
+   446  000001                     ?_main:	; 2 bytes @ 0x0
+   447                           	global	?_chk_isr
+   448  000001                     ?_chk_isr:	; 2 bytes @ 0x0
+   449  000001                     	ds   14
+   450                           	global	??_main
+   451  00000F                     ??_main:	; 0 bytes @ 0xE
+   452                           ;!
+   453                           ;!Data Sizes:
+   454                           ;!    Strings     0
+   455                           ;!    Constant    0
+   456                           ;!    Data        0
+   457                           ;!    BSS         0
+   458                           ;!    Persistent  0
+   459                           ;!    Stack       0
+   460                           ;!
+   461                           ;!Auto Spaces:
+   462                           ;!    Space          Size  Autos    Used
+   463                           ;!    COMRAM          127     14      14
+   464                           ;!    BANK0           128      0       0
+   465                           ;!    BANK1           256      0       0
+   466                           ;!    BANK2           256      0       0
+   467                           ;!    BANK3           256      0       0
+   468                           ;!    BANK4           256      0       0
+   469                           ;!    BANK5           256      0       0
+   470                           
+   471                           ;!
+   472                           ;!Pointer List with Targets:
    473                           ;!
-   474                           ;!Critical Paths under _main in COMRAM
-   475                           ;!
-   476                           ;!    None.
+   474                           ;!    None.
+   475                           
+   476                           
    477                           ;!
-   478                           ;!Critical Paths under _chk_isr in COMRAM
+   478                           ;!Critical Paths under _main in COMRAM
    479                           ;!
    480                           ;!    None.
    481                           ;!
-   482                           ;!Critical Paths under _main in BANK0
+   482                           ;!Critical Paths under _chk_isr in COMRAM
    483                           ;!
    484                           ;!    None.
    485                           ;!
-   486                           ;!Critical Paths under _chk_isr in BANK0
+   486                           ;!Critical Paths under _main in BANK0
    487                           ;!
    488                           ;!    None.
    489                           ;!
-   490                           ;!Critical Paths under _main in BANK1
+   490                           ;!Critical Paths under _chk_isr in BANK0
    491                           ;!
    492                           ;!    None.
    493                           ;!
-   494                           ;!Critical Paths under _chk_isr in BANK1
+   494                           ;!Critical Paths under _main in BANK1
    495                           ;!
    496                           ;!    None.
    497                           ;!
-   498                           ;!Critical Paths under _main in BANK2
+   498                           ;!Critical Paths under _chk_isr in BANK1
    499                           ;!
    500                           ;!    None.
    501                           ;!
-   502                           ;!Critical Paths under _chk_isr in BANK2
+   502                           ;!Critical Paths under _main in BANK2
    503                           ;!
    504                           ;!    None.
    505                           ;!
-   506                           ;!Critical Paths under _main in BANK3
+   506                           ;!Critical Paths under _chk_isr in BANK2
    507                           ;!
    508                           ;!    None.
    509                           ;!
-   510                           ;!Critical Paths under _chk_isr in BANK3
+   510                           ;!Critical Paths under _main in BANK3
    511                           ;!
    512                           ;!    None.
    513                           ;!
-   514                           ;!Critical Paths under _main in BANK4
+   514                           ;!Critical Paths under _chk_isr in BANK3
    515                           ;!
    516                           ;!    None.
    517                           ;!
-   518                           ;!Critical Paths under _chk_isr in BANK4
+   518                           ;!Critical Paths under _main in BANK4
    519                           ;!
    520                           ;!    None.
    521                           ;!
-   522                           ;!Critical Paths under _main in BANK5
+   522                           ;!Critical Paths under _chk_isr in BANK4
    523                           ;!
    524                           ;!    None.
    525                           ;!
-   526                           ;!Critical Paths under _chk_isr in BANK5
+   526                           ;!Critical Paths under _main in BANK5
    527                           ;!
    528                           ;!    None.
-   529                           
-   530 ;;
-   531 ;;Main: autosize = 0, tempsize = 0, incstack = 0, save=0
-   532 ;;
+   529                           ;!
+   530                           ;!Critical Paths under _chk_isr in BANK5
+   531                           ;!
+   532                           ;!    None.
    533                           
-   534                           ;!
-   535                           ;!Call Graph Tables:
-   536                           ;!
-   537                           ;! ---------------------------------------------------------------------------------
-   538                           ;! (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
-   539                           ;! ---------------------------------------------------------------------------------
-   540                           ;! (0) _main                                                 0     0      0       0
+   534 ;;
+   535 ;;Main: autosize = 0, tempsize = 0, incstack = 0, save=0
+   536 ;;
+   537                           
+   538                           ;!
+   539                           ;!Call Graph Tables:
+   540                           ;!
    541                           ;! ---------------------------------------------------------------------------------
-   542                           ;! Estimated maximum stack depth 0
+   542                           ;! (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
    543                           ;! ---------------------------------------------------------------------------------
-   544                           ;! (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
+   544                           ;! (0) _main                                                 0     0      0       0
    545                           ;! ---------------------------------------------------------------------------------
-   546                           ;! (1) _chk_isr                                             14    14      0       0
-   547                           ;!                                              0 COMRAM    14    14      0
-   548                           ;! ---------------------------------------------------------------------------------
-   549                           ;! Estimated maximum stack depth 1
-   550                           ;! ---------------------------------------------------------------------------------
-   551                           ;!
-   552                           ;! Call Graph Graphs:
-   553                           ;!
-   554                           ;! _main (ROOT)
+   546                           ;! Estimated maximum stack depth 0
+   547                           ;! ---------------------------------------------------------------------------------
+   548                           ;! (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
+   549                           ;! ---------------------------------------------------------------------------------
+   550                           ;! (1) _chk_isr                                             14    14      0       0
+   551                           ;!                                              0 COMRAM    14    14      0
+   552                           ;! ---------------------------------------------------------------------------------
+   553                           ;! Estimated maximum stack depth 1
+   554                           ;! ---------------------------------------------------------------------------------
    555                           ;!
-   556                           ;! _chk_isr (ROOT)
+   556                           ;! Call Graph Graphs:
    557                           ;!
-   558                           
-   559                           ;! Address spaces:
-   560                           
-   561                           ;!Name               Size   Autos  Total    Cost      Usage
-   562                           ;!BITCOMRAM           7F      0       0       0        0.0%
-   563                           ;!EEDATA             100      0       0       0        0.0%
-   564                           ;!NULL                 0      0       0       0        0.0%
-   565                           ;!CODE                 0      0       0       0        0.0%
-   566                           ;!COMRAM              7F      E       E       1       11.0%
-   567                           ;!STACK                0      0       0       2        0.0%
-   568                           ;!DATA                 0      0       0       3        0.0%
-   569                           ;!BITBANK0            80      0       0       4        0.0%
-   570                           ;!BANK0               80      0       0       5        0.0%
-   571                           ;!BITBANK1           100      0       0       6        0.0%
-   572                           ;!BANK1              100      0       0       7        0.0%
-   573                           ;!BITBANK2           100      0       0       8        0.0%
-   574                           ;!BANK2              100      0       0       9        0.0%
-   575                           ;!BITBANK3           100      0       0      10        0.0%
-   576                           ;!BANK3              100      0       0      11        0.0%
-   577                           ;!BITBANK4           100      0       0      12        0.0%
-   578                           ;!BANK4              100      0       0      13        0.0%
-   579                           ;!BANK5              100      0       0      14        0.0%
-   580                           ;!ABS                  0      0       0      15        0.0%
-   581                           ;!BITBANK5           100      0       0      16        0.0%
-   582                           ;!BIGRAM             5FF      0       0      17        0.0%
-   583                           ;!BITSFR               0      0       0      40        0.0%
-   584                           ;!SFR                  0      0       0      40        0.0%
-   585                           
-   586                           	global	_main
-   587                           
-   588 ;; *************** function _main *****************
-   589 ;; Defined at:
-   590 ;;		line 2 in file "C:\Users\imaum\Documents\timer\timer_int.c"
-   591 ;; Parameters:    Size  Location     Type
-   592 ;;		None
-   593 ;; Auto vars:     Size  Location     Type
-   594 ;;		None
-   595 ;; Return value:  Size  Location     Type
-   596 ;;                  2   30[COMRAM] int 
-   597 ;; Registers used:
-   598 ;;		wreg, status,2
-   599 ;; Tracked objects:
-   600 ;;		On entry : 0/0
-   601 ;;		On exit  : 0/0
-   602 ;;		Unchanged: 0/0
-   603 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
-   604 ;;      Params:         0       0       0       0       0       0       0
-   605 ;;      Locals:         0       0       0       0       0       0       0
-   606 ;;      Temps:          0       0       0       0       0       0       0
-   607 ;;      Totals:         0       0       0       0       0       0       0
-   608 ;;Total ram usage:        0 bytes
-   609 ;; Hardware stack levels required when called:    1
-   610 ;; This function calls:
-   611 ;;		Nothing
-   612 ;; This function is called by:
-   613 ;;		Startup code after reset
-   614 ;; This function uses a non-reentrant model
-   615 ;;
-   616                           psect	text0,class=CODE,space=0,reloc=2
-   617                           global __ptext0
-   618  00009A                     __ptext0:
-   619                           psect	text0
-   620                           	file	"C:\Users\imaum\Documents\timer\timer_int.c"
-   621                           	line	2
-   622                           	global	__size_of_main
-   623  0000                     	__size_of_main	equ	__end_of_main-_main
-   624                           	
-   625  00009A                     _main:
-   626                           	opt	stack 30
-   627                           	line	3
+   558                           ;! _main (ROOT)
+   559                           ;!
+   560                           ;! _chk_isr (ROOT)
+   561                           ;!
+   562                           
+   563                           ;! Address spaces:
+   564                           
+   565                           ;!Name               Size   Autos  Total    Cost      Usage
+   566                           ;!BITCOMRAM           7F      0       0       0        0.0%
+   567                           ;!EEDATA             100      0       0       0        0.0%
+   568                           ;!NULL                 0      0       0       0        0.0%
+   569                           ;!CODE                 0      0       0       0        0.0%
+   570                           ;!COMRAM              7F      E       E       1       11.0%
+   571                           ;!STACK                0      0       0       2        0.0%
+   572                           ;!DATA                 0      0       0       3        0.0%
+   573                           ;!BITBANK0            80      0       0       4        0.0%
+   574                           ;!BANK0               80      0       0       5        0.0%
+   575                           ;!BITBANK1           100      0       0       6        0.0%
+   576                           ;!BANK1              100      0       0       7        0.0%
+   577                           ;!BITBANK2           100      0       0       8        0.0%
+   578                           ;!BANK2              100      0       0       9        0.0%
+   579                           ;!BITBANK3           100      0       0      10        0.0%
+   580                           ;!BANK3              100      0       0      11        0.0%
+   581                           ;!BITBANK4           100      0       0      12        0.0%
+   582                           ;!BANK4              100      0       0      13        0.0%
+   583                           ;!BANK5              100      0       0      14        0.0%
+   584                           ;!ABS                  0      0       0      15        0.0%
+   585                           ;!BITBANK5           100      0       0      16        0.0%
+   586                           ;!BIGRAM             5FF      0       0      17        0.0%
+   587                           ;!BITSFR               0      0       0      40        0.0%
+   588                           ;!SFR                  0      0       0      40        0.0%
+   589                           
+   590                           	global	_main
+   591                           
+   592 ;; *************** function _main *****************
+   593 ;; Defined at:
+   594 ;;		line 2 in file "D:\Aumrudh Documents\mepco\lab\sem6-Lab\embedded\even\embedded\ex4\timer\timer_int.c"
+   595 ;; Parameters:    Size  Location     Type
+   596 ;;		None
+   597 ;; Auto vars:     Size  Location     Type
+   598 ;;		None
+   599 ;; Return value:  Size  Location     Type
+   600 ;;                  2   34[COMRAM] int 
+   601 ;; Registers used:
+   602 ;;		wreg, status,2
+   603 ;; Tracked objects:
+   604 ;;		On entry : 0/0
+   605 ;;		On exit  : 0/0
+   606 ;;		Unchanged: 0/0
+   607 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+   608 ;;      Params:         0       0       0       0       0       0       0
+   609 ;;      Locals:         0       0       0       0       0       0       0
+   610 ;;      Temps:          0       0       0       0       0       0       0
+   611 ;;      Totals:         0       0       0       0       0       0       0
+   612 ;;Total ram usage:        0 bytes
+   613 ;; Hardware stack levels required when called:    1
+   614 ;; This function calls:
+   615 ;;		Nothing
+   616 ;; This function is called by:
+   617 ;;		Startup code after reset
+   618 ;; This function uses a non-reentrant model
+   619 ;;
+   620                           psect	text0,class=CODE,space=0,reloc=2
+   621                           global __ptext0
+   622  00009A                     __ptext0:
+   623                           psect	text0
+   624                           	file	"D:\Aumrudh Documents\mepco\lab\sem6-Lab\embedded\even\embedded\ex4\timer\timer_in
+                                 t.c"
+   625                           	line	2
+   626                           	global	__size_of_main
+   627  0000                     	__size_of_main	equ	__end_of_main-_main
    628                           	
-   629  00009A                     l617:
-   630                           ;timer_int.c: 3: TRISB=0;
-   631  00009A  0E00               	movlw	low(0)
-   632  00009C  6E93               	movwf	((c:3987)),c	;volatile
-   633                           	line	4
-   634                           	
-   635  00009E                     l619:
-   636                           ;timer_int.c: 4: TRISC4=0;
-   637  00009E  9894               	bcf	c:(31908/8),(31908)&7	;volatile
-   638                           	line	5
-   639                           	
-   640  0000A0                     l621:
-   641                           ;timer_int.c: 5: TRISD4=1;
-   642  0000A0  8895               	bsf	c:(31916/8),(31916)&7	;volatile
-   643                           	line	6
-   644                           	
-   645  0000A2                     l623:
-   646                           ;timer_int.c: 6: RD4=1;
-   647  0000A2  8883               	bsf	c:(31772/8),(31772)&7	;volatile
-   648                           	line	7
-   649                           ;timer_int.c: 7: T1CON=0x00;
-   650  0000A4  0E00               	movlw	low(0)
-   651  0000A6  6ECD               	movwf	((c:4045)),c	;volatile
-   652                           	line	8
-   653                           ;timer_int.c: 8: TMR1L=0x6D;
-   654  0000A8  0E6D               	movlw	low(06Dh)
-   655  0000AA  6ECE               	movwf	((c:4046)),c	;volatile
-   656                           	line	9
-   657                           ;timer_int.c: 9: TMR1H=0x84;
-   658  0000AC  0E84               	movlw	low(084h)
-   659  0000AE  6ECF               	movwf	((c:4047)),c	;volatile
-   660                           	line	10
-   661                           	
-   662  0000B0                     l625:
-   663                           ;timer_int.c: 10: TMR1ON=1;
-   664  0000B0  80CD               	bsf	c:(32360/8),(32360)&7	;volatile
-   665                           	line	11
-   666                           	
-   667  0000B2                     l627:
-   668                           ;timer_int.c: 11: GIE=1;
-   669  0000B2  8EF2               	bsf	c:(32663/8),(32663)&7	;volatile
-   670                           	line	12
-   671                           	
-   672  0000B4                     l629:
-   673                           ;timer_int.c: 12: PEIE=1;
-   674  0000B4  8CF2               	bsf	c:(32662/8),(32662)&7	;volatile
-   675                           	line	13
-   676                           	
-   677  0000B6                     l631:
-   678                           ;timer_int.c: 13: TMR1IE=1;
-   679  0000B6  809D               	bsf	c:(31976/8),(31976)&7	;volatile
-   680                           	line	14
-   681                           	
-   682  0000B8                     l633:
-   683                           ;timer_int.c: 14: PORTB=0xFF;
-   684  0000B8  6881               	setf	((c:3969)),c	;volatile
-   685  0000BA  D000               	goto	l635
-   686                           	line	15
-   687                           ;timer_int.c: 15: while(1){
-   688                           	
-   689  0000BC                     l31:
-   690                           	line	16
-   691                           	
-   692  0000BC                     l635:
-   693                           ;timer_int.c: 16: RC4=RD4;
-   694  0000BC  B883               	btfsc	c:(31772/8),(31772)&7	;volatile
-   695  0000BE  D001               	goto	u11
-   696  0000C0  D002               	goto	u10
-   697  0000C2                     u11:
-   698  0000C2  8882               	bsf	c:(31764/8),(31764)&7	;volatile
-   699  0000C4  D001               	goto	u25
-   700  0000C6                     u10:
-   701  0000C6  9882               	bcf	c:(31764/8),(31764)&7	;volatile
-   702  0000C8                     u25:
-   703  0000C8  D7F9               	goto	l635
-   704                           	line	17
-   705                           	
-   706  0000CA                     l32:
-   707                           	line	15
-   708  0000CA  D7F8               	goto	l635
-   709                           	
-   710  0000CC                     l33:
-   711                           	line	18
-   712                           	
-   713  0000CC                     l34:
-   714                           	global	start
-   715  0000CC  EF0C  F000         	goto	start
-   716                           	opt stack 0
-   717                           GLOBAL	__end_of_main
-   718  0000D0                     	__end_of_main:
-   719                           	signat	_main,90
-   720                           	global	_chk_isr
-   721                           
-   722 ;; *************** function _chk_isr *****************
-   723 ;; Defined at:
-   724 ;;		line 19 in file "C:\Users\imaum\Documents\timer\timer_int.c"
-   725 ;; Parameters:    Size  Location     Type
-   726 ;;		None
-   727 ;; Auto vars:     Size  Location     Type
-   728 ;;		None
-   729 ;; Return value:  Size  Location     Type
-   730 ;;                  2   36[COMRAM] int 
-   731 ;; Registers used:
-   732 ;;		wreg, status,2, status,0
-   733 ;; Tracked objects:
-   734 ;;		On entry : 0/0
-   735 ;;		On exit  : 0/0
-   736 ;;		Unchanged: 0/0
-   737 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
-   738 ;;      Params:         0       0       0       0       0       0       0
-   739 ;;      Locals:         0       0       0       0       0       0       0
-   740 ;;      Temps:         14       0       0       0       0       0       0
-   741 ;;      Totals:        14       0       0       0       0       0       0
-   742 ;;Total ram usage:       14 bytes
-   743 ;; Hardware stack levels used:    1
-   744 ;; This function calls:
-   745 ;;		Nothing
-   746 ;; This function is called by:
-   747 ;;		Interrupt level 2
-   748 ;; This function uses a non-reentrant model
-   749 ;;
-   750                           psect	intcode,class=CODE,space=0,reloc=2
-   751                           global __pintcode
-   752  000008                     __pintcode:
-   753                           psect	intcode
-   754                           	file	"C:\Users\imaum\Documents\timer\timer_int.c"
-   755                           	line	19
-   756                           	global	__size_of_chk_isr
-   757  0000                     	__size_of_chk_isr	equ	__end_of_chk_isr-_chk_isr
-   758                           	
-   759  000008                     _chk_isr:
-   760                           	opt	stack 30
-   761  000008  CFFA F001          	movff	pclat+0,??_chk_isr+0
-   762  00000C  CFFB F002          	movff	pclat+1,??_chk_isr+1
-   763  000010  CFE9 F003          	movff	fsr0l+0,??_chk_isr+2
-   764                           	global	int_func
-   765  000014  ED0E  F000         	call	int_func,f	;refresh shadow registers
-   766                           psect	intcode_body
-   767  00001C                     int_func:
-   768                           
-   769  00001C  0006               	pop	; remove dummy address from shadow register refresh
-   770  00001E  CFEA F004          	movff	fsr0h+0,??_chk_isr+3
-   771  000022  CFE1 F005          	movff	fsr1l+0,??_chk_isr+4
-   772  000026  CFE2 F006          	movff	fsr1h+0,??_chk_isr+5
-   773  00002A  CFD9 F007          	movff	fsr2l+0,??_chk_isr+6
-   774  00002E  CFDA F008          	movff	fsr2h+0,??_chk_isr+7
-   775  000032  CFF3 F009          	movff	prodl+0,??_chk_isr+8
-   776  000036  CFF4 F00A          	movff	prodh+0,??_chk_isr+9
-   777  00003A  CFF6 F00B          	movff	tblptrl+0,??_chk_isr+10
-   778  00003E  CFF7 F00C          	movff	tblptrh+0,??_chk_isr+11
-   779  000042  CFF8 F00D          	movff	tblptru+0,??_chk_isr+12
-   780  000046  CFF5 F00E          	movff	tablat+0,??_chk_isr+13
-   781                           	line	20
-   782                           	
-   783  00004A                     i2l637:
-   784                           ;timer_int.c: 20: if(TMR1IF==1){
-   785  00004A  A09E               	btfss	c:(31984/8),(31984)&7	;volatile
-   786  00004C  D001               	goto	i2u3_41
-   787  00004E  D001               	goto	i2u3_40
-   788  000050                     i2u3_41:
-   789  000050  D007               	goto	i2l38
-   790  000052                     i2u3_40:
-   791                           	line	21
-   792                           	
-   793  000052                     i2l639:
-   794                           ;timer_int.c: 21: PORTB=~PORTB;
-   795  000052  1E81               	comf	((c:3969)),c	;volatile
-   796                           	line	22
-   797                           	
-   798  000054                     i2l641:
-   799                           ;timer_int.c: 22: TMR1L=0x6D;
-   800  000054  0E6D               	movlw	low(06Dh)
-   801  000056  6ECE               	movwf	((c:4046)),c	;volatile
-   802                           	line	23
-   803                           	
-   804  000058                     i2l643:
-   805                           ;timer_int.c: 23: TMR1H=0x84;
-   806  000058  0E84               	movlw	low(084h)
-   807  00005A  6ECF               	movwf	((c:4047)),c	;volatile
-   808                           	line	24
-   809                           	
-   810  00005C                     i2l645:
-   811                           ;timer_int.c: 24: TMR1IF=0;
-   812  00005C  909E               	bcf	c:(31984/8),(31984)&7	;volatile
-   813  00005E  D000               	goto	i2l38
-   814                           	line	25
-   815                           	
-   816  000060                     i2l37:
-   817                           	line	26
-   818                           	
-   819  000060                     i2l38:
-   820  000060  C00E  FFF5         	movff	??_chk_isr+13,tablat+0
-   821  000064  C00D  FFF8         	movff	??_chk_isr+12,tblptru+0
-   822  000068  C00C  FFF7         	movff	??_chk_isr+11,tblptrh+0
-   823  00006C  C00B  FFF6         	movff	??_chk_isr+10,tblptrl+0
-   824  000070  C00A  FFF4         	movff	??_chk_isr+9,prodh+0
-   825  000074  C009  FFF3         	movff	??_chk_isr+8,prodl+0
-   826  000078  C008  FFDA         	movff	??_chk_isr+7,fsr2h+0
-   827  00007C  C007  FFD9         	movff	??_chk_isr+6,fsr2l+0
-   828  000080  C006  FFE2         	movff	??_chk_isr+5,fsr1h+0
-   829  000084  C005  FFE1         	movff	??_chk_isr+4,fsr1l+0
-   830  000088  C004  FFEA         	movff	??_chk_isr+3,fsr0h+0
-   831  00008C  C003  FFE9         	movff	??_chk_isr+2,fsr0l+0
-   832  000090  C002  FFFB         	movff	??_chk_isr+1,pclat+1
-   833  000094  C001  FFFA         	movff	??_chk_isr+0,pclat+0
-   834  000098  0011               	retfie f
-   835                           	opt stack 0
-   836                           GLOBAL	__end_of_chk_isr
-   837  00009A                     	__end_of_chk_isr:
-   838                           	signat	_chk_isr,90
-   839                           	GLOBAL	__activetblptr
-   840  0000                     __activetblptr	EQU	0
-   841                           	psect	intsave_regs,class=BIGRAM,space=1
-   842                           psect	intcode_body
-   843                           	PSECT	rparam,class=COMRAM,space=1
-   844                           	GLOBAL	__Lrparam
-   845                           	FNCONF	rparam,??,?
-   846                           GLOBAL	__Lparam, __Hparam
-   847                           GLOBAL	__Lrparam, __Hrparam
-   848  0000                     __Lparam	EQU	__Lrparam
-   849  0000                     __Hparam	EQU	__Hrparam
+   629  00009A                     _main:
+   630                           	opt	stack 30
+   631                           	line	3
+   632                           	
+   633  00009A                     l621:
+   634                           ;timer_int.c: 3: TRISD=0;
+   635  00009A  0E00               	movlw	low(0)
+   636  00009C  6E95               	movwf	((c:3989)),c	;volatile
+   637                           	line	4
+   638                           ;timer_int.c: 4: TRISC=0;
+   639  00009E  0E00               	movlw	low(0)
+   640  0000A0  6E94               	movwf	((c:3988)),c	;volatile
+   641                           	line	5
+   642                           	
+   643  0000A2                     l623:
+   644                           ;timer_int.c: 5: TRISB=255;
+   645  0000A2  6893               	setf	((c:3987)),c	;volatile
+   646                           	line	6
+   647                           	
+   648  0000A4                     l625:
+   649                           ;timer_int.c: 6: TRISA=255;
+   650  0000A4  6892               	setf	((c:3986)),c	;volatile
+   651                           	line	7
+   652                           	
+   653  0000A6                     l627:
+   654                           ;timer_int.c: 7: RD4=1;
+   655  0000A6  8883               	bsf	c:(31772/8),(31772)&7	;volatile
+   656                           	line	8
+   657                           ;timer_int.c: 8: T1CON=0x00;
+   658  0000A8  0E00               	movlw	low(0)
+   659  0000AA  6ECD               	movwf	((c:4045)),c	;volatile
+   660                           	line	9
+   661                           ;timer_int.c: 9: TMR1L=0x6D;
+   662  0000AC  0E6D               	movlw	low(06Dh)
+   663  0000AE  6ECE               	movwf	((c:4046)),c	;volatile
+   664                           	line	10
+   665                           ;timer_int.c: 10: TMR1H=0x84;
+   666  0000B0  0E84               	movlw	low(084h)
+   667  0000B2  6ECF               	movwf	((c:4047)),c	;volatile
+   668                           	line	11
+   669                           	
+   670  0000B4                     l629:
+   671                           ;timer_int.c: 11: TMR1ON=1;
+   672  0000B4  80CD               	bsf	c:(32360/8),(32360)&7	;volatile
+   673                           	line	12
+   674                           	
+   675  0000B6                     l631:
+   676                           ;timer_int.c: 12: GIE=1;
+   677  0000B6  8EF2               	bsf	c:(32663/8),(32663)&7	;volatile
+   678                           	line	13
+   679                           	
+   680  0000B8                     l633:
+   681                           ;timer_int.c: 13: PEIE=1;
+   682  0000B8  8CF2               	bsf	c:(32662/8),(32662)&7	;volatile
+   683                           	line	14
+   684                           	
+   685  0000BA                     l635:
+   686                           ;timer_int.c: 14: TMR1IE=1;
+   687  0000BA  809D               	bsf	c:(31976/8),(31976)&7	;volatile
+   688                           	line	15
+   689                           	
+   690  0000BC                     l637:
+   691                           ;timer_int.c: 15: PORTD=0xFF;
+   692  0000BC  6883               	setf	((c:3971)),c	;volatile
+   693  0000BE  D000               	goto	l639
+   694                           	line	16
+   695                           ;timer_int.c: 16: while(1){
+   696                           	
+   697  0000C0                     l35:
+   698                           	line	17
+   699                           	
+   700  0000C0                     l639:
+   701                           ;timer_int.c: 17: RC4=RA6;
+   702  0000C0  BC80               	btfsc	c:(31750/8),(31750)&7	;volatile
+   703  0000C2  D001               	goto	u11
+   704  0000C4  D002               	goto	u10
+   705  0000C6                     u11:
+   706  0000C6  8882               	bsf	c:(31764/8),(31764)&7	;volatile
+   707  0000C8  D001               	goto	u25
+   708  0000CA                     u10:
+   709  0000CA  9882               	bcf	c:(31764/8),(31764)&7	;volatile
+   710  0000CC                     u25:
+   711  0000CC  D7F9               	goto	l639
+   712                           	line	18
+   713                           	
+   714  0000CE                     l36:
+   715                           	line	16
+   716  0000CE  D7F8               	goto	l639
+   717                           	
+   718  0000D0                     l37:
+   719                           	line	19
+   720                           	
+   721  0000D0                     l38:
+   722                           	global	start
+   723  0000D0  EF0C  F000         	goto	start
+   724                           	opt stack 0
+   725                           GLOBAL	__end_of_main
+   726  0000D4                     	__end_of_main:
+   727                           	signat	_main,90
+   728                           	global	_chk_isr
+   729                           
+   730 ;; *************** function _chk_isr *****************
+   731 ;; Defined at:
+   732 ;;		line 20 in file "D:\Aumrudh Documents\mepco\lab\sem6-Lab\embedded\even\embedded\ex4\timer\timer_int.c"
+   733 ;; Parameters:    Size  Location     Type
+   734 ;;		None
+   735 ;; Auto vars:     Size  Location     Type
+   736 ;;		None
+   737 ;; Return value:  Size  Location     Type
+   738 ;;                  2   40[COMRAM] int 
+   739 ;; Registers used:
+   740 ;;		wreg, status,2, status,0
+   741 ;; Tracked objects:
+   742 ;;		On entry : 0/0
+   743 ;;		On exit  : 0/0
+   744 ;;		Unchanged: 0/0
+   745 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+   746 ;;      Params:         0       0       0       0       0       0       0
+   747 ;;      Locals:         0       0       0       0       0       0       0
+   748 ;;      Temps:         14       0       0       0       0       0       0
+   749 ;;      Totals:        14       0       0       0       0       0       0
+   750 ;;Total ram usage:       14 bytes
+   751 ;; Hardware stack levels used:    1
+   752 ;; This function calls:
+   753 ;;		Nothing
+   754 ;; This function is called by:
+   755 ;;		Interrupt level 2
+   756 ;; This function uses a non-reentrant model
+   757 ;;
+   758                           psect	intcode,class=CODE,space=0,reloc=2
+   759                           global __pintcode
+   760  000008                     __pintcode:
+   761                           psect	intcode
+   762                           	file	"D:\Aumrudh Documents\mepco\lab\sem6-Lab\embedded\even\embedded\ex4\timer\timer_in
+                                 t.c"
+   763                           	line	20
+   764                           	global	__size_of_chk_isr
+   765  0000                     	__size_of_chk_isr	equ	__end_of_chk_isr-_chk_isr
+   766                           	
+   767  000008                     _chk_isr:
+   768                           	opt	stack 30
+   769  000008  CFFA F001          	movff	pclat+0,??_chk_isr+0
+   770  00000C  CFFB F002          	movff	pclat+1,??_chk_isr+1
+   771  000010  CFE9 F003          	movff	fsr0l+0,??_chk_isr+2
+   772                           	global	int_func
+   773  000014  ED0E  F000         	call	int_func,f	;refresh shadow registers
+   774                           psect	intcode_body
+   775  00001C                     int_func:
+   776                           
+   777  00001C  0006               	pop	; remove dummy address from shadow register refresh
+   778  00001E  CFEA F004          	movff	fsr0h+0,??_chk_isr+3
+   779  000022  CFE1 F005          	movff	fsr1l+0,??_chk_isr+4
+   780  000026  CFE2 F006          	movff	fsr1h+0,??_chk_isr+5
+   781  00002A  CFD9 F007          	movff	fsr2l+0,??_chk_isr+6
+   782  00002E  CFDA F008          	movff	fsr2h+0,??_chk_isr+7
+   783  000032  CFF3 F009          	movff	prodl+0,??_chk_isr+8
+   784  000036  CFF4 F00A          	movff	prodh+0,??_chk_isr+9
+   785  00003A  CFF6 F00B          	movff	tblptrl+0,??_chk_isr+10
+   786  00003E  CFF7 F00C          	movff	tblptrh+0,??_chk_isr+11
+   787  000042  CFF8 F00D          	movff	tblptru+0,??_chk_isr+12
+   788  000046  CFF5 F00E          	movff	tablat+0,??_chk_isr+13
+   789                           	line	21
+   790                           	
+   791  00004A                     i2l641:
+   792                           ;timer_int.c: 21: if(TMR1IF==1){
+   793  00004A  A09E               	btfss	c:(31984/8),(31984)&7	;volatile
+   794  00004C  D001               	goto	i2u3_41
+   795  00004E  D001               	goto	i2u3_40
+   796  000050                     i2u3_41:
+   797  000050  D007               	goto	i2l42
+   798  000052                     i2u3_40:
+   799                           	line	22
+   800                           	
+   801  000052                     i2l643:
+   802                           ;timer_int.c: 22: PORTD=~PORTD;
+   803  000052  1E83               	comf	((c:3971)),c	;volatile
+   804                           	line	23
+   805                           	
+   806  000054                     i2l645:
+   807                           ;timer_int.c: 23: TMR1L=0x6D;
+   808  000054  0E6D               	movlw	low(06Dh)
+   809  000056  6ECE               	movwf	((c:4046)),c	;volatile
+   810                           	line	24
+   811                           	
+   812  000058                     i2l647:
+   813                           ;timer_int.c: 24: TMR1H=0x84;
+   814  000058  0E84               	movlw	low(084h)
+   815  00005A  6ECF               	movwf	((c:4047)),c	;volatile
+   816                           	line	25
+   817                           	
+   818  00005C                     i2l649:
+   819                           ;timer_int.c: 25: TMR1IF=0;
+   820  00005C  909E               	bcf	c:(31984/8),(31984)&7	;volatile
+   821  00005E  D000               	goto	i2l42
+   822                           	line	26
+   823                           	
+   824  000060                     i2l41:
+   825                           	line	27
+   826                           	
+   827  000060                     i2l42:
+   828  000060  C00E  FFF5         	movff	??_chk_isr+13,tablat+0
+   829  000064  C00D  FFF8         	movff	??_chk_isr+12,tblptru+0
+   830  000068  C00C  FFF7         	movff	??_chk_isr+11,tblptrh+0
+   831  00006C  C00B  FFF6         	movff	??_chk_isr+10,tblptrl+0
+   832  000070  C00A  FFF4         	movff	??_chk_isr+9,prodh+0
+   833  000074  C009  FFF3         	movff	??_chk_isr+8,prodl+0
+   834  000078  C008  FFDA         	movff	??_chk_isr+7,fsr2h+0
+   835  00007C  C007  FFD9         	movff	??_chk_isr+6,fsr2l+0
+   836  000080  C006  FFE2         	movff	??_chk_isr+5,fsr1h+0
+   837  000084  C005  FFE1         	movff	??_chk_isr+4,fsr1l+0
+   838  000088  C004  FFEA         	movff	??_chk_isr+3,fsr0h+0
+   839  00008C  C003  FFE9         	movff	??_chk_isr+2,fsr0l+0
+   840  000090  C002  FFFB         	movff	??_chk_isr+1,pclat+1
+   841  000094  C001  FFFA         	movff	??_chk_isr+0,pclat+0
+   842  000098  0011               	retfie f
+   843                           	opt stack 0
+   844                           GLOBAL	__end_of_chk_isr
+   845  00009A                     	__end_of_chk_isr:
+   846                           	signat	_chk_isr,90
+   847                           	GLOBAL	__activetblptr
+   848  0000                     __activetblptr	EQU	0
+   849                           	psect	intsave_regs,class=BIGRAM,space=1
+   850                           psect	intcode_body
+   851                           	PSECT	rparam,class=COMRAM,space=1
+   852                           	GLOBAL	__Lrparam
+   853                           	FNCONF	rparam,??,?
+   854                           GLOBAL	__Lparam, __Hparam
+   855                           GLOBAL	__Lrparam, __Hrparam
+   856  0000                     __Lparam	EQU	__Lrparam
+   857  0000                     __Hparam	EQU	__Hrparam
 
 
 Data Sizes:
@@ -984,25 +994,26 @@ SFR                  0      0       0      40        0.0%
 
 
 HI-TECH Software PICC-18 Macro Assembler V9.80 build 11162 
-Symbol Table                                                                                   Sat Mar 13 20:00:07 2021
+Symbol Table                                                                                   Fri Mar 26 09:36:26 2021
 
-                  l31 00BC                    l32 00CA                    l33 00CC                    l34 00CC  
-                  u10 00C6                    u11 00C2                    u25 00C8                   l621 00A0  
-                 l631 00B6                   l623 00A2                   l633 00B8                   l625 00B0  
-                 l617 009A                   l635 00BC                   l627 00B2                   l619 009E  
-                 l629 00B4                   _GIE 007F97                   _RC4 007C14                   _RD4 007C1C  
-                _PEIE 007F96                  i2l37 0060                  i2l38 0060                  _main 009A  
-                fsr0h 000FEA                  fsr1h 000FE2                  fsr0l 000FE9                  fsr2h 000FDA  
-                fsr1l 000FE1                  fsr2l 000FD9                  pclat 000FFA                  prodh 000FF4  
-                prodl 000FF3                  start 0018                 ?_main 0001                 _T1CON 000FCD  
-               i2l641 0054                 i2l643 0058                 i2l645 005C                 i2l637 004A  
-               i2l639 0052                 _TMR1H 000FCF                 _TMR1L 000FCE                 _PORTB 000F81  
-               _TRISB 000F93       __end_of_chk_isr 009A                 tablat 000FF5          __end_of_main 00D0  
+                  l35 00C0                    l36 00CE                    l37 00D0                    l38 00D0  
+                  u10 00CA                    u11 00C6                    u25 00CC                   l621 009A  
+                 l631 00B6                   l623 00A2                   l633 00B8                   l625 00A4  
+                 l635 00BA                   l627 00A6                   l637 00BC                   l629 00B4  
+                 l639 00C0                   _GIE 007F97                   _RA6 007C06                   _RC4 007C14  
+                 _RD4 007C1C                  _PEIE 007F96                  i2l41 0060                  i2l42 0060  
+                _main 009A                  fsr0h 000FEA                  fsr1h 000FE2                  fsr0l 000FE9  
+                fsr2h 000FDA                  fsr1l 000FE1                  fsr2l 000FD9                  pclat 000FFA  
+                prodh 000FF4                  prodl 000FF3                  start 0018                 ?_main 0001  
+               _T1CON 000FCD                 i2l641 004A                 i2l643 0052                 i2l645 0054  
+               i2l647 0058                 i2l649 005C                 _TMR1H 000FCF                 _TMR1L 000FCE  
+               _PORTD 000F83                 _TRISA 000F92                 _TRISB 000F93                 _TRISC 000F94  
+               _TRISD 000F95       __end_of_chk_isr 009A                 tablat 000FF5          __end_of_main 00D4  
               ??_main 000F         __activetblptr 000000                _TMR1IE 007CE8                _TMR1IF 007CF0  
-              _TMR1ON 007E68                i2u3_40 0052                i2u3_41 0050                _TRISC4 007CA4  
-              _TRISD4 007CAC             ??_chk_isr 0001                tblptrh 000FF7                tblptrl 000FF6  
-              tblptru 000FF8            __accesstop 0080        __pcstackCOMRAM 0001               __Hparam 0000  
-             __Lparam 0000               __pcinit 00D0               _chk_isr 0008               __ramtop 0600  
-             __ptext0 009A        __pintcode_body 001C  end_of_initialization 00D0               int_func 001C  
- start_initialization 00D0             __pintcode 0008              ?_chk_isr 0001              __Hrparam 0000  
-            __Lrparam 0000      __size_of_chk_isr 0092         __size_of_main 0036              intlevel2 0000  
+              _TMR1ON 007E68                i2u3_40 0052                i2u3_41 0050             ??_chk_isr 0001  
+              tblptrh 000FF7                tblptrl 000FF6                tblptru 000FF8            __accesstop 0080  
+      __pcstackCOMRAM 0001               __Hparam 0000               __Lparam 0000               __pcinit 00D4  
+             _chk_isr 0008               __ramtop 0600               __ptext0 009A        __pintcode_body 001C  
+end_of_initialization 00D4               int_func 001C   start_initialization 00D4             __pintcode 0008  
+            ?_chk_isr 0001              __Hrparam 0000              __Lrparam 0000      __size_of_chk_isr 0092  
+       __size_of_main 003A              intlevel2 0000  

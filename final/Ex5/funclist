@@ -1,0 +1,7 @@
+_ready: CODE, 32384 0 38
+_delay: CODE, 32274 0 20
+_hdelay: CODE, 32422 0 84
+_main: CODE, 32506 0 262
+_data: CODE, 32294 0 26
+_command: CODE, 32320 0 26
+Total: 456

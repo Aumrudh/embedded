@@ -1,0 +1,22 @@
+#include<pic18.h>
+main(){
+	TRISA=0xFF;
+	TRISD=0;
+	TRISB4=1;
+	TRISB5=1;
+	TRISC1=0;
+	TRISC2=0;
+	GIE=1;
+	RBIF=0;
+	RBIE=1;
+	while(1){
+		PORTD=PORTA;
+	}
+}
+interrupt chk_isr(){
+	if(RBIF==1){
+		RC1=RB7;
+		RC2=RB5;
+		RBIF=0;
+	}
+}

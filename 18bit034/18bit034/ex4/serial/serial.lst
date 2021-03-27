@@ -1,0 +1,1090 @@
+
+
+HI-TECH Software PIC18 LITE Macro Assembler V9.80 build 11162 
+                                                                                               Sat Mar 13 21:13:14 2021
+
+HI-TECH Software Omniscient Code Generator (Lite mode) build 11162
+     1  0000                     opt subtitle "HI-TECH Software Omniscient Code Generator (Lite mode) build 11162"
+     2                           
+     3                           opt pagewidth 120
+     4                           
+     5                           	opt lm
+     6                           
+     7                           	processor	18F4520
+     8  0000                     porta	equ	0F80h
+     9  0000                     portb	equ	0F81h
+    10  0000                     portc	equ	0F82h
+    11  0000                     portd	equ	0F83h
+    12  0000                     porte	equ	0F84h
+    13  0000                     lata	equ	0F89h
+    14  0000                     latb	equ	0F8Ah
+    15  0000                     latc	equ	0F8Bh
+    16  0000                     latd	equ	0F8Ch
+    17  0000                     late	equ	0F8Dh
+    18  0000                     trisa	equ	0F92h
+    19  0000                     trisb	equ	0F93h
+    20  0000                     trisc	equ	0F94h
+    21  0000                     trisd	equ	0F95h
+    22  0000                     trise	equ	0F96h
+    23  0000                     pie1	equ	0F9Dh
+    24  0000                     pir1	equ	0F9Eh
+    25  0000                     ipr1	equ	0F9Fh
+    26  0000                     pie2	equ	0FA0h
+    27  0000                     pir2	equ	0FA1h
+    28  0000                     ipr2	equ	0FA2h
+    29  0000                     t3con	equ	0FB1h
+    30  0000                     tmr3l	equ	0FB2h
+    31  0000                     tmr3h	equ	0FB3h
+    32  0000                     ccp1con	equ	0FBDh
+    33  0000                     ccpr1l	equ	0FBEh
+    34  0000                     ccpr1h	equ	0FBFh
+    35  0000                     adcon1	equ	0FC1h
+    36  0000                     adcon0	equ	0FC2h
+    37  0000                     adresl	equ	0FC3h
+    38  0000                     adresh	equ	0FC4h
+    39  0000                     sspcon2	equ	0FC5h
+    40  0000                     sspcon1	equ	0FC6h
+    41  0000                     sspstat	equ	0FC7h
+    42  0000                     sspadd	equ	0FC8h
+    43  0000                     sspbuf	equ	0FC9h
+    44  0000                     t2con	equ	0FCAh
+    45  0000                     pr2	equ	0FCBh
+    46  0000                     tmr2	equ	0FCCh
+    47  0000                     t1con	equ	0FCDh
+    48  0000                     tmr1l	equ	0FCEh
+    49  0000                     tmr1h	equ	0FCFh
+    50  0000                     rcon	equ	0FD0h
+    51  0000                     wdtcon	equ	0FD1h
+    52  0000                     lvdcon	equ	0FD2h
+    53  0000                     osccon	equ	0FD3h
+    54  0000                     t0con	equ	0FD5h
+    55  0000                     tmr0l	equ	0FD6h
+    56  0000                     tmr0h	equ	0FD7h
+    57  0000                     status	equ	0FD8h
+    58  0000                     fsr2	equ	0FD9h
+    59  0000                     fsr2l	equ	0FD9h
+    60  0000                     fsr2h	equ	0FDAh
+    61  0000                     plusw2	equ	0FDBh
+    62  0000                     preinc2	equ	0FDCh
+    63  0000                     postdec2	equ	0FDDh
+    64  0000                     postinc2	equ	0FDEh
+    65  0000                     indf2	equ	0FDFh
+    66  0000                     bsr	equ	0FE0h
+    67  0000                     fsr1	equ	0FE1h
+    68  0000                     fsr1l	equ	0FE1h
+    69  0000                     fsr1h	equ	0FE2h
+    70  0000                     plusw1	equ	0FE3h
+    71  0000                     preinc1	equ	0FE4h
+    72  0000                     postdec1	equ	0FE5h
+    73  0000                     postinc1	equ	0FE6h
+    74  0000                     indf1	equ	0FE7h
+    75  0000                     wreg	equ	0FE8h
+    76  0000                     fsr0	equ	0FE9h
+    77  0000                     fsr0l	equ	0FE9h
+    78  0000                     fsr0h	equ	0FEAh
+    79  0000                     plusw0	equ	0FEBh
+    80  0000                     preinc0	equ	0FECh
+    81  0000                     postdec0	equ	0FEDh
+    82  0000                     postinc0	equ	0FEEh
+    83  0000                     indf0	equ	0FEFh
+    84  0000                     intcon3	equ	0FF0h
+    85  0000                     intcon2	equ	0FF1h
+    86  0000                     intcon	equ	0FF2h
+    87  0000                     prod	equ	0FF3h
+    88  0000                     prodl	equ	0FF3h
+    89  0000                     prodh	equ	0FF4h
+    90  0000                     tablat	equ	0FF5h
+    91  0000                     tblptr	equ	0FF6h
+    92  0000                     tblptrl	equ	0FF6h
+    93  0000                     tblptrh	equ	0FF7h
+    94  0000                     tblptru	equ	0FF8h
+    95  0000                     pcl	equ	0FF9h
+    96  0000                     pclat	equ	0FFAh
+    97  0000                     pclath	equ	0FFAh
+    98  0000                     pclatu	equ	0FFBh
+    99  0000                     stkptr	equ	0FFCh
+   100  0000                     tosl	equ	0FFDh
+   101  0000                     tosh	equ	0FFEh
+   102  0000                     tosu	equ	0FFFh
+   103                           skipnz macro
+   104                           	btfsc	status,2
+   105  0000                     	endm
+   106                           	global	__ramtop
+   107                           	global	__accesstop
+   108                           # 19 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   109  0000                     PORTA equ 0F80h ;# 
+   110                           # 90 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   111  0000                     PORTB equ 0F81h ;# 
+   112                           # 139 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   113  0000                     PORTC equ 0F82h ;# 
+   114                           # 194 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   115  0000                     PORTD equ 0F83h ;# 
+   116                           # 236 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   117  0000                     PORTE equ 0F84h ;# 
+   118                           # 365 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   119  0000                     LATA equ 0F89h ;# 
+   120                           # 418 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   121  0000                     LATB equ 0F8Ah ;# 
+   122                           # 471 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   123  0000                     LATC equ 0F8Bh ;# 
+   124                           # 524 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   125  0000                     LATD equ 0F8Ch ;# 
+   126                           # 577 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   127  0000                     LATE equ 0F8Dh ;# 
+   128                           # 625 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   129  0000                     TRISA equ 0F92h ;# 
+   130                           # 630 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   131  0000                     DDRA equ 0F92h ;# 
+   132                           # 688 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   133  0000                     TRISB equ 0F93h ;# 
+   134                           # 693 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   135  0000                     DDRB equ 0F93h ;# 
+   136                           # 751 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   137  0000                     TRISC equ 0F94h ;# 
+   138                           # 756 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   139  0000                     DDRC equ 0F94h ;# 
+   140                           # 814 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   141  0000                     TRISD equ 0F95h ;# 
+   142                           # 819 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   143  0000                     DDRD equ 0F95h ;# 
+   144                           # 877 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   145  0000                     TRISE equ 0F96h ;# 
+   146                           # 882 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   147  0000                     DDRE equ 0F96h ;# 
+   148                           # 932 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   149  0000                     OSCTUNE equ 0F9Bh ;# 
+   150                           # 954 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   151  0000                     PIE1 equ 0F9Dh ;# 
+   152                           # 981 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   153  0000                     PIR1 equ 0F9Eh ;# 
+   154                           # 1017 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   155  0000                     IPR1 equ 0F9Fh ;# 
+   156                           # 1044 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   157  0000                     PIE2 equ 0FA0h ;# 
+   158                           # 1067 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   159  0000                     PIR2 equ 0FA1h ;# 
+   160                           # 1090 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   161  0000                     IPR2 equ 0FA2h ;# 
+   162                           # 1113 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   163  0000                     EECON1 equ 0FA6h ;# 
+   164                           # 1136 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   165  0000                     EECON2 equ 0FA7h ;# 
+   166                           # 1148 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   167  0000                     EEDATA equ 0FA8h ;# 
+   168                           # 1160 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   169  0000                     EEADR equ 0FA9h ;# 
+   170                           # 1172 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   171  0000                     RCSTA equ 0FABh ;# 
+   172                           # 1177 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   173  0000                     RCSTA1 equ 0FABh ;# 
+   174                           # 1225 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   175  0000                     TXSTA equ 0FACh ;# 
+   176                           # 1230 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   177  0000                     TXSTA1 equ 0FACh ;# 
+   178                           # 1324 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   179  0000                     TXREG equ 0FADh ;# 
+   180                           # 1329 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   181  0000                     TXREG1 equ 0FADh ;# 
+   182                           # 1347 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   183  0000                     RCREG equ 0FAEh ;# 
+   184                           # 1352 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   185  0000                     RCREG1 equ 0FAEh ;# 
+   186                           # 1370 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   187  0000                     SPBRG equ 0FAFh ;# 
+   188                           # 1375 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   189  0000                     SPBRG1 equ 0FAFh ;# 
+   190                           # 1393 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   191  0000                     SPBRGH equ 0FB0h ;# 
+   192                           # 1405 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   193  0000                     T3CON equ 0FB1h ;# 
+   194                           # 1446 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   195  0000                     TMR3 equ 0FB2h ;# 
+   196                           # 1458 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   197  0000                     TMR3L equ 0FB2h ;# 
+   198                           # 1470 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   199  0000                     TMR3H equ 0FB3h ;# 
+   200                           # 1482 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   201  0000                     CMCON equ 0FB4h ;# 
+   202                           # 1515 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   203  0000                     CVRCON equ 0FB5h ;# 
+   204                           # 1541 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   205  0000                     ECCP1AS equ 0FB6h ;# 
+   206                           # 1546 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   207  0000                     ECCPAS equ 0FB6h ;# 
+   208                           # 1588 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   209  0000                     PWM1CON equ 0FB7h ;# 
+   210                           # 1593 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   211  0000                     ECCP1DEL equ 0FB7h ;# 
+   212                           # 1631 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   213  0000                     BAUDCON equ 0FB8h ;# 
+   214                           # 1636 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   215  0000                     BAUDCTL equ 0FB8h ;# 
+   216                           # 1696 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   217  0000                     CCP2CON equ 0FBAh ;# 
+   218                           # 1722 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   219  0000                     CCPR2 equ 0FBBh ;# 
+   220                           # 1734 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   221  0000                     CCPR2L equ 0FBBh ;# 
+   222                           # 1746 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   223  0000                     CCPR2H equ 0FBCh ;# 
+   224                           # 1758 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   225  0000                     CCP1CON equ 0FBDh ;# 
+   226                           # 1787 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   227  0000                     CCPR1 equ 0FBEh ;# 
+   228                           # 1799 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   229  0000                     CCPR1L equ 0FBEh ;# 
+   230                           # 1811 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   231  0000                     CCPR1H equ 0FBFh ;# 
+   232                           # 1823 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   233  0000                     ADCON2 equ 0FC0h ;# 
+   234                           # 1846 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   235  0000                     ADCON1 equ 0FC1h ;# 
+   236                           # 1879 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   237  0000                     ADCON0 equ 0FC2h ;# 
+   238                           # 1934 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   239  0000                     ADRES equ 0FC3h ;# 
+   240                           # 1946 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   241  0000                     ADRESL equ 0FC3h ;# 
+   242                           # 1958 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   243  0000                     ADRESH equ 0FC4h ;# 
+   244                           # 1970 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   245  0000                     SSPCON2 equ 0FC5h ;# 
+   246                           # 1997 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   247  0000                     SSPCON1 equ 0FC6h ;# 
+   248                           # 2019 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   249  0000                     SSPSTAT equ 0FC7h ;# 
+   250                           # 2126 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   251  0000                     SSPADD equ 0FC8h ;# 
+   252                           # 2138 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   253  0000                     SSPBUF equ 0FC9h ;# 
+   254                           # 2150 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   255  0000                     T2CON equ 0FCAh ;# 
+   256                           # 2180 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   257  0000                     PR2 equ 0FCBh ;# 
+   258                           # 2185 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   259  0000                     MEMCON equ 0FCBh ;# 
+   260                           # 2203 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   261  0000                     TMR2 equ 0FCCh ;# 
+   262                           # 2215 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   263  0000                     T1CON equ 0FCDh ;# 
+   264                           # 2252 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   265  0000                     TMR1 equ 0FCEh ;# 
+   266                           # 2264 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   267  0000                     TMR1L equ 0FCEh ;# 
+   268                           # 2276 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   269  0000                     TMR1H equ 0FCFh ;# 
+   270                           # 2288 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   271  0000                     RCON equ 0FD0h ;# 
+   272                           # 2333 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   273  0000                     WDTCON equ 0FD1h ;# 
+   274                           # 2348 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   275  0000                     HLVDCON equ 0FD2h ;# 
+   276                           # 2353 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   277  0000                     LVDCON equ 0FD2h ;# 
+   278                           # 2423 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   279  0000                     OSCCON equ 0FD3h ;# 
+   280                           # 2448 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   281  0000                     T0CON equ 0FD5h ;# 
+   282                           # 2473 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   283  0000                     TMR0 equ 0FD6h ;# 
+   284                           # 2485 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   285  0000                     TMR0L equ 0FD6h ;# 
+   286                           # 2497 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   287  0000                     TMR0H equ 0FD7h ;# 
+   288                           # 2509 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   289  0000                     STATUS equ 0FD8h ;# 
+   290                           # 2540 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   291  0000                     FSR2 equ 0FD9h ;# 
+   292                           # 2552 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   293  0000                     FSR2L equ 0FD9h ;# 
+   294                           # 2564 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   295  0000                     FSR2H equ 0FDAh ;# 
+   296                           # 2576 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   297  0000                     PLUSW2 equ 0FDBh ;# 
+   298                           # 2588 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   299  0000                     PREINC2 equ 0FDCh ;# 
+   300                           # 2600 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   301  0000                     POSTDEC2 equ 0FDDh ;# 
+   302                           # 2612 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   303  0000                     POSTINC2 equ 0FDEh ;# 
+   304                           # 2624 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   305  0000                     INDF2 equ 0FDFh ;# 
+   306                           # 2636 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   307  0000                     BSR equ 0FE0h ;# 
+   308                           # 2648 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   309  0000                     FSR1 equ 0FE1h ;# 
+   310                           # 2660 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   311  0000                     FSR1L equ 0FE1h ;# 
+   312                           # 2672 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   313  0000                     FSR1H equ 0FE2h ;# 
+   314                           # 2684 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   315  0000                     PLUSW1 equ 0FE3h ;# 
+   316                           # 2696 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   317  0000                     PREINC1 equ 0FE4h ;# 
+   318                           # 2708 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   319  0000                     POSTDEC1 equ 0FE5h ;# 
+   320                           # 2720 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   321  0000                     POSTINC1 equ 0FE6h ;# 
+   322                           # 2732 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   323  0000                     INDF1 equ 0FE7h ;# 
+   324                           # 2744 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   325  0000                     WREG equ 0FE8h ;# 
+   326                           # 2767 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   327  0000                     FSR0 equ 0FE9h ;# 
+   328                           # 2779 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   329  0000                     FSR0L equ 0FE9h ;# 
+   330                           # 2791 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   331  0000                     FSR0H equ 0FEAh ;# 
+   332                           # 2803 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   333  0000                     PLUSW0 equ 0FEBh ;# 
+   334                           # 2815 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   335  0000                     PREINC0 equ 0FECh ;# 
+   336                           # 2827 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   337  0000                     POSTDEC0 equ 0FEDh ;# 
+   338                           # 2839 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   339  0000                     POSTINC0 equ 0FEEh ;# 
+   340                           # 2851 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   341  0000                     INDF0 equ 0FEFh ;# 
+   342                           # 2863 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   343  0000                     INTCON3 equ 0FF0h ;# 
+   344                           # 2892 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   345  0000                     INTCON2 equ 0FF1h ;# 
+   346                           # 2919 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   347  0000                     INTCON equ 0FF2h ;# 
+   348                           # 2983 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   349  0000                     PROD equ 0FF3h ;# 
+   350                           # 2995 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   351  0000                     PRODL equ 0FF3h ;# 
+   352                           # 3007 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   353  0000                     PRODH equ 0FF4h ;# 
+   354                           # 3019 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   355  0000                     TABLAT equ 0FF5h ;# 
+   356                           # 3031 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   357  0000                     TBLPTR equ 0FF6h ;# 
+   358                           # 3044 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   359  0000                     TBLPTRL equ 0FF6h ;# 
+   360                           # 3056 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   361  0000                     TBLPTRH equ 0FF7h ;# 
+   362                           # 3068 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   363  0000                     TBLPTRU equ 0FF8h ;# 
+   364                           # 3081 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   365  0000                     PCLAT equ 0FF9h ;# 
+   366                           # 3086 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   367  0000                     PC equ 0FF9h ;# 
+   368                           # 3104 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   369  0000                     PCL equ 0FF9h ;# 
+   370                           # 3116 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   371  0000                     PCLATH equ 0FFAh ;# 
+   372                           # 3128 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   373  0000                     PCLATU equ 0FFBh ;# 
+   374                           # 3140 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   375  0000                     STKPTR equ 0FFCh ;# 
+   376                           # 3164 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   377  0000                     TOS equ 0FFDh ;# 
+   378                           # 3176 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   379  0000                     TOSL equ 0FFDh ;# 
+   380                           # 3188 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   381  0000                     TOSH equ 0FFEh ;# 
+   382                           # 3200 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
+   383  0000                     TOSU equ 0FFFh ;# 
+   384                           	FNROOT	_main
+   385                           	FNCALL	intlevel2,_chk_isr
+   386                           	global	intlevel2
+   387                           	FNROOT	intlevel2
+   388                           	global	chk_isr@F4450
+   389                           psect	idataCOMRAM,class=CODE,space=0,delta=1
+   390                           global __pidataCOMRAM
+   391  000124                     __pidataCOMRAM:
+   392                           	file	"C:\Users\imaum\Documents\serial\serial1.c"
+   393                           	line	18
+   394                           
+   395                           ;initializer for chk_isr@F4450
+   396  000124  47                 	db	low(047h)
+   397  000125  4F                 	db	low(04Fh)
+   398  000126  4F                 	db	low(04Fh)
+   399  000127  44                 	db	low(044h)
+   400  000128  4D                 	db	low(04Dh)
+   401  000129  4F                 	db	low(04Fh)
+   402  00012A  52                 	db	low(052h)
+   403  00012B  4E                 	db	low(04Eh)
+   404  00012C  49                 	db	low(049h)
+   405  00012D  4E                 	db	low(04Eh)
+   406  00012E  47                 	db	low(047h)
+   407                           	global	_PORTB
+   408  0000                     _PORTB	set	0xF81
+   409                           	global	_PORTD
+   410  0000                     _PORTD	set	0xF83
+   411                           	global	_SPBRG
+   412  0000                     _SPBRG	set	0xFAF
+   413                           	global	_TRISB
+   414  0000                     _TRISB	set	0xF93
+   415                           	global	_TRISD
+   416  0000                     _TRISD	set	0xF95
+   417                           	global	_TXREG
+   418  0000                     _TXREG	set	0xFAD
+   419                           	global	_TXSTA
+   420  0000                     _TXSTA	set	0xFAC
+   421                           	global	_GIE
+   422  0000                     _GIE	set	0x7F97
+   423                           	global	_PEIE
+   424  0000                     _PEIE	set	0x7F96
+   425                           	global	_SPEN
+   426  0000                     _SPEN	set	0x7D5F
+   427                           	global	_TRISC6
+   428  0000                     _TRISC6	set	0x7CA6
+   429                           	global	_TXIE
+   430  0000                     _TXIE	set	0x7CEC
+   431                           	global	_TXIF
+   432  0000                     _TXIF	set	0x7CF4
+   433                           ; #config settings
+   434                           	file	"serial.as"
+   435                           	line	#
+   436                           psect	cinit,class=CODE,delta=1,reloc=2
+   437                           global __pcinit
+   438  0000D8                     __pcinit:
+   439                           global start_initialization
+   440  0000D8                     start_initialization:
+   441                           
+   442                           psect	dataCOMRAM,class=COMRAM,space=1
+   443                           global __pdataCOMRAM
+   444  00001C                     __pdataCOMRAM:
+   445                           	file	"C:\Users\imaum\Documents\serial\serial1.c"
+   446  00001C                     chk_isr@F4450:
+   447  00001C                            ds      11
+   448                           psect	cinit
+   449                           ; Initialize objects allocated to COMRAM (11 bytes)
+   450                           	global __pidataCOMRAM
+   451                           	; load TBLPTR registers with __pidataCOMRAM
+   452  0000D8  0E24               	movlw	low (__pidataCOMRAM)
+   453  0000DA  6EF6               	movwf	tblptrl
+   454  0000DC  0E01               	movlw	high(__pidataCOMRAM)
+   455  0000DE  6EF7               	movwf	tblptrh
+   456  0000E0  0E00               	movlw	low highword(__pidataCOMRAM)
+   457  0000E2  6EF8               	movwf	tblptru
+   458  0000E4  EE00  F01C         	lfsr	0,__pdataCOMRAM
+   459  0000E8  EE10 F00B          	lfsr	1,11
+   460  0000EC                     	copy_data0:
+   461  0000EC  0009               	tblrd	*+
+   462  0000EE  CFF5 FFEE          	movff	tablat, postinc0
+   463  0000F2  50E5               	movf	postdec1,w
+   464  0000F4  50E1               	movf	fsr1l,w
+   465  0000F6  E1FA               	bnz	copy_data0
+   466                           psect cinit,class=CODE,delta=1
+   467                           global end_of_initialization
+   468                           
+   469                           ;End of C runtime variable initialization code
+   470                           
+   471  0000F8                     end_of_initialization:
+   472  0000F8  0100               movlb 0
+   473  0000FA  EF7F  F000         goto _main	;jump to C main() function
+   474                           psect	cstackCOMRAM,class=COMRAM,space=1
+   475                           global __pcstackCOMRAM
+   476  000001                     __pcstackCOMRAM:
+   477                           	global	??_chk_isr
+   478  000001                     ??_chk_isr:	; 0 bytes @ 0x0
+   479                           	global	?_main
+   480  000001                     ?_main:	; 2 bytes @ 0x0
+   481                           	global	?_chk_isr
+   482  000001                     ?_chk_isr:	; 2 bytes @ 0x0
+   483  000001                     	ds   15
+   484                           	global	chk_isr@msg
+   485  000010                     chk_isr@msg:	; 11 bytes @ 0xF
+   486  000010                     	ds   11
+   487                           	global	chk_isr@i
+   488  00001B                     chk_isr@i:	; 1 bytes @ 0x1A
+   489  00001B                     	ds   1
+   490                           	global	??_main
+   491  00001C                     ??_main:	; 0 bytes @ 0x1B
+   492                           ;!
+   493                           ;!Data Sizes:
+   494                           ;!    Strings     0
+   495                           ;!    Constant    0
+   496                           ;!    Data        11
+   497                           ;!    BSS         0
+   498                           ;!    Persistent  0
+   499                           ;!    Stack       0
+   500                           ;!
+   501                           ;!Auto Spaces:
+   502                           ;!    Space          Size  Autos    Used
+   503                           ;!    COMRAM          127     27      38
+   504                           ;!    BANK0           128      0       0
+   505                           ;!    BANK1           256      0       0
+   506                           ;!    BANK2           256      0       0
+   507                           ;!    BANK3           256      0       0
+   508                           ;!    BANK4           256      0       0
+   509                           ;!    BANK5           256      0       0
+   510                           
+   511                           ;!
+   512                           ;!Pointer List with Targets:
+   513                           ;!
+   514                           ;!    None.
+   515                           
+   516                           
+   517                           ;!
+   518                           ;!Critical Paths under _main in COMRAM
+   519                           ;!
+   520                           ;!    None.
+   521                           ;!
+   522                           ;!Critical Paths under _chk_isr in COMRAM
+   523                           ;!
+   524                           ;!    None.
+   525                           ;!
+   526                           ;!Critical Paths under _main in BANK0
+   527                           ;!
+   528                           ;!    None.
+   529                           ;!
+   530                           ;!Critical Paths under _chk_isr in BANK0
+   531                           ;!
+   532                           ;!    None.
+   533                           ;!
+   534                           ;!Critical Paths under _main in BANK1
+   535                           ;!
+   536                           ;!    None.
+   537                           ;!
+   538                           ;!Critical Paths under _chk_isr in BANK1
+   539                           ;!
+   540                           ;!    None.
+   541                           ;!
+   542                           ;!Critical Paths under _main in BANK2
+   543                           ;!
+   544                           ;!    None.
+   545                           ;!
+   546                           ;!Critical Paths under _chk_isr in BANK2
+   547                           ;!
+   548                           ;!    None.
+   549                           ;!
+   550                           ;!Critical Paths under _main in BANK3
+   551                           ;!
+   552                           ;!    None.
+   553                           ;!
+   554                           ;!Critical Paths under _chk_isr in BANK3
+   555                           ;!
+   556                           ;!    None.
+   557                           ;!
+   558                           ;!Critical Paths under _main in BANK4
+   559                           ;!
+   560                           ;!    None.
+   561                           ;!
+   562                           ;!Critical Paths under _chk_isr in BANK4
+   563                           ;!
+   564                           ;!    None.
+   565                           ;!
+   566                           ;!Critical Paths under _main in BANK5
+   567                           ;!
+   568                           ;!    None.
+   569                           ;!
+   570                           ;!Critical Paths under _chk_isr in BANK5
+   571                           ;!
+   572                           ;!    None.
+   573                           
+   574 ;;
+   575 ;;Main: autosize = 0, tempsize = 0, incstack = 0, save=0
+   576 ;;
+   577                           
+   578                           ;!
+   579                           ;!Call Graph Tables:
+   580                           ;!
+   581                           ;! ---------------------------------------------------------------------------------
+   582                           ;! (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
+   583                           ;! ---------------------------------------------------------------------------------
+   584                           ;! (0) _main                                                 0     0      0       0
+   585                           ;! ---------------------------------------------------------------------------------
+   586                           ;! Estimated maximum stack depth 0
+   587                           ;! ---------------------------------------------------------------------------------
+   588                           ;! (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
+   589                           ;! ---------------------------------------------------------------------------------
+   590                           ;! (1) _chk_isr                                             27    27      0      45
+   591                           ;!                                              0 COMRAM    27    27      0
+   592                           ;! ---------------------------------------------------------------------------------
+   593                           ;! Estimated maximum stack depth 1
+   594                           ;! ---------------------------------------------------------------------------------
+   595                           ;!
+   596                           ;! Call Graph Graphs:
+   597                           ;!
+   598                           ;! _main (ROOT)
+   599                           ;!
+   600                           ;! _chk_isr (ROOT)
+   601                           ;!
+   602                           
+   603                           ;! Address spaces:
+   604                           
+   605                           ;!Name               Size   Autos  Total    Cost      Usage
+   606                           ;!BIGRAM             5FF      0       0      17        0.0%
+   607                           ;!EEDATA             100      0       0       0        0.0%
+   608                           ;!BITBANK5           100      0       0      16        0.0%
+   609                           ;!BANK5              100      0       0      14        0.0%
+   610                           ;!BITBANK4           100      0       0      12        0.0%
+   611                           ;!BANK4              100      0       0      13        0.0%
+   612                           ;!BITBANK3           100      0       0      10        0.0%
+   613                           ;!BANK3              100      0       0      11        0.0%
+   614                           ;!BITBANK2           100      0       0       8        0.0%
+   615                           ;!BANK2              100      0       0       9        0.0%
+   616                           ;!BITBANK1           100      0       0       6        0.0%
+   617                           ;!BANK1              100      0       0       7        0.0%
+   618                           ;!BITBANK0            80      0       0       4        0.0%
+   619                           ;!BANK0               80      0       0       5        0.0%
+   620                           ;!BITCOMRAM           7F      0       0       0        0.0%
+   621                           ;!COMRAM              7F     1B      26       1       29.9%
+   622                           ;!BITSFR               0      0       0      40        0.0%
+   623                           ;!SFR                  0      0       0      40        0.0%
+   624                           ;!STACK                0      0       0       2        0.0%
+   625                           ;!NULL                 0      0       0       0        0.0%
+   626                           ;!ABS                  0      0      26      15        0.0%
+   627                           ;!DATA                 0      0      26       3        0.0%
+   628                           ;!CODE                 0      0       0       0        0.0%
+   629                           
+   630                           	global	_main
+   631                           
+   632 ;; *************** function _main *****************
+   633 ;; Defined at:
+   634 ;;		line 2 in file "C:\Users\imaum\Documents\serial\serial1.c"
+   635 ;; Parameters:    Size  Location     Type
+   636 ;;		None
+   637 ;; Auto vars:     Size  Location     Type
+   638 ;;		None
+   639 ;; Return value:  Size  Location     Type
+   640 ;;                  2   28[COMRAM] int 
+   641 ;; Registers used:
+   642 ;;		wreg, status,2
+   643 ;; Tracked objects:
+   644 ;;		On entry : 0/0
+   645 ;;		On exit  : 0/0
+   646 ;;		Unchanged: 0/0
+   647 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+   648 ;;      Params:         0       0       0       0       0       0       0
+   649 ;;      Locals:         0       0       0       0       0       0       0
+   650 ;;      Temps:          0       0       0       0       0       0       0
+   651 ;;      Totals:         0       0       0       0       0       0       0
+   652 ;;Total ram usage:        0 bytes
+   653 ;; Hardware stack levels required when called:    1
+   654 ;; This function calls:
+   655 ;;		Nothing
+   656 ;; This function is called by:
+   657 ;;		Startup code after reset
+   658 ;; This function uses a non-reentrant model
+   659 ;;
+   660                           psect	text0,class=CODE,space=0,reloc=2
+   661                           global __ptext0
+   662  0000FE                     __ptext0:
+   663                           psect	text0
+   664                           	file	"C:\Users\imaum\Documents\serial\serial1.c"
+   665                           	line	2
+   666                           	global	__size_of_main
+   667  0000                     	__size_of_main	equ	__end_of_main-_main
+   668                           	
+   669  0000FE                     _main:
+   670                           	opt	stack 30
+   671                           	line	3
+   672                           	
+   673  0000FE                     l619:
+   674                           ;serial1.c: 3: TRISB=0xFF;
+   675  0000FE  6893               	setf	((c:3987)),c	;volatile
+   676                           	line	4
+   677                           	
+   678  000100                     l621:
+   679                           ;serial1.c: 4: TRISD=0;
+   680  000100  0E00               	movlw	low(0)
+   681  000102  6E95               	movwf	((c:3989)),c	;volatile
+   682                           	line	5
+   683                           	
+   684  000104                     l623:
+   685                           ;serial1.c: 5: GIE=1;
+   686  000104  8EF2               	bsf	c:(32663/8),(32663)&7	;volatile
+   687                           	line	6
+   688                           	
+   689  000106                     l625:
+   690                           ;serial1.c: 6: PEIE=1;
+   691  000106  8CF2               	bsf	c:(32662/8),(32662)&7	;volatile
+   692                           	line	7
+   693                           	
+   694  000108                     l627:
+   695                           ;serial1.c: 7: TXIE=1;
+   696  000108  889D               	bsf	c:(31980/8),(31980)&7	;volatile
+   697                           	line	8
+   698                           ;serial1.c: 8: TXSTA=0x20;
+   699  00010A  0E20               	movlw	low(020h)
+   700  00010C  6EAC               	movwf	((c:4012)),c	;volatile
+   701                           	line	9
+   702                           	
+   703  00010E                     l629:
+   704                           ;serial1.c: 9: TRISC6=0;
+   705  00010E  9C94               	bcf	c:(31910/8),(31910)&7	;volatile
+   706                           	line	10
+   707                           ;serial1.c: 10: SPBRG=15;
+   708  000110  0E0F               	movlw	low(0Fh)
+   709  000112  6EAF               	movwf	((c:4015)),c	;volatile
+   710                           	line	11
+   711                           	
+   712  000114                     l631:
+   713                           ;serial1.c: 11: SPEN=1;
+   714  000114  8EAB               	bsf	c:(32095/8),(32095)&7	;volatile
+   715  000116  D000               	goto	l633
+   716                           	line	12
+   717                           ;serial1.c: 12: while(1){
+   718                           	
+   719  000118                     l29:
+   720                           	line	13
+   721                           	
+   722  000118                     l633:
+   723                           ;serial1.c: 13: PORTD=PORTB;
+   724  000118  CF81 FF83          	movff	(c:3969),(c:3971)	;volatile
+   725  00011C  D7FD               	goto	l633
+   726                           	line	14
+   727                           	
+   728  00011E                     l30:
+   729                           	line	12
+   730  00011E  D7FC               	goto	l633
+   731                           	
+   732  000120                     l31:
+   733                           	line	15
+   734                           	
+   735  000120                     l32:
+   736                           	global	start
+   737  000120  EF0C  F000         	goto	start
+   738                           	opt stack 0
+   739                           GLOBAL	__end_of_main
+   740  000124                     	__end_of_main:
+   741                           	signat	_main,90
+   742                           	global	_chk_isr
+   743                           
+   744 ;; *************** function _chk_isr *****************
+   745 ;; Defined at:
+   746 ;;		line 16 in file "C:\Users\imaum\Documents\serial\serial1.c"
+   747 ;; Parameters:    Size  Location     Type
+   748 ;;		None
+   749 ;; Auto vars:     Size  Location     Type
+   750 ;;  msg            11   15[COMRAM] unsigned char [11]
+   751 ;;  i               1   26[COMRAM] unsigned char 
+   752 ;; Return value:  Size  Location     Type
+   753 ;;                  2   34[COMRAM] int 
+   754 ;; Registers used:
+   755 ;;		wreg, fsr1l, fsr1h, fsr2l, fsr2h, status,2, status,0, prodl, prodh
+   756 ;; Tracked objects:
+   757 ;;		On entry : 0/0
+   758 ;;		On exit  : 0/0
+   759 ;;		Unchanged: 0/0
+   760 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
+   761 ;;      Params:         0       0       0       0       0       0       0
+   762 ;;      Locals:        12       0       0       0       0       0       0
+   763 ;;      Temps:         15       0       0       0       0       0       0
+   764 ;;      Totals:        27       0       0       0       0       0       0
+   765 ;;Total ram usage:       27 bytes
+   766 ;; Hardware stack levels used:    1
+   767 ;; This function calls:
+   768 ;;		Nothing
+   769 ;; This function is called by:
+   770 ;;		Interrupt level 2
+   771 ;; This function uses a non-reentrant model
+   772 ;;
+   773                           psect	intcode,class=CODE,space=0,reloc=2
+   774                           global __pintcode
+   775  000008                     __pintcode:
+   776                           psect	intcode
+   777                           	file	"C:\Users\imaum\Documents\serial\serial1.c"
+   778                           	line	16
+   779                           	global	__size_of_chk_isr
+   780  0000                     	__size_of_chk_isr	equ	__end_of_chk_isr-_chk_isr
+   781                           	
+   782  000008                     _chk_isr:
+   783                           	opt	stack 30
+   784  000008  CFFA F002          	movff	pclat+0,??_chk_isr+1
+   785  00000C  CFFB F003          	movff	pclat+1,??_chk_isr+2
+   786  000010  CFE9 F004          	movff	fsr0l+0,??_chk_isr+3
+   787                           	global	int_func
+   788  000014  ED0E  F000         	call	int_func,f	;refresh shadow registers
+   789                           psect	intcode_body,class=CODE,space=0,reloc=2
+   790                           global __pintcode_body
+   791  00001C                     __pintcode_body:
+   792  00001C                     int_func:
+   793                           
+   794  00001C  0006               	pop	; remove dummy address from shadow register refresh
+   795  00001E  CFEA F005          	movff	fsr0h+0,??_chk_isr+4
+   796  000022  CFE1 F006          	movff	fsr1l+0,??_chk_isr+5
+   797  000026  CFE2 F007          	movff	fsr1h+0,??_chk_isr+6
+   798  00002A  CFD9 F008          	movff	fsr2l+0,??_chk_isr+7
+   799  00002E  CFDA F009          	movff	fsr2h+0,??_chk_isr+8
+   800  000032  CFF3 F00A          	movff	prodl+0,??_chk_isr+9
+   801  000036  CFF4 F00B          	movff	prodh+0,??_chk_isr+10
+   802  00003A  CFF6 F00C          	movff	tblptrl+0,??_chk_isr+11
+   803  00003E  CFF7 F00D          	movff	tblptrh+0,??_chk_isr+12
+   804  000042  CFF8 F00E          	movff	tblptru+0,??_chk_isr+13
+   805  000046  CFF5 F00F          	movff	tablat+0,??_chk_isr+14
+   806                           	line	17
+   807                           	
+   808  00004A                     i2l635:
+   809                           ;serial1.c: 17: if(TXIF==1){
+   810  00004A  A89E               	btfss	c:(31988/8),(31988)&7	;volatile
+   811  00004C  D001               	goto	i2u1_41
+   812  00004E  D001               	goto	i2u1_40
+   813  000050                     i2u1_41:
+   814  000050  D026               	goto	i2l40
+   815  000052                     i2u1_40:
+   816                           	line	18
+   817                           	
+   818  000052                     i2l637:
+   819                           ;serial1.c: 18: unsigned char msg[]={'G','O','O','D','M','O','R','N','I','N','G'};
+   820  000052  EE20  F01C         	lfsr	2,(chk_isr@F4450)
+   821  000056  EE10  F010         	lfsr	1,(chk_isr@msg)
+   822  00005A  0E0B               	movlw	11
+   823  00005C                     i2u2_41:
+   824  00005C  CFDE FFE6          	movff	postinc2,postinc1
+   825  000060  2EE8               	decfsz	wreg
+   826  000062  D7FC               	goto	i2u2_41
+   827                           	line	19
+   828                           	
+   829  000064                     i2l639:
+   830                           ;serial1.c: 19: unsigned char i=0;
+   831  000064  6E01               	movwf	(??_chk_isr+0+0)&0ffh,c
+   832  000066  0E00               	movlw	low(0)
+   833  000068  6E1B               	movwf	((c:chk_isr@i)),c
+   834  00006A  5001               	movf	(??_chk_isr+0+0)&0ffh,c,w
+   835                           	line	20
+   836                           	
+   837  00006C                     i2l641:
+   838                           ;serial1.c: 20: TXREG=msg[i];
+   839  00006C  501B               	movf	((c:chk_isr@i)),c,w
+   840  00006E  0D01               	mullw	01h
+   841  000070  0E10               	movlw	low((c:chk_isr@msg))
+   842  000072  24F3               	addwf	(prodl),c,w
+   843  000074  6ED9               	movwf	c:fsr2l
+   844  000076  6ADA               	clrf	1+c:fsr2l
+   845  000078  0E00               	movlw	high((c:chk_isr@msg))
+   846  00007A  22DA               	addwfc	1+c:fsr2l
+   847  00007C  50DF               	movf	indf2,w
+   848  00007E  6EAD               	movwf	((c:4013)),c	;volatile
+   849                           	line	21
+   850                           	
+   851  000080                     i2l643:
+   852                           ;serial1.c: 21: TXIF=0;
+   853  000080  989E               	bcf	c:(31988/8),(31988)&7	;volatile
+   854                           	line	22
+   855                           	
+   856  000082                     i2l645:
+   857                           ;serial1.c: 22: if(i==12){
+   858  000082  501B               	movf	((c:chk_isr@i)),c,w
+   859  000084  0A0C               	xorlw	12
+   860                           
+   861  000086  A4D8               	btfss	status,2
+   862  000088  D001               	goto	i2u3_41
+   863  00008A  D001               	goto	i2u3_40
+   864  00008C                     i2u3_41:
+   865  00008C  D005               	goto	i2l649
+   866  00008E                     i2u3_40:
+   867                           	line	23
+   868                           	
+   869  00008E                     i2l647:
+   870                           ;serial1.c: 23: i=0;
+   871  00008E  6E01               	movwf	(??_chk_isr+0+0)&0ffh,c
+   872  000090  0E00               	movlw	low(0)
+   873  000092  6E1B               	movwf	((c:chk_isr@i)),c
+   874  000094  5001               	movf	(??_chk_isr+0+0)&0ffh,c,w
+   875                           	line	24
+   876                           ;serial1.c: 24: }
+   877  000096  D003               	goto	i2l40
+   878                           	line	25
+   879                           	
+   880  000098                     i2l38:
+   881                           	line	26
+   882                           	
+   883  000098                     i2l649:
+   884                           ;serial1.c: 25: else{
+   885                           ;serial1.c: 26: i++;
+   886  000098  2A1B               	incf	((c:chk_isr@i)),c
+   887  00009A  D001               	goto	i2l40
+   888                           	line	27
+   889                           	
+   890  00009C                     i2l39:
+   891  00009C  D000               	goto	i2l40
+   892                           	line	28
+   893                           	
+   894  00009E                     i2l35:
+   895                           	line	29
+   896                           	
+   897  00009E                     i2l40:
+   898  00009E  C00F  FFF5         	movff	??_chk_isr+14,tablat+0
+   899  0000A2  C00E  FFF8         	movff	??_chk_isr+13,tblptru+0
+   900  0000A6  C00D  FFF7         	movff	??_chk_isr+12,tblptrh+0
+   901  0000AA  C00C  FFF6         	movff	??_chk_isr+11,tblptrl+0
+   902  0000AE  C00B  FFF4         	movff	??_chk_isr+10,prodh+0
+   903  0000B2  C00A  FFF3         	movff	??_chk_isr+9,prodl+0
+   904  0000B6  C009  FFDA         	movff	??_chk_isr+8,fsr2h+0
+   905  0000BA  C008  FFD9         	movff	??_chk_isr+7,fsr2l+0
+   906  0000BE  C007  FFE2         	movff	??_chk_isr+6,fsr1h+0
+   907  0000C2  C006  FFE1         	movff	??_chk_isr+5,fsr1l+0
+   908  0000C6  C005  FFEA         	movff	??_chk_isr+4,fsr0h+0
+   909  0000CA  C004  FFE9         	movff	??_chk_isr+3,fsr0l+0
+   910  0000CE  C003  FFFB         	movff	??_chk_isr+2,pclat+1
+   911  0000D2  C002  FFFA         	movff	??_chk_isr+1,pclat+0
+   912  0000D6  0011               	retfie f
+   913                           	opt stack 0
+   914                           GLOBAL	__end_of_chk_isr
+   915  0000D8                     	__end_of_chk_isr:
+   916                           	signat	_chk_isr,90
+   917                           	GLOBAL	__activetblptr
+   918  0000                     __activetblptr	EQU	0
+   919                           	psect	intsave_regs,class=BIGRAM,space=1
+   920                           psect	intcode_body
+   921                           	PSECT	rparam,class=COMRAM,space=1
+   922                           	GLOBAL	__Lrparam
+   923                           	FNCONF	rparam,??,?
+   924                           GLOBAL	__Lparam, __Hparam
+   925                           GLOBAL	__Lrparam, __Hrparam
+   926  0000                     __Lparam	EQU	__Lrparam
+   927  0000                     __Hparam	EQU	__Hrparam
+
+
+Data Sizes:
+    Strings     0
+    Constant    0
+    Data        11
+    BSS         0
+    Persistent  0
+    Stack       0
+
+Auto Spaces:
+    Space          Size  Autos    Used
+    COMRAM          127     27      38
+    BANK0           128      0       0
+    BANK1           256      0       0
+    BANK2           256      0       0
+    BANK3           256      0       0
+    BANK4           256      0       0
+    BANK5           256      0       0
+
+Pointer List with Targets:
+
+    None.
+
+Critical Paths under _main in COMRAM
+
+    None.
+
+Critical Paths under _chk_isr in COMRAM
+
+    None.
+
+Critical Paths under _main in BANK0
+
+    None.
+
+Critical Paths under _chk_isr in BANK0
+
+    None.
+
+Critical Paths under _main in BANK1
+
+    None.
+
+Critical Paths under _chk_isr in BANK1
+
+    None.
+
+Critical Paths under _main in BANK2
+
+    None.
+
+Critical Paths under _chk_isr in BANK2
+
+    None.
+
+Critical Paths under _main in BANK3
+
+    None.
+
+Critical Paths under _chk_isr in BANK3
+
+    None.
+
+Critical Paths under _main in BANK4
+
+    None.
+
+Critical Paths under _chk_isr in BANK4
+
+    None.
+
+Critical Paths under _main in BANK5
+
+    None.
+
+Critical Paths under _chk_isr in BANK5
+
+    None.
+
+Call Graph Tables:
+
+ ---------------------------------------------------------------------------------
+ (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
+ ---------------------------------------------------------------------------------
+ (0) _main                                                 0     0      0       0
+ ---------------------------------------------------------------------------------
+ Estimated maximum stack depth 0
+ ---------------------------------------------------------------------------------
+ (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
+ ---------------------------------------------------------------------------------
+ (1) _chk_isr                                             27    27      0      45
+                                              0 COMRAM    27    27      0
+ ---------------------------------------------------------------------------------
+ Estimated maximum stack depth 1
+ ---------------------------------------------------------------------------------
+
+ Call Graph Graphs:
+
+ _main (ROOT)
+
+ _chk_isr (ROOT)
+
+ Address spaces:
+Name               Size   Autos  Total    Cost      Usage
+BIGRAM             5FF      0       0      17        0.0%
+EEDATA             100      0       0       0        0.0%
+BITBANK5           100      0       0      16        0.0%
+BANK5              100      0       0      14        0.0%
+BITBANK4           100      0       0      12        0.0%
+BANK4              100      0       0      13        0.0%
+BITBANK3           100      0       0      10        0.0%
+BANK3              100      0       0      11        0.0%
+BITBANK2           100      0       0       8        0.0%
+BANK2              100      0       0       9        0.0%
+BITBANK1           100      0       0       6        0.0%
+BANK1              100      0       0       7        0.0%
+BITBANK0            80      0       0       4        0.0%
+BANK0               80      0       0       5        0.0%
+BITCOMRAM           7F      0       0       0        0.0%
+COMRAM              7F     1B      26       1       29.9%
+BITSFR               0      0       0      40        0.0%
+SFR                  0      0       0      40        0.0%
+STACK                0      0       0       2        0.0%
+NULL                 0      0       0       0        0.0%
+ABS                  0      0      26      15        0.0%
+DATA                 0      0      26       3        0.0%
+CODE                 0      0       0       0        0.0%
+
+
+HI-TECH Software PICC-18 Macro Assembler V9.80 build 11162 
+Symbol Table                                                                                   Sat Mar 13 21:13:14 2021
+
+                  l30 011E                    l31 0120                    l32 0120                    l29 0118  
+                 l621 0100                   l631 0114                   l623 0104                   l633 0118  
+                 l625 0106                   l627 0108                   l619 00FE                   l629 010E  
+                 _GIE 007F97                   wreg 000FE8                  _PEIE 007F96                  i2l40 009E  
+                i2l35 009E                  i2l38 0098                  i2l39 009C                  _SPEN 007D5F  
+                _TXIE 007CEC                  _TXIF 007CF4                  _main 00FE                  fsr0h 000FEA  
+                fsr1h 000FE2                  fsr0l 000FE9                  fsr2h 000FDA                  fsr1l 000FE1  
+                indf2 000FDF                  fsr2l 000FD9                  pclat 000FFA                  prodh 000FF4  
+                prodl 000FF3                  start 0018                 ?_main 0001                 i2l641 006C  
+               i2l643 0080                 i2l635 004A                 i2l645 0082                 i2l637 0052  
+               i2l647 008E                 i2l639 0064                 i2l649 0098                 _SPBRG 000FAF  
+               _PORTB 000F81                 _PORTD 000F83                 _TRISB 000F93                 _TRISD 000F95  
+               _TXREG 000FAD                 _TXSTA 000FAC       __end_of_chk_isr 00D8                 tablat 000FF5  
+               status 000FD8          __end_of_main 0124                ??_main 001C         __activetblptr 000000  
+              i2u1_40 0052                i2u1_41 0050                i2u2_41 005C                i2u3_40 008E  
+              i2u3_41 008C                _TRISC6 007CA6             ??_chk_isr 0001          __pdataCOMRAM 001C  
+              tblptrh 000FF7                tblptrl 000FF6                tblptru 000FF8            __accesstop 0080  
+      __pcstackCOMRAM 0001               __Hparam 0000               __Lparam 0000               __pcinit 00D8  
+             _chk_isr 0008               __ramtop 0600               __ptext0 00FE            chk_isr@msg 0010  
+      __pintcode_body 001C  end_of_initialization 00F8               int_func 001C               postdec1 000FE5  
+             postinc0 000FEE               postinc1 000FE6               postinc2 000FDE         __pidataCOMRAM 0124  
+ start_initialization 00D8             __pintcode 0008              ?_chk_isr 0001          chk_isr@F4450 001C  
+           copy_data0 00EC              __Hrparam 0000              __Lrparam 0000      __size_of_chk_isr 00D0  
+       __size_of_main 0026              chk_isr@i 001B              intlevel2 0000  

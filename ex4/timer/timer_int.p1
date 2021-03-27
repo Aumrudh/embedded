@@ -1,11 +1,13 @@
 Version 3.2 HI-TECH Software Intermediate Code
 [p mainexit ]
-"686 C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h
+"812 C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h
+[v _TRISD `Vuc ~T0 0 e@3989 ]
+"749
+[v _TRISC `Vuc ~T0 0 e@3988 ]
+"686
 [v _TRISB `Vuc ~T0 0 e@3987 ]
-"4313
-[v _TRISC4 `Vb ~T0 0 e@31908 ]
-"4329
-[v _TRISD4 `Vb ~T0 0 e@31916 ]
+"623
+[v _TRISA `Vuc ~T0 0 e@3986 ]
 [t ~ __deprecated__ ]
 [t T32 __deprecated__ ]
 "4025
@@ -24,10 +26,12 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _PEIE `Vb ~T0 0 e@32662 ]
 "4237
 [v _TMR1IE `Vb ~T0 0 e@31976 ]
-"88
-[v _PORTB `Vuc ~T0 0 e@3969 ]
+"192
+[v _PORTD `Vuc ~T0 0 e@3971 ]
 "3993
 [v _RC4 `Vb ~T32 0 e@31764 ]
+"3951
+[v _RA6 `Vb ~T32 0 e@31750 ]
 "4239
 [v _TMR1IF `Vb ~T0 0 e@31984 ]
 [; ;pic18f4520.h: 17: extern volatile unsigned char PORTA @ 0xF80;
@@ -4107,94 +4111,97 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;pic18.h: 186: extern void _delay(unsigned long);
 [; ;pic18.h: 188: extern void _delaywdt(unsigned long);
 [; ;pic18.h: 190: extern void _delay3(unsigned char);
-"2 C:\Users\imaum\Documents\timer\timer_int.c
+"2 D:\Aumrudh Documents\mepco\lab\sem6-Lab\embedded\even\embedded\ex4\timer\timer_int.c
 [v _main `(i ~T0 1 ef ]
 {
 [; ;timer_int.c: 2: main(){
 [e :U _main ]
 [f ]
-[; ;timer_int.c: 3: TRISB=0;
+[; ;timer_int.c: 3: TRISD=0;
 "3
-[e = _TRISB -> -> 0 `i `uc ]
-[; ;timer_int.c: 4: TRISC4=0;
+[e = _TRISD -> -> 0 `i `uc ]
+[; ;timer_int.c: 4: TRISC=0;
 "4
-[e = _TRISC4 -> -> 0 `i `b ]
-[; ;timer_int.c: 5: TRISD4=1;
+[e = _TRISC -> -> 0 `i `uc ]
+[; ;timer_int.c: 5: TRISB=255;
 "5
-[e = _TRISD4 -> -> 1 `i `b ]
-[; ;timer_int.c: 6: RD4=1;
+[e = _TRISB -> -> 255 `i `uc ]
+[; ;timer_int.c: 6: TRISA=255;
 "6
-[e = _RD4 -> -> 1 `i `b ]
-[; ;timer_int.c: 7: T1CON=0x00;
+[e = _TRISA -> -> 255 `i `uc ]
+[; ;timer_int.c: 7: RD4=1;
 "7
-[e = _T1CON -> -> 0 `i `uc ]
-[; ;timer_int.c: 8: TMR1L=0x6D;
+[e = _RD4 -> -> 1 `i `b ]
+[; ;timer_int.c: 8: T1CON=0x00;
 "8
-[e = _TMR1L -> -> 109 `i `uc ]
-[; ;timer_int.c: 9: TMR1H=0x84;
+[e = _T1CON -> -> 0 `i `uc ]
+[; ;timer_int.c: 9: TMR1L=0x6D;
 "9
-[e = _TMR1H -> -> 132 `i `uc ]
-[; ;timer_int.c: 10: TMR1ON=1;
+[e = _TMR1L -> -> 109 `i `uc ]
+[; ;timer_int.c: 10: TMR1H=0x84;
 "10
-[e = _TMR1ON -> -> 1 `i `b ]
-[; ;timer_int.c: 11: GIE=1;
+[e = _TMR1H -> -> 132 `i `uc ]
+[; ;timer_int.c: 11: TMR1ON=1;
 "11
-[e = _GIE -> -> 1 `i `b ]
-[; ;timer_int.c: 12: PEIE=1;
+[e = _TMR1ON -> -> 1 `i `b ]
+[; ;timer_int.c: 12: GIE=1;
 "12
-[e = _PEIE -> -> 1 `i `b ]
-[; ;timer_int.c: 13: TMR1IE=1;
+[e = _GIE -> -> 1 `i `b ]
+[; ;timer_int.c: 13: PEIE=1;
 "13
-[e = _TMR1IE -> -> 1 `i `b ]
-[; ;timer_int.c: 14: PORTB=0xFF;
+[e = _PEIE -> -> 1 `i `b ]
+[; ;timer_int.c: 14: TMR1IE=1;
 "14
-[e = _PORTB -> -> 255 `i `uc ]
-[; ;timer_int.c: 15: while(1){
+[e = _TMR1IE -> -> 1 `i `b ]
+[; ;timer_int.c: 15: PORTD=0xFF;
 "15
+[e = _PORTD -> -> 255 `i `uc ]
+[; ;timer_int.c: 16: while(1){
+"16
 [e :U 560 ]
 {
-[; ;timer_int.c: 16: RC4=RD4;
-"16
-[e = _RC4 _RD4 ]
+[; ;timer_int.c: 17: RC4=RA6;
 "17
+[e = _RC4 _RA6 ]
+"18
 }
 [e :U 559 ]
-"15
+"16
 [e $U 560  ]
 [e :U 561 ]
-[; ;timer_int.c: 17: }
 [; ;timer_int.c: 18: }
-"18
+[; ;timer_int.c: 19: }
+"19
 [e :UE 558 ]
 }
-"19
+"20
 [v F4448 `(i ~T0 1 tf ]
 [v _chk_isr `IF4448 ~T0 1 e ]
 {
-[; ;timer_int.c: 19: interrupt chk_isr(){
+[; ;timer_int.c: 20: interrupt chk_isr(){
 [e :U _chk_isr ]
 [f ]
-[; ;timer_int.c: 20: if(TMR1IF==1){
-"20
+[; ;timer_int.c: 21: if(TMR1IF==1){
+"21
 [e $ ! == -> _TMR1IF `i -> 1 `i 563  ]
 {
-[; ;timer_int.c: 21: PORTB=~PORTB;
-"21
-[e = _PORTB -> ~ -> _PORTB `i `uc ]
-[; ;timer_int.c: 22: TMR1L=0x6D;
+[; ;timer_int.c: 22: PORTD=~PORTD;
 "22
-[e = _TMR1L -> -> 109 `i `uc ]
-[; ;timer_int.c: 23: TMR1H=0x84;
+[e = _PORTD -> ~ -> _PORTD `i `uc ]
+[; ;timer_int.c: 23: TMR1L=0x6D;
 "23
-[e = _TMR1H -> -> 132 `i `uc ]
-[; ;timer_int.c: 24: TMR1IF=0;
+[e = _TMR1L -> -> 109 `i `uc ]
+[; ;timer_int.c: 24: TMR1H=0x84;
 "24
-[e = _TMR1IF -> -> 0 `i `b ]
+[e = _TMR1H -> -> 132 `i `uc ]
+[; ;timer_int.c: 25: TMR1IF=0;
 "25
+[e = _TMR1IF -> -> 0 `i `b ]
+"26
 }
 [e :U 563 ]
-[; ;timer_int.c: 25: }
 [; ;timer_int.c: 26: }
-"26
+[; ;timer_int.c: 27: }
+"27
 [e :UE 562 ]
 }

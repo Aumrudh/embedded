@@ -1,5 +1,5 @@
 
-# 1 "C:\Users\imaum\Documents\timer\timer_int.c"
+# 1 "D:\Aumrudh Documents\mepco\lab\sem6-Lab\embedded\even\embedded\ex4\timer\timer_int.c"
 
 # 17 "C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h"
 extern volatile unsigned char PORTA @ 0xF80;
@@ -5348,11 +5348,12 @@ extern void _delaywdt(unsigned long);
 #pragma inline(_delay3)
 extern void _delay3(unsigned char);
 
-# 2 "C:\Users\imaum\Documents\timer\timer_int.c"
+# 2 "D:\Aumrudh Documents\mepco\lab\sem6-Lab\embedded\even\embedded\ex4\timer\timer_int.c"
 main(){
-TRISB=0;
-TRISC4=0;
-TRISD4=1;
+TRISD=0;
+TRISC=0;
+TRISB=255;
+TRISA=255;
 RD4=1;
 T1CON=0x00;
 TMR1L=0x6D;
@@ -5361,14 +5362,14 @@ TMR1ON=1;
 GIE=1;
 PEIE=1;
 TMR1IE=1;
-PORTB=0xFF;
+PORTD=0xFF;
 while(1){
-RC4=RD4;
+RC4=RA6;
 }
 }
 interrupt chk_isr(){
 if(TMR1IF==1){
-PORTB=~PORTB;
+PORTD=~PORTD;
 TMR1L=0x6D;
 TMR1H=0x84;
 TMR1IF=0;

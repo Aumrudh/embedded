@@ -1,0 +1,25 @@
+#include<pic18.h>
+main(){
+	TRISA4=1;
+	TRISC4=0;
+	TRISD=0;
+	T1CON=0x00;
+	TMR1L=0x6D;
+	TMR1H=0x84;
+	TMR1ON=1;
+	GIE=1;
+	PEIE=1;
+	TMR1IE=1;
+	PORTD=0xFF;
+	while(1){
+		RC4=RA4;
+	}
+}
+interrupt chk_isr(){
+	if(TMR1IF==1){
+		PORTD=~PORTD;
+		TMR1L=0x6D;
+		TMR1H=0x84;
+		TMR1IF=0;
+	}
+}
