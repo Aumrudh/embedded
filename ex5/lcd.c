@@ -45,14 +45,17 @@ main(){
 	ready();
 	lcdcmd(0x01);
 	ready();
-
-	lcdcmd(0x8F);
+	lcdcmd(0x06);
+	ready();
+	lcdcmd(0x86);
+	ready();
+	lcdcmd(0x1C);
 	ready();
 	while(str[i]!='\0'){
 		lcddata(str[i]);
 		ready();
 		i=i+1;		
-		lcdcmd(0x07);
+		lcdcmd(0x1C);
 		ready();
 	}
 	while(1){

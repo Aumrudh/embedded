@@ -1,6 +1,6 @@
 Version 3.2 HI-TECH Software Intermediate Code
-"192 C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h
-[v _PORTD `Vuc ~T0 0 e@3971 ]
+"137 C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h
+[v _PORTC `Vuc ~T0 0 e@3970 ]
 [t ~ __deprecated__ ]
 [t T11 __deprecated__ ]
 "3955
@@ -9,13 +9,15 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _RB1 `Vb ~T11 0 e@31753 ]
 "3959
 [v _RB2 `Vb ~T11 0 e@31754 ]
-"812
-[v _TRISD `Vuc ~T0 0 e@3989 ]
-"4031
-[v _RD7 `Vb ~T11 0 e@31775 ]
+"749
+[v _TRISC `Vuc ~T0 0 e@3988 ]
+"3999
+[v _RC7 `Vb ~T11 0 e@31767 ]
 [p mainexit ]
 "686
 [v _TRISB `Vuc ~T0 0 e@3987 ]
+"812
+[v _TRISD `Vuc ~T0 0 e@3989 ]
 [; ;pic18f4520.h: 17: extern volatile unsigned char PORTA @ 0xF80;
 "19 C:\Program Files (x86)\HI-TECH Software\PICC-18\9.80\include\pic18f4520.h
 [; ;pic18f4520.h: 19: asm("PORTA equ 0F80h");
@@ -4128,9 +4130,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e :U _lcdcmd ]
 [v _a `uc ~T0 1 r1 ]
 [f ]
-[; ;lcd.c: 8: PORTD=a;
+[; ;lcd.c: 8: PORTC=a;
 "8
-[e = _PORTD _a ]
+[e = _PORTC _a ]
 [; ;lcd.c: 9: RB0=0;
 "9
 [e = _RB0 -> -> 0 `i `b ]
@@ -4157,9 +4159,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e :U _lcddata ]
 [v _a `uc ~T0 1 r1 ]
 [f ]
-[; ;lcd.c: 17: PORTD=a;
+[; ;lcd.c: 17: PORTC=a;
 "17
-[e = _PORTD _a ]
+[e = _PORTC _a ]
 [; ;lcd.c: 18: RB0=1;
 "18
 [e = _RB0 -> -> 1 `i `b ]
@@ -4185,9 +4187,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;lcd.c: 25: void ready(){
 [e :U _ready ]
 [f ]
-[; ;lcd.c: 26: TRISD=0xFF;
+[; ;lcd.c: 26: TRISC=0xFF;
 "26
-[e = _TRISD -> -> 255 `i `uc ]
+[e = _TRISC -> -> 255 `i `uc ]
 [; ;lcd.c: 27: RB0=0;
 "27
 [e = _RB0 -> -> 0 `i `b ]
@@ -4209,12 +4211,12 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = _RB2 -> -> 0 `i `b ]
 "33
 }
-[; ;lcd.c: 33: }while(RD7==1);
-[e $ == -> _RD7 `i -> 1 `i 567  ]
+[; ;lcd.c: 33: }while(RC7==1);
+[e $ == -> _RC7 `i -> 1 `i 567  ]
 [e :U 566 ]
-[; ;lcd.c: 34: TRISD=0;
+[; ;lcd.c: 34: TRISC=0;
 "34
-[e = _TRISD -> -> 0 `i `uc ]
+[e = _TRISC -> -> 0 `i `uc ]
 [; ;lcd.c: 35: }
 "35
 [e :UE 564 ]
@@ -4282,51 +4284,55 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;lcd.c: 47: ready();
 "47
 [e ( _ready ..  ]
-[; ;lcd.c: 49: lcdcmd(0x8F);
+[; ;lcd.c: 48: lcdcmd(0x06);
+"48
+[e ( _lcdcmd (1 -> -> 6 `i `uc ]
+[; ;lcd.c: 49: ready();
 "49
-[e ( _lcdcmd (1 -> -> 143 `i `uc ]
-[; ;lcd.c: 50: ready();
-"50
 [e ( _ready ..  ]
-[; ;lcd.c: 51: while(str[i]!='\0'){
+[; ;lcd.c: 50: lcdcmd(0x86);
+"50
+[e ( _lcdcmd (1 -> -> 134 `i `uc ]
+[; ;lcd.c: 51: ready();
 "51
-[e $U 569  ]
-[e :U 570 ]
-{
-[; ;lcd.c: 52: lcddata(str[i]);
+[e ( _ready ..  ]
+[; ;lcd.c: 52: lcdcmd(0x1C);
 "52
-[e ( _lcddata (1 *U + &U _str * -> _i `ux -> -> # *U &U _str `ui `ux ]
+[e ( _lcdcmd (1 -> -> 28 `i `uc ]
 [; ;lcd.c: 53: ready();
 "53
 [e ( _ready ..  ]
-[; ;lcd.c: 54: i=i+1;
+[; ;lcd.c: 54: for(int au=1;au<20;au++){
 "54
-[e = _i -> + -> _i `i -> 1 `i `uc ]
-[; ;lcd.c: 55: lcdcmd(0x07);
+{
+[v _au `i ~T0 1 a ]
+[e = _au -> 1 `i ]
+[e $ < _au -> 20 `i 569  ]
+[e $U 570  ]
+[e :U 569 ]
+{
+[; ;lcd.c: 55: lcddata(str[au]);
 "55
-[e ( _lcdcmd (1 -> -> 7 `i `uc ]
+[e ( _lcddata (1 *U + &U _str * -> -> _au `ui `ux -> -> # *U &U _str `ui `ux ]
 [; ;lcd.c: 56: ready();
 "56
 [e ( _ready ..  ]
-"57
-}
-[e :U 569 ]
-"51
-[e $ != -> *U + &U _str * -> _i `ux -> -> # *U &U _str `ui `ux `ui -> 0 `ui 570  ]
-[e :U 571 ]
-[; ;lcd.c: 57: }
-[; ;lcd.c: 58: while(1){
+[; ;lcd.c: 58: lcdcmd(0x1C);
 "58
-[e :U 573 ]
-{
+[e ( _lcdcmd (1 -> -> 28 `i `uc ]
+[; ;lcd.c: 59: ready();
+"59
+[e ( _ready ..  ]
 "60
 }
-[e :U 572 ]
-"58
-[e $U 573  ]
-[e :U 574 ]
+"54
+[e ++ _au -> 1 `i ]
+[e $ < _au -> 20 `i 569  ]
+[e :U 570 ]
+"60
+}
 [; ;lcd.c: 60: }
-[; ;lcd.c: 61: }
-"61
+[; ;lcd.c: 62: }
+"62
 [e :UE 568 ]
 }

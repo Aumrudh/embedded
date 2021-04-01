@@ -418,10 +418,12 @@ __pidataCOMRAM:
 	db	low(020h)
 	db	low(04Ah)
 	db	low(0)
-	global	_PORTD
-_PORTD	set	0xF83
+	global	_PORTC
+_PORTC	set	0xF82
 	global	_TRISB
 _TRISB	set	0xF93
+	global	_TRISC
+_TRISC	set	0xF94
 	global	_TRISD
 _TRISD	set	0xF95
 	global	_RB0
@@ -430,8 +432,8 @@ _RB0	set	0x7C08
 _RB1	set	0x7C09
 	global	_RB2
 _RB2	set	0x7C0A
-	global	_RD7
-_RD7	set	0x7C1F
+	global	_RC7
+_RC7	set	0x7C17
 ; #config settings
 	file	"lcd.as"
 	line	#
@@ -511,6 +513,9 @@ main@str:	; 22 bytes @ 0x6
 	global	main@i
 main@i:	; 1 bytes @ 0x1C
 	ds   1
+	global	main@au
+main@au:	; 2 bytes @ 0x1D
+	ds   2
 ;!
 ;!Data Sizes:
 ;!    Strings     0
@@ -522,7 +527,7 @@ main@i:	; 1 bytes @ 0x1C
 ;!
 ;!Auto Spaces:
 ;!    Space          Size  Autos    Used
-;!    COMRAM          127     29      51
+;!    COMRAM          127     31      53
 ;!    BANK0           128      0       0
 ;!    BANK1           256      0       0
 ;!    BANK2           256      0       0
@@ -579,8 +584,8 @@ main@i:	; 1 bytes @ 0x1C
 ;! ---------------------------------------------------------------------------------
 ;! (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
 ;! ---------------------------------------------------------------------------------
-;! (0) _main                                                24    24      0     195
-;!                                              5 COMRAM    24    24      0
+;! (0) _main                                                26    26      0     180
+;!                                              5 COMRAM    26    26      0
 ;!                             _lcdcmd
 ;!                              _ready
 ;!                            _lcddata
@@ -631,13 +636,13 @@ main@i:	; 1 bytes @ 0x1C
 ;!BITBANK0            80      0       0       4        0.0%
 ;!BANK0               80      0       0       5        0.0%
 ;!BITCOMRAM           7F      0       0       0        0.0%
-;!COMRAM              7F     1D      33       1       40.2%
+;!COMRAM              7F     1F      35       1       41.7%
 ;!BITSFR               0      0       0      40        0.0%
 ;!SFR                  0      0       0      40        0.0%
 ;!STACK                0      0       2       2        0.0%
 ;!NULL                 0      0       0       0        0.0%
-;!ABS                  0      0      33      15        0.0%
-;!DATA                 0      0      35       3        0.0%
+;!ABS                  0      0      35      15        0.0%
+;!DATA                 0      0      37       3        0.0%
 ;!CODE                 0      0       0       0        0.0%
 
 	global	_main
@@ -648,22 +653,23 @@ main@i:	; 1 bytes @ 0x1C
 ;; Parameters:    Size  Location     Type
 ;;		None
 ;; Auto vars:     Size  Location     Type
+;;  au              2   29[COMRAM] int 
 ;;  str            22    6[COMRAM] unsigned char [22]
 ;;  i               1   28[COMRAM] unsigned char 
 ;; Return value:  Size  Location     Type
-;;                  2   32[COMRAM] int 
+;;                  2   34[COMRAM] int 
 ;; Registers used:
-;;		wreg, fsr1l, fsr1h, fsr2l, fsr2h, status,2, status,0, prodl, prodh, cstack
+;;		wreg, fsr1l, fsr1h, fsr2l, fsr2h, status,2, status,0, cstack
 ;; Tracked objects:
 ;;		On entry : 0/0
 ;;		On exit  : 0/0
 ;;		Unchanged: 0/0
 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5
 ;;      Params:         0       0       0       0       0       0       0
-;;      Locals:        23       0       0       0       0       0       0
+;;      Locals:        25       0       0       0       0       0       0
 ;;      Temps:          1       0       0       0       0       0       0
-;;      Totals:        24       0       0       0       0       0       0
-;;Total ram usage:       24 bytes
+;;      Totals:        26       0       0       0       0       0       0
+;;Total ram usage:       26 bytes
 ;; Hardware stack levels required when called:    2
 ;; This function calls:
 ;;		_lcdcmd
@@ -686,7 +692,7 @@ _main:
 	opt	stack 29
 	line	39
 	
-l1814:
+l1812:
 ;lcd.c: 39: unsigned char str[]="AUMRUDH LAL KUMAR T J",i=0;
 	lfsr	2,(main@F4455)
 	lfsr	1,(main@str)
@@ -696,26 +702,26 @@ u1851:
 	decfsz	wreg
 	goto	u1851
 	
-l1816:
+l1814:
 	movwf	(??_main+0+0)&0ffh,c
 	movlw	low(0)
 	movwf	((c:main@i)),c
 	movf	(??_main+0+0)&0ffh,c,w
 	line	40
 	
-l1818:
+l1816:
 ;lcd.c: 40: TRISB=0;
 	movlw	low(0)
 	movwf	((c:3987)),c	;volatile
 	line	41
 	
-l1820:
+l1818:
 ;lcd.c: 41: TRISD=0;
 	movlw	low(0)
 	movwf	((c:3989)),c	;volatile
 	line	42
 	
-l1822:
+l1820:
 ;lcd.c: 42: lcdcmd(0x38);
 	movwf	(??_main+0+0)&0ffh,c
 	movlw	low(038h)
@@ -724,12 +730,12 @@ l1822:
 	call	_lcdcmd	;wreg free
 	line	43
 	
-l1824:
+l1822:
 ;lcd.c: 43: ready();
 	call	_ready	;wreg free
 	line	44
 	
-l1826:
+l1824:
 ;lcd.c: 44: lcdcmd(0x0E);
 	movwf	(??_main+0+0)&0ffh,c
 	movlw	low(0Eh)
@@ -738,12 +744,12 @@ l1826:
 	call	_lcdcmd	;wreg free
 	line	45
 	
-l1828:
+l1826:
 ;lcd.c: 45: ready();
 	call	_ready	;wreg free
 	line	46
 	
-l1830:
+l1828:
 ;lcd.c: 46: lcdcmd(0x01);
 	movwf	(??_main+0+0)&0ffh,c
 	movlw	low(01h)
@@ -752,36 +758,85 @@ l1830:
 	call	_lcdcmd	;wreg free
 	line	47
 	
-l1832:
+l1830:
 ;lcd.c: 47: ready();
 	call	_ready	;wreg free
-	line	49
+	line	48
 	
-l1834:
-;lcd.c: 49: lcdcmd(0x8F);
+l1832:
+;lcd.c: 48: lcdcmd(0x06);
 	movwf	(??_main+0+0)&0ffh,c
-	movlw	low(08Fh)
+	movlw	low(06h)
 	movwf	((c:?_lcdcmd)),c
 	movf	(??_main+0+0)&0ffh,c,w
 	call	_lcdcmd	;wreg free
+	line	49
+	
+l1834:
+;lcd.c: 49: ready();
+	call	_ready	;wreg free
 	line	50
 	
 l1836:
-;lcd.c: 50: ready();
-	call	_ready	;wreg free
+;lcd.c: 50: lcdcmd(0x86);
+	movwf	(??_main+0+0)&0ffh,c
+	movlw	low(086h)
+	movwf	((c:?_lcdcmd)),c
+	movf	(??_main+0+0)&0ffh,c,w
+	call	_lcdcmd	;wreg free
 	line	51
-;lcd.c: 51: while(str[i]!='\0'){
-	goto	l35
-	
-l36:
-	line	52
 	
 l1838:
-;lcd.c: 52: lcddata(str[i]);
-	movf	((c:main@i)),c,w
-	mullw	01h
+;lcd.c: 51: ready();
+	call	_ready	;wreg free
+	line	52
+	
+l1840:
+;lcd.c: 52: lcdcmd(0x1C);
+	movwf	(??_main+0+0)&0ffh,c
+	movlw	low(01Ch)
+	movwf	((c:?_lcdcmd)),c
+	movf	(??_main+0+0)&0ffh,c,w
+	call	_lcdcmd	;wreg free
+	line	53
+	
+l1842:
+;lcd.c: 53: ready();
+	call	_ready	;wreg free
+	line	54
+	
+l1844:
+;lcd.c: 54: for(int au=1;au<20;au++){
+	movlw	high(01h)
+	movwf	((c:main@au+1)),c
+	movlw	low(01h)
+	movwf	((c:main@au)),c
+	
+l1846:
+	movf	((c:main@au+1)),c,w
+	xorlw	80h
+	addlw	-((0)^80h)
+	movlw	014h
+	btfsc	status,2
+	subwf	((c:main@au)),c,w
+	btfss	status,0
+	goto	u1861
+	goto	u1860
+u1861:
+	goto	l1850
+u1860:
+	goto	l39
+	
+l1848:
+	goto	l39
+	
+l37:
+	line	55
+	
+l1850:
+;lcd.c: 55: lcddata(str[au]);
 	movlw	low((c:main@str))
-	addwf	(prodl),c,w
+	addwf	((c:main@au)),c,w
 	movwf	c:fsr2l
 	clrf	1+c:fsr2l
 	movlw	high((c:main@str))
@@ -789,68 +844,50 @@ l1838:
 	movf	indf2,w
 	movwf	((c:?_lcddata)),c
 	call	_lcddata	;wreg free
-	line	53
+	line	56
 	
-l1840:
-;lcd.c: 53: ready();
+l1852:
+;lcd.c: 56: ready();
 	call	_ready	;wreg free
-	line	54
+	line	58
 	
-l1842:
-;lcd.c: 54: i=i+1;
-	incf	((c:main@i)),c,w
-	movwf	((c:main@i)),c
-	line	55
-	
-l1844:
-;lcd.c: 55: lcdcmd(0x07);
+l1854:
+;lcd.c: 58: lcdcmd(0x1C);
 	movwf	(??_main+0+0)&0ffh,c
-	movlw	low(07h)
+	movlw	low(01Ch)
 	movwf	((c:?_lcdcmd)),c
 	movf	(??_main+0+0)&0ffh,c,w
 	call	_lcdcmd	;wreg free
-	line	56
+	line	59
 	
-l1846:
-;lcd.c: 56: ready();
+l1856:
+;lcd.c: 59: ready();
 	call	_ready	;wreg free
-	line	57
+	line	54
 	
-l35:
-	line	51
-	movf	((c:main@i)),c,w
-	mullw	01h
-	movlw	low((c:main@str))
-	addwf	(prodl),c,w
-	movwf	c:fsr2l
-	clrf	1+c:fsr2l
-	movlw	high((c:main@str))
-	addwfc	1+c:fsr2l
-	movf	indf2,w
-	btfss	status,2
-	goto	u1861
-	goto	u1860
-u1861:
-	goto	l1838
-u1860:
-	goto	l38
+l1858:
+	infsnz	((c:main@au)),c
+	incf	((c:main@au+1)),c
 	
-l37:
-	line	58
-;lcd.c: 57: }
-;lcd.c: 58: while(1){
+l1860:
+	movf	((c:main@au+1)),c,w
+	xorlw	80h
+	addlw	-((0)^80h)
+	movlw	014h
+	btfsc	status,2
+	subwf	((c:main@au)),c,w
+	btfss	status,0
+	goto	u1871
+	goto	u1870
+u1871:
+	goto	l1850
+u1870:
+	goto	l39
 	
 l38:
-	line	60
+	line	62
 	
 l39:
-	line	58
-	goto	l38
-	
-l40:
-	line	61
-	
-l41:
 	global	start
 	goto	start
 	opt stack 0
@@ -901,9 +938,9 @@ _ready:
 	opt	stack 29
 	line	26
 	
-l1804:
-;lcd.c: 26: TRISD=0xFF;
-	setf	((c:3989)),c	;volatile
+l1802:
+;lcd.c: 26: TRISC=0xFF;
+	setf	((c:3988)),c	;volatile
 	line	27
 ;lcd.c: 27: RB0=0;
 	bcf	c:(31752/8),(31752)&7	;volatile
@@ -913,42 +950,42 @@ l1804:
 	line	29
 ;lcd.c: 29: do{
 	
-l28:
+l30:
 	line	30
 ;lcd.c: 30: RB2=1;
 	bsf	c:(31754/8),(31754)&7	;volatile
 	line	31
 	
-l1806:
+l1804:
 ;lcd.c: 31: delay();
 	call	_delay	;wreg free
 	line	32
 	
-l1808:
+l1806:
 ;lcd.c: 32: RB2=0;
 	bcf	c:(31754/8),(31754)&7	;volatile
 	line	33
 	
-l1810:
-;lcd.c: 33: }while(RD7==1);
-	btfsc	c:(31775/8),(31775)&7	;volatile
+l1808:
+;lcd.c: 33: }while(RC7==1);
+	btfsc	c:(31767/8),(31767)&7	;volatile
 	goto	u1841
 	goto	u1840
 u1841:
-	goto	l28
+	goto	l30
 u1840:
-	goto	l1812
+	goto	l1810
 	
-l29:
+l31:
 	line	34
 	
-l1812:
-;lcd.c: 34: TRISD=0;
+l1810:
+;lcd.c: 34: TRISC=0;
 	movlw	low(0)
-	movwf	((c:3989)),c	;volatile
+	movwf	((c:3988)),c	;volatile
 	line	35
 	
-l30:
+l32:
 	return
 	opt stack 0
 GLOBAL	__end_of_ready
@@ -998,9 +1035,9 @@ _lcdcmd:
 	opt	stack 29
 	line	8
 	
-l1792:
-;lcd.c: 8: PORTD=a;
-	movff	(c:lcdcmd@a),(c:3971)	;volatile
+l1790:
+;lcd.c: 8: PORTC=a;
+	movff	(c:lcdcmd@a),(c:3970)	;volatile
 	line	9
 ;lcd.c: 9: RB0=0;
 	bcf	c:(31752/8),(31752)&7	;volatile
@@ -1012,17 +1049,17 @@ l1792:
 	bsf	c:(31754/8),(31754)&7	;volatile
 	line	12
 	
-l1794:
+l1792:
 ;lcd.c: 12: delay();
 	call	_delay	;wreg free
 	line	13
 	
-l1796:
+l1794:
 ;lcd.c: 13: RB2=0;
 	bcf	c:(31754/8),(31754)&7	;volatile
 	line	14
 	
-l22:
+l24:
 	return
 	opt stack 0
 GLOBAL	__end_of_lcdcmd
@@ -1072,9 +1109,9 @@ _lcddata:
 	opt	stack 29
 	line	17
 	
-l1798:
-;lcd.c: 17: PORTD=a;
-	movff	(c:lcddata@a),(c:3971)	;volatile
+l1796:
+;lcd.c: 17: PORTC=a;
+	movff	(c:lcddata@a),(c:3970)	;volatile
 	line	18
 ;lcd.c: 18: RB0=1;
 	bsf	c:(31752/8),(31752)&7	;volatile
@@ -1086,17 +1123,17 @@ l1798:
 	bsf	c:(31754/8),(31754)&7	;volatile
 	line	21
 	
-l1800:
+l1798:
 ;lcd.c: 21: delay();
 	call	_delay	;wreg free
 	line	22
 	
-l1802:
+l1800:
 ;lcd.c: 22: RB2=0;
 	bcf	c:(31754/8),(31754)&7	;volatile
 	line	23
 	
-l25:
+l27:
 	return
 	opt stack 0
 GLOBAL	__end_of_lcddata
@@ -1147,7 +1184,7 @@ _delay:
 	opt	stack 29
 	line	4
 	
-l620:
+l618:
 ;lcd.c: 4: for(unsigned long int i=0;i<100;i++)
 	movlw	low(0)
 	movwf	((c:delay@i)),c
@@ -1158,7 +1195,7 @@ l620:
 	movlw	high highword(0)
 	movwf	((c:delay@i+3)),c
 	
-l622:
+l620:
 	movlw	low(064h)
 	subwf	((c:delay@i)),c,w
 	movlw	high(064h)
@@ -1171,18 +1208,18 @@ l622:
 	goto	u11
 	goto	u10
 u11:
-	goto	l626
+	goto	l624
 u10:
-	goto	l19
+	goto	l21
 	
-l624:
-	goto	l19
+l622:
+	goto	l21
 	line	5
 	
-l17:
+l19:
 	line	4
 	
-l626:
+l624:
 ;lcd.c: 5: {}
 	movlw	01h
 	addwf	((c:delay@i)),c
@@ -1204,14 +1241,14 @@ l626:
 	goto	u21
 	goto	u20
 u21:
-	goto	l626
+	goto	l624
 u20:
-	goto	l19
+	goto	l21
 	
-l18:
+l20:
 	line	6
 	
-l19:
+l21:
 	return
 	opt stack 0
 GLOBAL	__end_of_delay

@@ -30,26 +30,26 @@ Call graph: (short form)
 
                 Name          Link     Load   Length Selector   Space       Scale
 startup.obj     end_init         0        0        4       0     0
-lcd.obj         text4         7EF2     7EF2       58    3F79     0
-                text3         7E74     7E74       12    3F3A     0
-                text2         7E86     7E86       12    3F43     0
-                text1         7EAE     7EAE       1E    3F57     0
-                text0         7F4A     7F4A       B6    3FA5     0
-                cstackCOM        1        1       1D       1     1
-                dataCOMRA       1E       1E       16       1     1
-                cinit         7ECC     7ECC       26    3F66     0
-                idataCOMR     7E98     7E98       16    7E98     0
+lcd.obj         text4         7EC0     7EC0       58    3F60     0
+                text3         7E42     7E42       12    3F21     0
+                text2         7E54     7E54       12    3F2A     0
+                text1         7E7C     7E7C       1E    3F3E     0
+                text0         7F18     7F18       E8    3F8C     0
+                cstackCOM        1        1       1F       1     1
+                dataCOMRA       20       20       16       1     1
+                cinit         7E9A     7E9A       26    3F4D     0
+                idataCOMR     7E66     7E66       16    7E66     0
 
 TOTAL           Name          Link     Load   Length     Space
         CLASS   CODE           
                 end_init         0        0        4     0
-                text4         7EF2     7EF2       58     0
-                text3         7E74     7E74       12     0
-                text2         7E86     7E86       12     0
-                text1         7EAE     7EAE       1E     0
-                text0         7F4A     7F4A       B6     0
-                cinit         7ECC     7ECC       26     0
-                idataCOMR     7E98     7E98       16     0
+                text4         7EC0     7EC0       58     0
+                text3         7E42     7E42       12     0
+                text2         7E54     7E54       12     0
+                text1         7E7C     7E7C       1E     0
+                text0         7F18     7F18       E8     0
+                cinit         7E9A     7E9A       26     0
+                idataCOMR     7E66     7E66       16     0
 
         CLASS   CONST          
 
@@ -58,8 +58,8 @@ TOTAL           Name          Link     Load   Length     Space
         CLASS   MEDIUMCONST    
 
         CLASS   COMRAM         
-                cstackCOM        1        1       1D     1
-                dataCOMRA       1E       1E       16     1
+                cstackCOM        1        1       1F     1
+                dataCOMRA       20       20       16     1
 
         CLASS   ABS1           
 
@@ -94,14 +94,14 @@ TOTAL           Name          Link     Load   Length     Space
 SEGMENTS        Name            Load    Length   Top    Selector   Space  Class
 
                 reset_vec       000000  000004  000004         0       0  CODE    
-                cstackCOMRAM    000001  000033  000034         1       1  COMRAM  
-                text3           007E74  000012  007E86      3F3A       0  CODE    
-                text2           007E86  000012  007E98      3F43       0  CODE    
-                idataCOMRAM     007E98  000016  007EAE      7E98       0  CODE    
-                text1           007EAE  00001E  007ECC      3F57       0  CODE    
-                cinit           007ECC  000026  007EF2      3F66       0  CODE    
-                text4           007EF2  000058  007F4A      3F79       0  CODE    
-                text0           007F4A  0000B6  008000      3FA5       0  CODE    
+                cstackCOMRAM    000001  000035  000036         1       1  COMRAM  
+                text3           007E42  000012  007E54      3F21       0  CODE    
+                text2           007E54  000012  007E66      3F2A       0  CODE    
+                idataCOMRAM     007E66  000016  007E7C      7E66       0  CODE    
+                text1           007E7C  00001E  007E9A      3F3E       0  CODE    
+                cinit           007E9A  000026  007EC0      3F4D       0  CODE    
+                text4           007EC0  000058  007F18      3F60       0  CODE    
+                text0           007F18  0000E8  008000      3F8C       0  CODE    
 
 
 UNUSED ADDRESS RANGES
@@ -113,17 +113,17 @@ UNUSED ADDRESS RANGES
         BANK3            0300-03FF            100
         BANK4            0400-04FF            100
         BANK5            0500-05FF            100
-        BIGRAM           0034-05FF            5CC
-        CODE             0004-7E73           7E70
-        COMRAM           0034-007F             4C
+        BIGRAM           0036-05FF            5CA
+        CODE             0004-7E41           7E3E
+        COMRAM           0036-007F             4A
         CONFIG           300000-30000D              E
-        CONST            0004-7E73           7E70
+        CONST            0004-7E41           7E3E
         EEDATA           F00000-F000FF            100
         IDLOC            200000-200007              8
-        MEDIUMCONST      0600-7E73           7874
+        MEDIUMCONST      0600-7E41           7842
         RAM              0080-05FF            100
         SFR              0F80-0FFF             80
-        SMALLCONST       0600-7E73            100
+        SMALLCONST       0600-7E41            100
 
                                   Symbol Table
 
@@ -137,12 +137,13 @@ UNUSED ADDRESS RANGES
 ?_lcddata             cstackCOMRAM 0005
 ?_main                cstackCOMRAM 0001
 ?_ready               cstackCOMRAM 0001
-_PORTD                (abs)        0F83
+_PORTC                (abs)        0F82
 _RB0                  (abs)        7C08
 _RB1                  (abs)        7C09
 _RB2                  (abs)        7C0A
-_RD7                  (abs)        7C1F
+_RC7                  (abs)        7C17
 _TRISB                (abs)        0F93
+_TRISC                (abs)        0F94
 _TRISD                (abs)        0F95
 __HRAM                (abs)        0000
 __Habs1               abs1         0000
@@ -265,24 +266,24 @@ __Ltext3              text3        0000
 __Ltext4              text4        0000
 __Ltext5              text5        0000
 __S0                  (abs)        8000
-__S1                  (abs)        0034
+__S1                  (abs)        0036
 __accesstop           (abs)        0080
 __activetblptr        (abs)        0000
-__end_of_delay        text4        7F4A
-__end_of_lcdcmd       text2        7E98
-__end_of_lcddata      text3        7E86
+__end_of_delay        text4        7F18
+__end_of_lcdcmd       text2        7E66
+__end_of_lcddata      text3        7E54
 __end_of_main         text0        8000
-__end_of_ready        text1        7ECC
+__end_of_ready        text1        7E9A
 __mediumconst         mediumconst  0000
-__pcinit              cinit        7ECC
+__pcinit              cinit        7E9A
 __pcstackCOMRAM       cstackCOMRAM 0001
-__pdataCOMRAM         dataCOMRAM   001E
-__pidataCOMRAM        idataCOMRAM  7E98
-__ptext0              text0        7F4A
-__ptext1              text1        7EAE
-__ptext2              text2        7E86
-__ptext3              text3        7E74
-__ptext4              text4        7EF2
+__pdataCOMRAM         dataCOMRAM   0020
+__pidataCOMRAM        idataCOMRAM  7E66
+__ptext0              text0        7F18
+__ptext1              text1        7E7C
+__ptext2              text2        7E54
+__ptext3              text3        7E42
+__ptext4              text4        7EC0
 __ptext5              text5        0000
 __ramtop              ramtop       0600
 __size_of_delay       (abs)        0000
@@ -291,21 +292,22 @@ __size_of_lcddata     (abs)        0000
 __size_of_main        (abs)        0000
 __size_of_ready       (abs)        0000
 __smallconst          smallconst   0000
-_delay                text4        7EF2
-_lcdcmd               text2        7E86
-_lcddata              text3        7E74
-_main                 text0        7F4A
-_ready                text1        7EAE
+_delay                text4        7EC0
+_lcdcmd               text2        7E54
+_lcddata              text3        7E42
+_main                 text0        7F18
+_ready                text1        7E7C
 delay@i               cstackCOMRAM 0001
-end_of_initialization cinit        7EEC
+end_of_initialization cinit        7EBA
 intlevel0             text         0000
 intlevel1             text         0000
 intlevel2             text         0000
 intlevel3             text         0000
 lcdcmd@a              cstackCOMRAM 0005
 lcddata@a             cstackCOMRAM 0005
-main@F4455            dataCOMRAM   001E
+main@F4455            dataCOMRAM   0020
+main@au               cstackCOMRAM 001E
 main@i                cstackCOMRAM 001D
 main@str              cstackCOMRAM 0007
 start                 init         0000
-start_initialization  cinit        7ECC
+start_initialization  cinit        7E9A

@@ -1,25 +1,26 @@
 _RB0 7C08 0 ABS 0
 _RB1 7C09 0 ABS 0
 _RB2 7C0A 0 ABS 0
-_RD7 7C1F 0 ABS 0
+_RC7 7C17 0 ABS 0
 __S0 8000 0 ABS 0
-__S1 34 0 ABS 0
+__S1 36 0 ABS 0
 __Hintentry 0 0 ABS 0
 __Lintentry 0 0 ABS 0
-__end_of_ready 7ECC 0 CODE 0
-_main 7F4A 0 CODE 0
+__end_of_ready 7E9A 0 CODE 0
+_main 7F18 0 CODE 0
 start 0 0 CODE 0
 ??_lcdcmd 6 0 COMRAM 1
 ?_lcddata 5 0 COMRAM 1
 __size_of_ready 0 0 ABS 0
 _TRISB F93 0 ABS 0
+_TRISC F94 0 ABS 0
 _TRISD F95 0 ABS 0
 __Hirdata 0 0 CODE 0
 __Lirdata 0 0 CODE 0
+_PORTC F82 0 ABS 0
 __HRAM 0 0 ABS 0
-_PORTD F83 0 ABS 0
 __LRAM 1 0 ABS 0
-__end_of_delay 7F4A 0 CODE 0
+__end_of_delay 7F18 0 CODE 0
 __Hconfig 0 0 CONFIG 0
 __Lconfig 0 0 CONFIG 0
 main@i 1D 0 COMRAM 1
@@ -36,11 +37,11 @@ __Hsfr 0 0 ABS 0
 __Lsfr 0 0 ABS 0
 __Hbss 0 0 RAM 1
 __Lbss 0 0 RAM 1
-_ready 7EAE 0 CODE 0
+_ready 7E7C 0 CODE 0
 __Hnvrram 0 0 COMRAM 1
-_delay 7EF2 0 CODE 0
+_delay 7EC0 0 CODE 0
 __Lnvrram 0 0 COMRAM 1
-main@F4455 1E 0 COMRAM 1
+main@F4455 20 0 COMRAM 1
 __Heeprom_data 0 0 EEDATA 0
 __Leeprom_data 0 0 EEDATA 0
 __Hintsave_regs 0 0 BIGRAM 1
@@ -70,7 +71,8 @@ __size_of_delay 0 0 ABS 0
 delay@i 1 0 COMRAM 1
 __Hdata 0 0 ABS 0
 __Ldata 0 0 ABS 0
-_lcdcmd 7E86 0 CODE 0
+_lcdcmd 7E54 0 CODE 0
+main@au 1E 0 COMRAM 1
 ??_main 6 0 COMRAM 1
 __Htemp 0 0 COMRAM 1
 __Ltemp 0 0 COMRAM 1
@@ -87,8 +89,8 @@ __end_of_main 8000 0 CODE 0
 __Lrbss 0 0 COMRAM 1
 __Htext 0 0 ABS 0
 __Ltext 0 0 ABS 0
-__end_of_lcdcmd 7E98 0 CODE 0
-end_of_initialization 7EEC 0 CODE 0
+__end_of_lcdcmd 7E66 0 CODE 0
+end_of_initialization 7EBA 0 CODE 0
 __Hibigdata 0 0 CODE 0
 __Libigdata 0 0 CODE 0
 __Hifardata 0 0 CODE 0
@@ -111,19 +113,19 @@ __Htext0 0 0 ABS 0
 __Ltext0 0 0 ABS 0
 __Htext1 0 0 ABS 0
 __Ltext1 0 0 ABS 0
-__ptext0 7F4A 0 CODE 0
+__ptext0 7F18 0 CODE 0
 __Htext2 0 0 ABS 0
 __Ltext2 0 0 ABS 0
-__ptext1 7EAE 0 CODE 0
+__ptext1 7E7C 0 CODE 0
 __Htext3 0 0 ABS 0
 __Ltext3 0 0 ABS 0
-__ptext2 7E86 0 CODE 0
+__ptext2 7E54 0 CODE 0
 __Htext4 0 0 ABS 0
 __Ltext4 0 0 ABS 0
-__ptext3 7E74 0 CODE 0
+__ptext3 7E42 0 CODE 0
 __Htext5 0 0 ABS 0
 __Ltext5 0 0 ABS 0
-__ptext4 7EF2 0 CODE 0
+__ptext4 7EC0 0 CODE 0
 __ptext5 0 0 CODE 0
 __Hclrtext 0 0 ABS 0
 __Lclrtext 0 0 ABS 0
@@ -133,7 +135,7 @@ __Lidata 0 0 CODE 0
 ?_lcdcmd 5 0 COMRAM 1
 __Hrdata 0 0 COMRAM 1
 __Lrdata 0 0 COMRAM 1
-_lcddata 7E74 0 CODE 0
+_lcddata 7E42 0 CODE 0
 __Hidloc 0 0 IDLOC 0
 __Lidloc 0 0 IDLOC 0
 __Hparam 0 0 ABS 0
@@ -141,7 +143,7 @@ __Lparam 0 0 ABS 0
 __HcstackCOMRAM 0 0 ABS 0
 __LcstackCOMRAM 0 0 ABS 0
 __pcstackCOMRAM 1 0 COMRAM 1
-__end_of_lcddata 7E86 0 CODE 0
+__end_of_lcddata 7E54 0 CODE 0
 __Hsmallconst 0 0 SMALLCONST 0
 __Lsmallconst 0 0 SMALLCONST 0
 __Hnvbit 0 0 COMRAM 1
@@ -150,7 +152,7 @@ __Lnvbit 0 0 COMRAM 1
 __Hcinit 0 0 ABS 0
 ??_delay 1 0 COMRAM 1
 __Lcinit 0 0 ABS 0
-__pcinit 7ECC 0 CODE 0
+__pcinit 7E9A 0 CODE 0
 main@str 7 0 COMRAM 1
 __ramtop 600 0 RAM 0
 __mediumconst 0 0 MEDIUMCONST 0
@@ -163,7 +165,7 @@ __Hend_init 4 0 CODE 0
 __Lend_init 0 0 CODE 0
 __HidataCOMRAM 0 0 ABS 0
 __LidataCOMRAM 0 0 ABS 0
-__pidataCOMRAM 7E98 0 CODE 0
+__pidataCOMRAM 7E66 0 CODE 0
 __smallconst 0 0 SMALLCONST 0
 __Hreset_vec 0 0 CODE 0
 __Lreset_vec 0 0 CODE 0
@@ -176,20 +178,20 @@ intlevel2 0 0 CODE 0
 intlevel3 0 0 CODE 0
 __HdataCOMRAM 0 0 ABS 0
 __LdataCOMRAM 0 0 ABS 0
-__pdataCOMRAM 1E 0 COMRAM 1
-start_initialization 7ECC 0 CODE 0
+__pdataCOMRAM 20 0 COMRAM 1
+start_initialization 7E9A 0 CODE 0
 lcddata@a 5 0 COMRAM 1
 __activetblptr 0 0 ABS 0
 %segments
 reset_vec 0 3 CODE 0 0
-cstackCOMRAM 1 33 COMRAM 1 1
-text0 7F4A 7FFF CODE 7F4A 0
-text4 7EF2 7F49 CODE 7EF2 0
-cinit 7ECC 7EF1 CODE 7ECC 0
-text1 7EAE 7ECB CODE 7EAE 0
-idataCOMRAM 7E98 7EAD CODE 7E98 0
-text2 7E86 7E97 CODE 7E86 0
-text3 7E74 7E85 CODE 7E74 0
+cstackCOMRAM 1 35 COMRAM 1 1
+text0 7F18 7FFF CODE 7F18 0
+text4 7EC0 7F17 CODE 7EC0 0
+cinit 7E9A 7EBF CODE 7E9A 0
+text1 7E7C 7E99 CODE 7E7C 0
+idataCOMRAM 7E66 7E7B CODE 7E66 0
+text2 7E54 7E65 CODE 7E54 0
+text3 7E42 7E53 CODE 7E42 0
 %locals
 startup.obj
 startup.as
@@ -200,70 +202,72 @@ startup.as
 lcd.obj
 lcd.as
 D:\Aumrudh Documents\mepco\lab\sem6-Lab\embedded\even\embedded\ex5\lcd.c
-39 7E98 0 CODE 0
+39 7E66 0 CODE 0
 D:\Aumrudh Documents\mepco\lab\sem6-Lab\embedded\even\embedded\ex5\lcd.c
-454 7ECC 0 CODE 0
-455 7ECE 0 CODE 0
-456 7ED0 0 CODE 0
-457 7ED2 0 CODE 0
-458 7ED4 0 CODE 0
-459 7ED6 0 CODE 0
-460 7ED8 0 CODE 0
-461 7EDC 0 CODE 0
-463 7EE0 0 CODE 0
-464 7EE2 0 CODE 0
-465 7EE6 0 CODE 0
-466 7EE8 0 CODE 0
-467 7EEA 0 CODE 0
-474 7EEC 0 CODE 0
-475 7EEE 0 CODE 0
+456 7E9A 0 CODE 0
+457 7E9C 0 CODE 0
+458 7E9E 0 CODE 0
+459 7EA0 0 CODE 0
+460 7EA2 0 CODE 0
+461 7EA4 0 CODE 0
+462 7EA6 0 CODE 0
+463 7EAA 0 CODE 0
+465 7EAE 0 CODE 0
+466 7EB0 0 CODE 0
+467 7EB4 0 CODE 0
+468 7EB6 0 CODE 0
+469 7EB8 0 CODE 0
+476 7EBA 0 CODE 0
+477 7EBC 0 CODE 0
 D:\Aumrudh Documents\mepco\lab\sem6-Lab\embedded\even\embedded\ex5\lcd.c
-39 7F4A 0 CODE 0
-40 7F64 0 CODE 0
-41 7F68 0 CODE 0
-42 7F6C 0 CODE 0
-43 7F78 0 CODE 0
-44 7F7C 0 CODE 0
-45 7F88 0 CODE 0
-46 7F8C 0 CODE 0
-47 7F98 0 CODE 0
-49 7F9C 0 CODE 0
-50 7FA8 0 CODE 0
-51 7FAC 0 CODE 0
-52 7FAE 0 CODE 0
-53 7FC6 0 CODE 0
-54 7FCA 0 CODE 0
-55 7FCE 0 CODE 0
-56 7FDA 0 CODE 0
-51 7FDE 0 CODE 0
-58 7FFA 0 CODE 0
-61 7FFC 0 CODE 0
+39 7F18 0 CODE 0
+40 7F32 0 CODE 0
+41 7F36 0 CODE 0
+42 7F3A 0 CODE 0
+43 7F46 0 CODE 0
+44 7F4A 0 CODE 0
+45 7F56 0 CODE 0
+46 7F5A 0 CODE 0
+47 7F66 0 CODE 0
+48 7F6A 0 CODE 0
+49 7F76 0 CODE 0
+50 7F7A 0 CODE 0
+51 7F86 0 CODE 0
+52 7F8A 0 CODE 0
+53 7F96 0 CODE 0
+54 7F9A 0 CODE 0
+55 7FBA 0 CODE 0
+56 7FCE 0 CODE 0
+58 7FD2 0 CODE 0
+59 7FDE 0 CODE 0
+54 7FE2 0 CODE 0
+62 7FFC 0 CODE 0
 D:\Aumrudh Documents\mepco\lab\sem6-Lab\embedded\even\embedded\ex5\lcd.c
-26 7EAE 0 CODE 0
-27 7EB0 0 CODE 0
-28 7EB2 0 CODE 0
-30 7EB4 0 CODE 0
-31 7EB6 0 CODE 0
-32 7EBA 0 CODE 0
-33 7EBC 0 CODE 0
-34 7EC6 0 CODE 0
-35 7ECA 0 CODE 0
+26 7E7C 0 CODE 0
+27 7E7E 0 CODE 0
+28 7E80 0 CODE 0
+30 7E82 0 CODE 0
+31 7E84 0 CODE 0
+32 7E88 0 CODE 0
+33 7E8A 0 CODE 0
+34 7E94 0 CODE 0
+35 7E98 0 CODE 0
 D:\Aumrudh Documents\mepco\lab\sem6-Lab\embedded\even\embedded\ex5\lcd.c
-8 7E86 0 CODE 0
-9 7E8A 0 CODE 0
-10 7E8C 0 CODE 0
-11 7E8E 0 CODE 0
-12 7E90 0 CODE 0
-13 7E94 0 CODE 0
-14 7E96 0 CODE 0
+8 7E54 0 CODE 0
+9 7E58 0 CODE 0
+10 7E5A 0 CODE 0
+11 7E5C 0 CODE 0
+12 7E5E 0 CODE 0
+13 7E62 0 CODE 0
+14 7E64 0 CODE 0
 D:\Aumrudh Documents\mepco\lab\sem6-Lab\embedded\even\embedded\ex5\lcd.c
-17 7E74 0 CODE 0
-18 7E78 0 CODE 0
-19 7E7A 0 CODE 0
-20 7E7C 0 CODE 0
-21 7E7E 0 CODE 0
-22 7E82 0 CODE 0
-23 7E84 0 CODE 0
+17 7E42 0 CODE 0
+18 7E46 0 CODE 0
+19 7E48 0 CODE 0
+20 7E4A 0 CODE 0
+21 7E4C 0 CODE 0
+22 7E50 0 CODE 0
+23 7E52 0 CODE 0
 D:\Aumrudh Documents\mepco\lab\sem6-Lab\embedded\even\embedded\ex5\lcd.c
-4 7EF2 0 CODE 0
-6 7F48 0 CODE 0
+4 7EC0 0 CODE 0
+6 7F16 0 CODE 0
